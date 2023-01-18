@@ -408,7 +408,7 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
                     image_converted.Save(filename)
                     print('Image saved at %s\n' % filename)
 
-                    result &= display_chunk_data_from_image(image_result)
+                    result &= display_chunk_data_from_nodemap(nodemap)
 
                     #  Release image
                     #
