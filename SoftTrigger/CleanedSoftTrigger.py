@@ -16,6 +16,7 @@ class ChunkDataTypes:
 
 CHOSEN_CHUNK_DATA_TYPE = ChunkDataTypes.NODEMAP
 
+
 def configure_chunk_data(nodemap):
     """
     This function configures the camera to add chunk data to each image. It does
@@ -106,6 +107,7 @@ def configure_chunk_data(nodemap):
         result = False
 
     return result
+
 
 def display_chunk_data_from_nodemap(nodemap):
     """
@@ -564,51 +566,6 @@ def print_device_info(nodemap):
 
     return result
 
-
-def run_single_camera(cam):
-    """
-    This function acts as the body of the example; please see NodeMapInfo example
-    for more in-depth comments on setting up cameras.
-
-    :param cam: Camera to run on.
-    :type cam: CameraPtr
-    :return: True if successful, False otherwise.
-    :rtype: bool
-    """
-    try:
-        result = True
-        err = False
-
-        # Retrieve TL device nodemap and print device information
-        nodemap_tldevice = cam.GetTLDeviceNodeMap()
-
-        result &= print_device_info(nodemap_tldevice)
-
-        # Initialize camera
-        cam.Init()
-
-        # Retrieve GenICam nodemap
-        nodemap = cam.GetNodeMap()
-
-        # Configure trigger
-        if configure_trigger(cam) is False:
-            return False
-
-        # Acquire images
-        result &= acquire_images(cam, nodemap, nodemap_tldevice)
-
-        # Reset trigger
-        result &= reset_trigger(nodemap)
-
-        # Deinitialize camera
-        cam.DeInit()
-
-    except PySpin.SpinnakerException as ex:
-        print('Error: %s' % ex)
-        result = False
-
-    return result
-
 def disable_chunk_data(nodemap):
     """
     This function disables each type of chunk data before disabling chunk data mode.
@@ -681,6 +638,50 @@ def disable_chunk_data(nodemap):
 
     return result
 
+
+def run_single_camera(cam):
+    """
+    This function acts as the body of the example; please see NodeMapInfo example
+    for more in-depth comments on setting up cameras.
+
+    :param cam: Camera to run on.
+    :type cam: CameraPtr
+    :return: True if successful, False otherwise.
+    :rtype: bool
+    """
+    try:
+        result = True
+        err = False
+
+        # Retrieve TL device nodemap and print device information
+        nodemap_tldevice = cam.GetTLDeviceNodeMap()
+
+        result &= print_device_info(nodemap_tldevice)
+
+        # Initialize camera
+        cam.Init()
+
+        # Retrieve GenICam nodemap
+        nodemap = cam.GetNodeMap()
+
+        # Configure trigger
+        if configure_trigger(cam) is False:
+            return False
+
+        # Acquire images
+        result &= acquire_images(cam, nodemap, nodemap_tldevice)
+
+        # Reset trigger
+        result &= reset_trigger(nodemap)
+
+        # Deinitialize camera
+        cam.DeInit()
+
+    except PySpin.SpinnakerException as ex:
+        print('Error: %s' % ex)
+        result = False
+
+    return result
 
 def main():
     """
