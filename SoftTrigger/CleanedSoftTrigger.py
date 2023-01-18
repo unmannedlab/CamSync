@@ -109,6 +109,70 @@ def configure_chunk_data(nodemap):
     return result
 
 
+
+def display_chunk_data_from_image(image):
+    """
+    This function displays a select amount of chunk data from the image. Unlike
+    accessing chunk data via the nodemap, there is no way to loop through all
+    available data.
+
+    :param image: Image to acquire chunk data from
+    :type image: Image object
+    :return: True if successful, False otherwise.
+    :rtype: bool
+    """
+    print('Printing chunk data from image...')
+    try:
+        result = True
+        print(type(image))
+        # Retrieve chunk data from image
+        #
+        # *** NOTES ***
+        # When retrieving chunk data from an image, the data is stored in a
+        # ChunkData object and accessed with getter functions.
+        chunk_data = image.GetChunkData()
+
+        # Retrieve exposure time (recorded in microseconds)
+        exposure_time = chunk_data.GetExposureTime()
+        print('\tExposure time: {}'.format(exposure_time))
+
+        # Retrieve frame ID
+        frame_id = chunk_data.GetFrameID()
+        print('\tFrame ID: {}'.format(frame_id))
+
+        # Retrieve gain; gain recorded in decibels
+        gain = chunk_data.GetGain()
+        print('\tGain: {}'.format(gain))
+
+        # Retrieve height; height recorded in pixels
+        height = chunk_data.GetHeight()
+        print('\tHeight: {}'.format(height))
+
+        # Retrieve offset X; offset X recorded in pixels
+        offset_x = chunk_data.GetOffsetX()
+        print('\tOffset X: {}'.format(offset_x))
+
+        # Retrieve offset Y; offset Y recorded in pixels
+        offset_y = chunk_data.GetOffsetY()
+        print('\tOffset Y: {}'.format(offset_y))
+
+        # Retrieve sequencer set active
+        sequencer_set_active = chunk_data.GetSequencerSetActive()
+        print('\tSequencer set active: {}'.format(sequencer_set_active))
+
+        # Retrieve timestamp
+        timestamp = chunk_data.GetTimestamp()
+        print('\tTimestamp: {}'.format(timestamp))
+
+        # Retrieve width; width recorded in pixels
+        width = chunk_data.GetWidth()
+        print('\tWidth: {}'.format(width))
+
+    except PySpin.SpinnakerException as ex:
+        print('Error: %s' % ex)
+        result = False
+    return result
+
 def display_chunk_data_from_nodemap(nodemap):
     """
     This function displays all available chunk data by looping through the
@@ -469,69 +533,6 @@ def reset_trigger(nodemap):
 
     return result
 
-def display_chunk_data_from_image(image):
-    """
-    This function displays a select amount of chunk data from the image. Unlike
-    accessing chunk data via the nodemap, there is no way to loop through all
-    available data.
-
-    :param image: Image to acquire chunk data from
-    :type image: Image object
-    :return: True if successful, False otherwise.
-    :rtype: bool
-    """
-    print('Printing chunk data from image...')
-    try:
-        result = True
-        print(type(image))
-        # Retrieve chunk data from image
-        #
-        # *** NOTES ***
-        # When retrieving chunk data from an image, the data is stored in a
-        # ChunkData object and accessed with getter functions.
-        chunk_data = image.GetChunkData()
-
-        # Retrieve exposure time (recorded in microseconds)
-        exposure_time = chunk_data.GetExposureTime()
-        print('\tExposure time: {}'.format(exposure_time))
-
-        # Retrieve frame ID
-        frame_id = chunk_data.GetFrameID()
-        print('\tFrame ID: {}'.format(frame_id))
-
-        # Retrieve gain; gain recorded in decibels
-        gain = chunk_data.GetGain()
-        print('\tGain: {}'.format(gain))
-
-        # Retrieve height; height recorded in pixels
-        height = chunk_data.GetHeight()
-        print('\tHeight: {}'.format(height))
-
-        # Retrieve offset X; offset X recorded in pixels
-        offset_x = chunk_data.GetOffsetX()
-        print('\tOffset X: {}'.format(offset_x))
-
-        # Retrieve offset Y; offset Y recorded in pixels
-        offset_y = chunk_data.GetOffsetY()
-        print('\tOffset Y: {}'.format(offset_y))
-
-        # Retrieve sequencer set active
-        sequencer_set_active = chunk_data.GetSequencerSetActive()
-        print('\tSequencer set active: {}'.format(sequencer_set_active))
-
-        # Retrieve timestamp
-        timestamp = chunk_data.GetTimestamp()
-        print('\tTimestamp: {}'.format(timestamp))
-
-        # Retrieve width; width recorded in pixels
-        width = chunk_data.GetWidth()
-        print('\tWidth: {}'.format(width))
-
-    except PySpin.SpinnakerException as ex:
-        print('Error: %s' % ex)
-        result = False
-    return result
-
 def print_device_info(nodemap):
     """
     This function prints the device information of the camera from the transport
@@ -639,43 +640,70 @@ def disable_chunk_data(nodemap):
     return result
 
 
-def run_single_camera(cam):
+def run_multiple_cameras(cam_list):
     """
     This function acts as the body of the example; please see NodeMapInfo example
     for more in-depth comments on setting up cameras.
 
-    :param cam: Camera to run on.
-    :type cam: CameraPtr
+    :param cam_list: List of cameras
+    :type cam_list: CameraList
     :return: True if successful, False otherwise.
     :rtype: bool
     """
     try:
         result = True
-        err = False
 
-        # Retrieve TL device nodemap and print device information
-        nodemap_tldevice = cam.GetTLDeviceNodeMap()
+        # Retrieve transport layer nodemaps and print device information for
+        # each camera
+        # *** NOTES ***
+        # This example retrieves information from the transport layer nodemap
+        # twice: once to print device information and once to grab the device
+        # serial number. Rather than caching the nodem#ap, each nodemap is
+        # retrieved both times as needed.
+        print('*** DEVICE INFORMATION ***\n')
 
-        result &= print_device_info(nodemap_tldevice)
+        for i, cam in enumerate(cam_list):
 
-        # Initialize camera
-        cam.Init()
+            # Retrieve TL device nodemap
+            nodemap_tldevice = cam.GetTLDeviceNodeMap()
 
-        # Retrieve GenICam nodemap
-        nodemap = cam.GetNodeMap()
+            # Print device information
+            result &= print_device_info(nodemap_tldevice, i)
 
-        # Configure trigger
-        if configure_trigger(cam) is False:
-            return False
+        # Initialize each camera
+        #
+        # *** NOTES ***
+        # You may notice that the steps in this function have more loops with
+        # less steps per loop; this contrasts the AcquireImages() function
+        # which has less loops but more steps per loop. This is done for
+        # demonstrative purposes as both work equally well.
+        #
+        # *** LATER ***
+        # Each camera needs to be deinitialized once all images have been
+        # acquired.
+        for i, cam in enumerate(cam_list):
 
-        # Acquire images
-        result &= acquire_images(cam, nodemap, nodemap_tldevice)
+            # Initialize camera
+            cam.Init()
 
-        # Reset trigger
-        result &= reset_trigger(nodemap)
+        # Acquire images on all cameras
+        result &= acquire_images(cam_list)
 
-        # Deinitialize camera
-        cam.DeInit()
+        # Deinitialize each camera
+        #
+        # *** NOTES ***
+        # Again, each camera must be deinitialized separately by first
+        # selecting the camera and then deinitializing it.
+        for cam in cam_list:
+
+            # Deinitialize camera
+            cam.DeInit()
+
+        # Release reference to camera
+        # NOTE: Unlike the C++ examples, we cannot rely on pointer objects being automatically
+        # cleaned up when going out of scope.
+        # The usage of del is preferred to assigning the variable to None.
+        del cam
 
     except PySpin.SpinnakerException as ex:
         print('Error: %s' % ex)
@@ -733,12 +761,8 @@ def main():
         input('Done! Press Enter to exit...')
         return False
 
-    t1 = threading.Thread(target=run_single_camera, args=([cam_list.GetBySerial('17512985')]))
-    t2 = threading.Thread(target=run_single_camera, args=([cam_list.GetBySerial('18060270')]))
-    t1.start()
-    t2.start()
-    t1.join()
-    t2.join()
+    result = run_multiple_cameras(cam_list)
+
     """    
     # Run example on each camera
     for i, cam in enumerate(cam_list):
@@ -758,8 +782,7 @@ def main():
     cam_list.Clear()
 
     # Release system instance
-    system.ReleaseInstance()
-    
+    system.ReleaseInstance()    
 
     input('Done! Press Enter to exit...')
     return result
