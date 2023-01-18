@@ -10,6 +10,105 @@ import threading
 
 NUM_IMAGES = 10  # number of images to grab
 
+class ChunkDataTypes:
+    IMAGE = 1
+    NODEMAP = 2
+
+
+CHOSEN_CHUNK_DATA_TYPE = ChunkDataTypes.IMAGE
+
+def configure_chunk_data(nodemap):
+    """
+    This function configures the camera to add chunk data to each image. It does
+    this by enabling each type of chunk data before enabling chunk data mode.
+    When chunk data is turned on, the data is made available in both the nodemap
+    and each image.
+
+    :param nodemap: Transport layer device nodemap.
+    :type nodemap: INodeMap
+    :return: True if successful, False otherwise
+    :rtype: bool
+    """
+    try:
+        result = True
+        print('\n*** CONFIGURING CHUNK DATA ***\n')
+
+        # Activate chunk mode
+        #
+        # *** NOTES ***
+        # Once enabled, chunk data will be available at the end of the payload
+        # of every image captured until it is disabled. Chunk data can also be
+        # retrieved from the nodemap.
+        chunk_mode_active = PySpin.CBooleanPtr(nodemap.GetNode('ChunkModeActive'))
+
+        if PySpin.IsWritable(chunk_mode_active):
+            chunk_mode_active.SetValue(True)
+
+        print('Chunk mode activated...')
+
+        # Enable all types of chunk data
+        #
+        # *** NOTES ***
+        # Enabling chunk data requires working with nodes: "ChunkSelector"
+        # is an enumeration selector node and "ChunkEnable" is a boolean. It
+        # requires retrieving the selector node (which is of enumeration node
+        # type), selecting the entry of the chunk data to be enabled, retrieving
+        # the corresponding boolean, and setting it to be true.
+        #
+        # In this example, all chunk data is enabled, so these steps are
+        # performed in a loop. Once this is complete, chunk mode still needs to
+        # be activated.
+        chunk_selector = PySpin.CEnumerationPtr(nodemap.GetNode('ChunkSelector'))
+
+        if not PySpin.IsReadable(chunk_selector) or not PySpin.IsWritable(chunk_selector):
+            print('Unable to retrieve chunk selector. Aborting...\n')
+            return False
+
+        # Retrieve entries
+        #
+        # *** NOTES ***
+        # PySpin handles mass entry retrieval in a different way than the C++
+        # API. Instead of taking in a NodeList_t reference, GetEntries() takes
+        # no parameters and gives us a list of INodes. Since we want these INodes
+        # to be of type CEnumEntryPtr, we can use a list comprehension to
+        # transform all of our collected INodes into CEnumEntryPtrs at once.
+        entries = [PySpin.CEnumEntryPtr(chunk_selector_entry) for chunk_selector_entry in chunk_selector.GetEntries()]
+
+        print('Enabling entries...')
+
+        # Iterate through our list and select each entry node to enable
+        for chunk_selector_entry in entries:
+            # Go to next node if problem occurs
+            if not PySpin.IsReadable(chunk_selector_entry):
+                continue
+
+            chunk_selector.SetIntValue(chunk_selector_entry.GetValue())
+
+            chunk_str = '\t {}:'.format(chunk_selector_entry.GetSymbolic())
+
+            # Retrieve corresponding boolean
+            chunk_enable = PySpin.CBooleanPtr(nodemap.GetNode('ChunkEnable'))
+
+            # Enable the boolean, thus enabling the corresponding chunk data
+            if not PySpin.IsAvailable(chunk_enable):
+                print('{} not available'.format(chunk_str))
+                result = False
+            elif chunk_enable.GetValue() is True:
+                print('{} enabled'.format(chunk_str))
+            elif PySpin.IsWritable(chunk_enable):
+                chunk_enable.SetValue(True)
+                print('{} enabled'.format(chunk_str))
+            else:
+                print('{} not writable'.format(chunk_str))
+                result = False
+
+    except PySpin.SpinnakerException as ex:
+        print('Error: %s' % ex)
+        result = False
+
+    return result
+
+
 def configure_trigger(cam):
     """
     This function configures the camera to use a trigger. First, trigger mode is
@@ -260,6 +359,8 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
                     image_converted.Save(filename)
                     print('Image saved at %s\n' % filename)
 
+                    result &= display_chunk_data_from_image(image_result)
+
                     #  Release image
                     #
                     #  *** NOTES ***
@@ -317,6 +418,68 @@ def reset_trigger(nodemap):
 
     return result
 
+def display_chunk_data_from_image(image):
+    """
+    This function displays a select amount of chunk data from the image. Unlike
+    accessing chunk data via the nodemap, there is no way to loop through all
+    available data.
+
+    :param image: Image to acquire chunk data from
+    :type image: Image object
+    :return: True if successful, False otherwise.
+    :rtype: bool
+    """
+    print('Printing chunk data from image...')
+    try:
+        result = True
+        print(type(image))
+        # Retrieve chunk data from image
+        #
+        # *** NOTES ***
+        # When retrieving chunk data from an image, the data is stored in a
+        # ChunkData object and accessed with getter functions.
+        chunk_data = image.GetChunkData()
+
+        # Retrieve exposure time (recorded in microseconds)
+        exposure_time = chunk_data.GetExposureTime()
+        print('\tExposure time: {}'.format(exposure_time))
+
+        # Retrieve frame ID
+        frame_id = chunk_data.GetFrameID()
+        print('\tFrame ID: {}'.format(frame_id))
+
+        # Retrieve gain; gain recorded in decibels
+        gain = chunk_data.GetGain()
+        print('\tGain: {}'.format(gain))
+
+        # Retrieve height; height recorded in pixels
+        height = chunk_data.GetHeight()
+        print('\tHeight: {}'.format(height))
+
+        # Retrieve offset X; offset X recorded in pixels
+        offset_x = chunk_data.GetOffsetX()
+        print('\tOffset X: {}'.format(offset_x))
+
+        # Retrieve offset Y; offset Y recorded in pixels
+        offset_y = chunk_data.GetOffsetY()
+        print('\tOffset Y: {}'.format(offset_y))
+
+        # Retrieve sequencer set active
+        sequencer_set_active = chunk_data.GetSequencerSetActive()
+        print('\tSequencer set active: {}'.format(sequencer_set_active))
+
+        # Retrieve timestamp
+        timestamp = chunk_data.GetTimestamp()
+        print('\tTimestamp: {}'.format(timestamp))
+
+        # Retrieve width; width recorded in pixels
+        width = chunk_data.GetWidth()
+        print('\tWidth: {}'.format(width))
+
+    except PySpin.SpinnakerException as ex:
+        print('Error: %s' % ex)
+        result = False
+    return result
 
 def print_device_info(nodemap):
     """
@@ -351,6 +514,7 @@ def print_device_info(nodemap):
         return False
 
     return result
+
 
 
 def run_single_camera(cam):
@@ -390,6 +554,78 @@ def run_single_camera(cam):
 
         # Deinitialize camera
         cam.DeInit()
+
+    except PySpin.SpinnakerException as ex:
+        print('Error: %s' % ex)
+        result = False
+
+    return result
+
+def disable_chunk_data(nodemap):
+    """
+    This function disables each type of chunk data before disabling chunk data mode.
+
+    :param nodemap: Transport layer device nodemap.
+    :type nodemap: INodeMap
+    :return: True if successful, False otherwise
+    :rtype: bool
+    """
+    try:
+        result = True
+
+        # Retrieve the selector node
+        chunk_selector = PySpin.CEnumerationPtr(nodemap.GetNode('ChunkSelector'))
+
+        if not PySpin.IsReadable(chunk_selector) or not PySpin.IsWritable(chunk_selector):
+            print('Unable to retrieve chunk selector. Aborting...\n')
+            return False
+
+        # Retrieve entries
+        #
+        # *** NOTES ***
+        # PySpin handles mass entry retrieval in a different way than the C++
+        # API. Instead of taking in a NodeList_t reference, GetEntries() takes
+        # no parameters and gives us a list of INodes. Since we want these INodes
+        # to be of type CEnumEntryPtr, we can use a list comprehension to
+        # transform all of our collected INodes into CEnumEntryPtrs at once.
+        entries = [PySpin.CEnumEntryPtr(chunk_selector_entry) for chunk_selector_entry in chunk_selector.GetEntries()]
+
+        print('Disabling entries...')
+
+        for chunk_selector_entry in entries:
+            # Go to next node if problem occurs
+            if not PySpin.IsReadable(chunk_selector_entry):
+                continue
+
+            chunk_selector.SetIntValue(chunk_selector_entry.GetValue())
+
+            chunk_symbolic_form = '\t {}:'.format(chunk_selector_entry.GetSymbolic())
+
+            # Retrieve corresponding boolean
+            chunk_enable = PySpin.CBooleanPtr(nodemap.GetNode('ChunkEnable'))
+
+            # Disable the boolean, thus disabling the corresponding chunk data
+            if not PySpin.IsAvailable(chunk_enable):
+                print('{} not available'.format(chunk_symbolic_form))
+                result = False
+            elif not chunk_enable.GetValue():
+                print('{} disabled'.format(chunk_symbolic_form))
+            elif PySpin.IsWritable(chunk_enable):
+                chunk_enable.SetValue(False)
+                print('{} disabled'.format(chunk_symbolic_form))
+            else:
+                print('{} not writable'.format(chunk_symbolic_form))
+
+        # Deactivate Chunk Mode
+        chunk_mode_active = PySpin.CBooleanPtr(nodemap.GetNode('ChunkModeActive'))
+
+        if not PySpin.IsWritable(chunk_mode_active):
+            print('Unable to deactivate chunk mode. Aborting...\n')
+            return False
+
+        chunk_mode_active.SetValue(False)
+
+        print('Chunk mode deactivated...')
 
     except PySpin.SpinnakerException as ex:
         print('Error: %s' % ex)
