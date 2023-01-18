@@ -4,7 +4,6 @@ import os
 import PySpin
 import sys
 import matplotlib.pyplot as plt
-import keyboard
 import time
 import threading
 
@@ -314,7 +313,7 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
                 result &= grab_next_image_by_trigger(nodemap, cam)
 
                 #  Retrieve next received image
-                image_result = cam.GetNextImage(1)
+                image_result = cam.GetNextImage(500)
 
                 #  Ensure image completion
                 if image_result.IsIncomplete():
@@ -342,7 +341,7 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
                     #
                     #  When converting images, color processing algorithm is an
                     #  optional parameter.
-                    image_converted = processor.Convert(image_result, PySpin.PixelFormat_BayerBG16)
+                    image_converted = processor.Convert(image_result, PySpin.PixelFormat_Mono8)
 
                     # Create a unique filename
                     if device_serial_number:
@@ -516,7 +515,6 @@ def print_device_info(nodemap):
     return result
 
 
-
 def run_single_camera(cam):
     """
     This function acts as the body of the example; please see NodeMapInfo example
@@ -684,8 +682,8 @@ def main():
         input('Done! Press Enter to exit...')
         return False
 
-    t1 = threading.Thread(target=run_single_camera, args=(cam_list.GetBySerial(17512982)))
-    t2 = threading.Thread(target=run_single_camera, args=(cam_list.GetBySerial(18060270)))
+    t1 = threading.Thread(target=run_single_camera, args=([cam_list.GetBySerial('17512985')]))
+    t2 = threading.Thread(target=run_single_camera, args=([cam_list.GetBySerial('18060270')]))
     t1.start()
     t2.start()
     t1.join()
@@ -704,8 +702,7 @@ def main():
     # NOTE: Unlike the C++ examples, we cannot rely on pointer objects being automatically
     # cleaned up when going out of scope.
     # The usage of del is preferred to assigning the variable to None.
-
-    del cam
+    
     # Clear camera list before releasing system
     cam_list.Clear()
 
