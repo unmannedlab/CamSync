@@ -219,7 +219,7 @@ def grab_next_image_by_trigger(nodemap, cam):
         # When an image is retrieved, it is plucked from the stream.
 
         # Get user input
-        input('Press the Enter key to initiate software trigger.')
+        # input('Press the Enter key to initiate software trigger.')
 
         # Execute software trigger
         node_softwaretrigger_cmd = PySpin.CCommandPtr(nodemap.GetNode('TriggerSoftware'))
@@ -341,7 +341,7 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
                     #
                     #  When converting images, color processing algorithm is an
                     #  optional parameter.
-                    image_converted = processor.Convert(image_result, PySpin.PixelFormat_Mono8)
+                    image_converted = processor.Convert(image_result, PySpin.ChunkPixelFormat_Mono8)
 
                     # Create a unique filename
                     if device_serial_number:
