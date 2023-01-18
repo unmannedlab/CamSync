@@ -107,6 +107,56 @@ def configure_chunk_data(nodemap):
 
     return result
 
+def display_chunk_data_from_nodemap(nodemap):
+    """
+    This function displays all available chunk data by looping through the
+    chunk data category node on the nodemap.
+
+    :param nodemap: Device nodemap to retrieve images from.
+    :type nodemap: INodeMap
+    :return: True if successful, False otherwise
+    :rtype: bool
+    """
+    print('Printing chunk data from nodemap...')
+    try:
+        result = True
+        # Retrieve chunk data information nodes
+        #
+        # *** NOTES ***
+        # As well as being written into the payload of the image, chunk data is
+        # accessible on the GenICam nodemap. When chunk data is enabled, it is
+        # made available from both the image payload and the nodemap.
+        chunk_data_control = PySpin.CCategoryPtr(nodemap.GetNode('ChunkDataControl'))
+        if not PySpin.IsReadable(chunk_data_control):
+            print('Unable to retrieve chunk data control. Aborting...\n')
+            return False
+
+        features = chunk_data_control.GetFeatures()
+
+        # Iterate through children
+        for feature in features:
+            feature_node = PySpin.CNodePtr(feature)
+            feature_display_name = '\t{}:'.format(feature_node.GetDisplayName())
+
+            if not PySpin.IsReadable(feature_node):
+                print('{} node not readable'.format(feature_display_name))
+                result &= False
+                continue
+            # Print node type value
+            #
+            # *** NOTES ***
+            # All nodes can be cast as value nodes and have their information
+            # retrieved as a string using the ToString() method. This is much
+            # easier than dealing with each individual node type.
+            else:
+                feature_value = PySpin.CValuePtr(feature)
+                print('{} {}'.format(feature_display_name, feature_value.ToString()))
+    except PySpin.SpinnakerException as ex:
+        print('Error: %s' % ex)
+        result = False
+
+    return result
+
 
 def configure_trigger(cam):
     """
