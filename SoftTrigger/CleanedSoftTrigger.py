@@ -1,11 +1,6 @@
-# coding=utf-8
-
 import os
 import PySpin
 import sys
-import matplotlib.pyplot as plt
-import time
-import threading
 
 NUM_IMAGES = 10  # number of images to grab
 
@@ -13,9 +8,12 @@ class ChunkDataTypes:
     IMAGE = 1
     NODEMAP = 2
 
+class TriggerType:
+    SOFTWARE = 1
+    HARDWARE = 2
 
 CHOSEN_CHUNK_DATA_TYPE = ChunkDataTypes.NODEMAP
-
+CHOSEN_TRIGGER = TriggerType.SOFTWARE
 
 def configure_chunk_data(nodemap):
     """
@@ -109,6 +107,56 @@ def configure_chunk_data(nodemap):
     return result
 
 
+def display_chunk_data_from_nodemap(nodemap):
+    """
+    This function displays all available chunk data by looping through the
+    chunk data category node on the nodemap.
+
+    :param nodemap: Device nodemap to retrieve images from.
+    :type nodemap: INodeMap
+    :return: True if successful, False otherwise
+    :rtype: bool
+    """
+    print('Printing chunk data from nodemap...')
+    try:
+        result = True
+        # Retrieve chunk data information nodes
+        #
+        # *** NOTES ***
+        # As well as being written into the payload of the image, chunk data is
+        # accessible on the GenICam nodemap. When chunk data is enabled, it is
+        # made available from both the image payload and the nodemap.
+        chunk_data_control = PySpin.CCategoryPtr(nodemap.GetNode('ChunkDataControl'))
+        if not PySpin.IsReadable(chunk_data_control):
+            print('Unable to retrieve chunk data control. Aborting...\n')
+            return False
+
+        features = chunk_data_control.GetFeatures()
+
+        # Iterate through children
+        for feature in features:
+            feature_node = PySpin.CNodePtr(feature)
+            feature_display_name = '\t{}:'.format(feature_node.GetDisplayName())
+
+            if not PySpin.IsReadable(feature_node):
+                print('{} node not readable'.format(feature_display_name))
+                result &= False
+                continue
+            # Print node type value
+            #
+            # *** NOTES ***
+            # All nodes can be cast as value nodes and have their information
+            # retrieved as a string using the ToString() method. This is much
+            # easier than dealing with each individual node type.
+            else:
+                feature_value = PySpin.CValuePtr(feature)
+                print('{} {}'.format(feature_display_name, feature_value.ToString()))
+    except PySpin.SpinnakerException as ex:
+        print('Error: %s' % ex)
+        result = False
+
+    return result
+
 
 def display_chunk_data_from_image(image):
     """
@@ -173,57 +221,6 @@ def display_chunk_data_from_image(image):
         result = False
     return result
 
-def display_chunk_data_from_nodemap(nodemap):
-    """
-    This function displays all available chunk data by looping through the
-    chunk data category node on the nodemap.
-
-    :param nodemap: Device nodemap to retrieve images from.
-    :type nodemap: INodeMap
-    :return: True if successful, False otherwise
-    :rtype: bool
-    """
-    print('Printing chunk data from nodemap...')
-    try:
-        result = True
-        # Retrieve chunk data information nodes
-        #
-        # *** NOTES ***
-        # As well as being written into the payload of the image, chunk data is
-        # accessible on the GenICam nodemap. When chunk data is enabled, it is
-        # made available from both the image payload and the nodemap.
-        chunk_data_control = PySpin.CCategoryPtr(nodemap.GetNode('ChunkDataControl'))
-        if not PySpin.IsReadable(chunk_data_control):
-            print('Unable to retrieve chunk data control. Aborting...\n')
-            return False
-
-        features = chunk_data_control.GetFeatures()
-
-        # Iterate through children
-        for feature in features:
-            feature_node = PySpin.CNodePtr(feature)
-            feature_display_name = '\t{}:'.format(feature_node.GetDisplayName())
-
-            if not PySpin.IsReadable(feature_node):
-                print('{} node not readable'.format(feature_display_name))
-                result &= False
-                continue
-            # Print node type value
-            #
-            # *** NOTES ***
-            # All nodes can be cast as value nodes and have their information
-            # retrieved as a string using the ToString() method. This is much
-            # easier than dealing with each individual node type.
-            else:
-                feature_value = PySpin.CValuePtr(feature)
-                print('{} {}'.format(feature_display_name, feature_value.ToString()))
-    except PySpin.SpinnakerException as ex:
-        print('Error: %s' % ex)
-        result = False
-
-    return result
-
-
 def configure_trigger(cam):
     """
     This function configures the camera to use a trigger. First, trigger mode is
@@ -243,9 +240,11 @@ def configure_trigger(cam):
     print('Note that if the application / user software triggers faster than frame time, the trigger may be dropped / skipped by the camera.\n')
     print('If several frames are needed per trigger, a more reliable alternative for such case, is to use the multi-frame mode.\n\n')
 
-   
-    print('Software trigger chosen ...')
-    
+    if CHOSEN_TRIGGER == TriggerType.SOFTWARE:
+        print('Software trigger chosen ...')
+    elif CHOSEN_TRIGGER == TriggerType.HARDWARE:
+        print('Hardware trigger chose ...')
+
     try:
         # Ensure trigger mode off
         # The trigger must be disabled in order to configure whether the source
@@ -289,12 +288,21 @@ def configure_trigger(cam):
             print('Unable to get trigger source (node retrieval). Aborting...')
             return False
 
-        node_trigger_source_software = node_trigger_source.GetEntryByName('Software')
-        if not PySpin.IsReadable(node_trigger_source_software):
-            print('Unable to get trigger source (enum entry retrieval). Aborting...')
-            return False
-        node_trigger_source.SetIntValue(node_trigger_source_software.GetValue())
-        print('Trigger source set to software...')
+        if CHOSEN_TRIGGER == TriggerType.SOFTWARE:
+            node_trigger_source_software = node_trigger_source.GetEntryByName('Software')
+            if not PySpin.IsReadable(node_trigger_source_software):
+                print('Unable to get trigger source (enum entry retrieval). Aborting...')
+                return False
+            node_trigger_source.SetIntValue(node_trigger_source_software.GetValue())
+            print('Trigger source set to software...')
+
+        elif CHOSEN_TRIGGER == TriggerType.HARDWARE:
+            node_trigger_source_hardware = node_trigger_source.GetEntryByName('Line0')
+            if not PySpin.IsReadable(node_trigger_source_hardware):
+                print('Unable to get trigger source (enum entry retrieval). Aborting...')
+                return False
+            node_trigger_source.SetIntValue(node_trigger_source_hardware.GetValue())
+            print('Trigger source set to hardware...')
 
         # Turn trigger mode on
         # Once the appropriate trigger source has been set, turn trigger mode
@@ -334,17 +342,19 @@ def grab_next_image_by_trigger(nodemap, cam):
         # acquire images, the camera captures a continuous stream of images.
         # When an image is retrieved, it is plucked from the stream.
 
-        # Get user input
-        # input('Press the Enter key to initiate software trigger.')
+        if CHOSEN_TRIGGER == TriggerType.SOFTWARE:
+            # Execute software trigger
+            node_softwaretrigger_cmd = PySpin.CCommandPtr(nodemap.GetNode('TriggerSoftware'))
+            if not PySpin.IsWritable(node_softwaretrigger_cmd):
+                print('Unable to execute trigger. Aborting...')
+                return False
 
-        # Execute software trigger
-        node_softwaretrigger_cmd = PySpin.CCommandPtr(nodemap.GetNode('TriggerSoftware'))
-        if not PySpin.IsWritable(node_softwaretrigger_cmd):
-            print('Unable to execute trigger. Aborting...')
-            return False
-        node_softwaretrigger_cmd.Execute()
+            node_softwaretrigger_cmd.Execute()
 
-        # TODO: Blackfly and Flea3 GEV cameras need 2 second delay after software trigger
+            # TODO: Blackfly and Flea3 GEV cameras need 2 second delay after software trigger
+
+        elif CHOSEN_TRIGGER == TriggerType.HARDWARE:
+            print('Use the hardware to trigger image acquisition.')
 
     except PySpin.SpinnakerException as ex:
         print('Error: %s' % ex)
@@ -356,7 +366,6 @@ def grab_next_image_by_trigger(nodemap, cam):
 def acquire_images(cam, nodemap, nodemap_tldevice):
     """
     This function acquires and saves 10 images from a device.
-    Please see Acquisition example for more in-depth comments on acquiring images.
 
     :param cam: Camera to acquire images from.
     :param nodemap: Device nodemap.
@@ -367,19 +376,40 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
     :return: True if successful, False otherwise.
     :rtype: bool
     """
+    print('\n*** IMAGE ACQUISTION ***\n')
 
-    print('*** IMAGE ACQUISITION ***\n')
     try:
         result = True
-
         # Set acquisition mode to continuous
+        #
+        #  *** NOTES ***
+        #  Because the example acquires and saves 10 images, setting acquisition
+        #  mode to continuous lets the example finish. If set to single frame
+        #  or multiframe (at a lower number of images), the example would just
+        #  hang. This would happen because the example has been written to
+        #  acquire 10 images while the camera would have been programmed to
+        #  retrieve less than that.
+        #
+        #  Setting the value of an enumeration node is slightly more complicated
+        #  than other node types. Two nodes must be retrieved: first, the
+        #  enumeration node is retrieved from the nodemap; and second, the entry
+        #  node is retrieved from the enumeration node. The integer value of the
+        #  entry node is then set as the new value of the enumeration node.
+        #
+        #  Notice that both the enumeration and the entry nodes are checked for
+        #  availability and readability/writability. Enumeration nodes are
+        #  generally readable and writable whereas their entry nodes are only
+        #  ever readable.
+        #
+        #  Retrieve enumeration node from nodemap
+
         # In order to access the node entries, they have to be casted to a pointer type (CEnumerationPtr here)
         node_acquisition_mode = PySpin.CEnumerationPtr(nodemap.GetNode('AcquisitionMode'))
         if not PySpin.IsReadable(node_acquisition_mode) or not PySpin.IsWritable(node_acquisition_mode):
-            print('Unable to set acquisition mode to continuous (enum retrieval). Aborting...')
+            print('Unable to set acquisition mode to continuous (node retrieval). Aborting...')
             return False
 
-        # Retrieve entry node from enumeration node
+        # Retrieve entry node from enumeration mode
         node_acquisition_mode_continuous = node_acquisition_mode.GetEntryByName('Continuous')
         if not PySpin.IsReadable(node_acquisition_mode_continuous):
             print('Unable to set acquisition mode to continuous (entry retrieval). Aborting...')
@@ -393,17 +423,27 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
 
         print('Acquisition mode set to continuous...')
 
-        #  Begin acquiring images
+        # Begin acquiring images
+        #
+        # *** NOTES ***
+        # What happens when the camera begins acquiring images depends on the
+        # acquisition mode. Single frame captures only a single image, multi
+        # frame captures a set number of images, and continuous captures a
+        # continuous stream of images. As the example calls for the
+        # retrieval of 10 images, continuous mode has been set.
+        #
+        # *** LATER ***
+        # Image acquisition must be ended when no more images are needed.
         cam.BeginAcquisition()
 
         print('Acquiring images...')
 
-        #  Retrieve device serial number for filename
+        # Retrieve device serial number for filename
         #
-        #  *** NOTES ***
-        #  The device serial number is retrieved in order to keep cameras from
-        #  overwriting one another. Grabbing image IDs could also accomplish
-        #  this.
+        # *** NOTES ***
+        # The device serial number is retrieved in order to keep cameras from
+        # overwriting one another. Grabbing image IDs could also accomplish
+        # this.
         device_serial_number = ''
         node_device_serial_number = PySpin.CStringPtr(nodemap_tldevice.GetNode('DeviceSerialNumber'))
         if PySpin.IsReadable(node_device_serial_number):
@@ -424,108 +464,90 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
 
         for i in range(NUM_IMAGES):
             try:
+                # Retrieve next received image
+                #
+                # *** NOTES ***
+                # Capturing an image houses images on the camera buffer. Trying
+                # to capture an image that does not exist will hang the camera.
+                #
+                # *** LATER ***
+                # Once an image from the buffer is saved and/or no longer
+                # needed, the image must be released in order to keep the
+                # buffer from filling up.
+                image_result = cam.GetNextImage(1000)
 
-                #  Retrieve the next image from the trigger
-                result &= grab_next_image_by_trigger(nodemap, cam)
-
-                #  Retrieve next received image
-                image_result = cam.GetNextImage(500)
-
-                #  Ensure image completion
+                # Ensure image completion
+                #
+                # *** NOTES ***
+                # Images can be easily checked for completion. This should be
+                # done whenever a complete image is expected or required.
+                # Further, check image status for a little more insight into
+                # why an image is incomplete.
                 if image_result.IsIncomplete():
                     print('Image incomplete with image status %d ...' % image_result.GetImageStatus())
-
                 else:
 
-                    #  Print image information; height and width recorded in pixels
+                    # Print image information
                     #
-                    #  *** NOTES ***
-                    #  Images have quite a bit of available metadata including
-                    #  things such as CRC, image status, and offset values, to
-                    #  name a few.
+                    # *** NOTES ***
+                    # Images have quite a bit of available metadata including
+                    # things such as CRC, image status, and offset values, to
+                    # name a few.
                     width = image_result.GetWidth()
                     height = image_result.GetHeight()
                     print('Grabbed Image %d, width = %d, height = %d' % (i, width, height))
 
-                    #  Convert image to mono 8
+                    # Convert image to mono 8
                     #
-                    #  *** NOTES ***
-                    #  Images can be converted between pixel formats by using
-                    #  the appropriate enumeration value. Unlike the original
-                    #  image, the converted one does not need to be released as
-                    #  it does not affect the camera buffer.
+                    # *** NOTES ***
+                    # Images can be converted between pixel formats by using
+                    # the appropriate enumeration value. Unlike the original
+                    # image, the converted one does not need to be released as
+                    # it does not affect the camera buffer.
                     #
-                    #  When converting images, color processing algorithm is an
-                    #  optional parameter.
-                    image_converted = processor.Convert(image_result, PySpin.ChunkPixelFormat_Mono8)
+                    # When converting images, color processing algorithm is an
+                    # optional parameter.
+                    image_converted = processor.Convert(image_result, PySpin.PixelFormat_Mono8)
 
                     # Create a unique filename
                     if device_serial_number:
-                        filename = 'Trigger-%s-%d.jpg' % (device_serial_number, i)
-                    else:  # if serial number is empty
-                        filename = 'Trigger-%d.jpg' % i
+                        filename = 'SoftSyncTest-%s-%d.jpg' % (device_serial_number, i)
+                    else:
+                        filename = 'SoftSyncTest-%d.jpg' % i
 
                     # Save image
                     #
-                    #  *** NOTES ***
-                    #  The standard practice of the examples is to use device
-                    #  serial numbers to keep images of one device from
-                    #  overwriting those of another.
+                    # *** NOTES ***
+                    # The standard practice of the examples is to use device
+                    # serial numbers to keep images of one device from
+                    # overwriting those of another.
                     image_converted.Save(filename)
-                    print('Image saved at %s\n' % filename)
+                    print('Image saved at %s' % filename)
 
-                    result &= display_chunk_data_from_nodemap(nodemap)
+                    # Display chunk data
 
-                    #  Release image
+                    if CHOSEN_CHUNK_DATA_TYPE == ChunkDataTypes.IMAGE:
+                        result &= display_chunk_data_from_image(image_result)
+                    elif CHOSEN_CHUNK_DATA_TYPE == ChunkDataTypes.NODEMAP:
+                        result = display_chunk_data_from_nodemap(nodemap)
+                    # Release image
                     #
-                    #  *** NOTES ***
-                    #  Images retrieved directly from the camera (i.e. non-converted
-                    #  images) need to be released in order to keep from filling the
-                    #  buffer.
+                    # *** NOTES ***
+                    # Images retrieved directly from the camera (i.e. non-converted
+                    # images) need to be released in order to keep from filling the
+                    # buffer.
                     image_result.Release()
+                    print('')
 
             except PySpin.SpinnakerException as ex:
                 print('Error: %s' % ex)
                 return False
-
         # End acquisition
         #
-        #  *** NOTES ***
-        #  Ending acquisition appropriately helps ensure that devices clean up
-        #  properly and do not need to be power-cycled to maintain integrity.
+        # *** NOTES ***
+        # Ending acquisition appropriately helps ensure that devices clean up
+        # properly and do not need to be power-cycled to maintain integrity.
         cam.EndAcquisition()
-
-    except PySpin.SpinnakerException as ex:
-        print('Error: %s' % ex)
-        return False
-
-    return result
-
-
-def reset_trigger(nodemap):
-    """
-    This function returns the camera to a normal state by turning off trigger mode.
-
-    :param nodemap: Transport layer device nodemap.
-    :type nodemap: INodeMap
-    :returns: True if successful, False otherwise.
-    :rtype: bool
-    """
-    try:
-        result = True
-        node_trigger_mode = PySpin.CEnumerationPtr(nodemap.GetNode('TriggerMode'))
-        if not PySpin.IsReadable(node_trigger_mode) or not PySpin.IsWritable(node_trigger_mode):
-            print('Unable to disable trigger mode (node retrieval). Aborting...')
-            return False
-
-        node_trigger_mode_off = node_trigger_mode.GetEntryByName('Off')
-        if not PySpin.IsReadable(node_trigger_mode_off):
-            print('Unable to disable trigger mode (enum entry retrieval). Aborting...')
-            return False
-
-        node_trigger_mode.SetIntValue(node_trigger_mode_off.GetValue())
-
-        print('Trigger mode disabled...')
 
     except PySpin.SpinnakerException as ex:
         print('Error: %s' % ex)
@@ -533,39 +555,6 @@ def reset_trigger(nodemap):
 
     return result
 
-def print_device_info(nodemap):
-    """
-    This function prints the device information of the camera from the transport
-    layer; please see NodeMapInfo example for more in-depth comments on printing
-    device information from the nodemap.
-
-    :param nodemap: Transport layer device nodemap.
-    :type nodemap: INodeMap
-    :returns: True if successful, False otherwise.
-    :rtype: bool
-    """
-
-    print('*** DEVICE INFORMATION ***\n')
-
-    try:
-        result = True
-        node_device_information = PySpin.CCategoryPtr(nodemap.GetNode('DeviceInformation'))
-
-        if PySpin.IsReadable(node_device_information):
-            features = node_device_information.GetFeatures()
-            for feature in features:
-                node_feature = PySpin.CValuePtr(feature)
-                print('%s: %s' % (node_feature.GetName(),
-                                  node_feature.ToString() if PySpin.IsReadable(node_feature) else 'Node not readable'))
-
-        else:
-            print('Device control information not readable.')
-
-    except PySpin.SpinnakerException as ex:
-        print('Error: %s' % ex)
-        return False
-
-    return result
 
 def disable_chunk_data(nodemap):
     """
@@ -640,6 +629,45 @@ def disable_chunk_data(nodemap):
     return result
 
 
+""" 
+def print_device_info(nodemap, cam_num):
+    
+    This function prints the device information of the camera from the transport
+    layer; please see NodeMapInfo example for more in-depth comments on printing
+    device information from the nodemap.
+
+    :param nodemap: Transport layer device nodemap.
+    :param cam_num: Camera number.
+    :type nodemap: INodeMap
+    :type cam_num: int
+    :returns: True if successful, False otherwise.
+    :rtype: bool
+    
+
+    print('Printing device information for camera %d... \n' % cam_num)
+
+    try:
+        result = True
+        node_device_information = PySpin.CCategoryPtr(nodemap.GetNode('DeviceInformation'))
+
+        if PySpin.IsReadable(node_device_information):
+            features = node_device_information.GetFeatures()
+            for feature in features:
+                node_feature = PySpin.CValuePtr(feature)
+                print('%s: %s' % (node_feature.GetName(),
+                                  node_feature.ToString() if PySpin.IsReadable(node_feature) else 'Node not readable'))
+
+        else:
+            print('Device control information not readable.')
+        print()
+
+    except PySpin.SpinnakerException as ex:
+        print('Error: %s' % ex)
+        return False
+
+    return result
+ """
+
 def run_multiple_cameras(cam_list):
     """
     This function acts as the body of the example; please see NodeMapInfo example
@@ -668,7 +696,7 @@ def run_multiple_cameras(cam_list):
             nodemap_tldevice = cam.GetTLDeviceNodeMap()
 
             # Print device information
-            result &= print_device_info(nodemap_tldevice)
+            #result &= print_device_info(nodemap_tldevice, i)
 
         # Initialize each camera
         #
@@ -687,7 +715,7 @@ def run_multiple_cameras(cam_list):
             cam.Init()
 
         # Acquire images on all cameras
-        result &= acquire_images(cam_list)
+        result &= acquire_images(cam_list, cam_list.nodemap, cam_list.nodemap_tldevice)
 
         # Deinitialize each camera
         #
@@ -710,6 +738,7 @@ def run_multiple_cameras(cam_list):
         result = False
 
     return result
+
 
 def main():
     """
@@ -751,6 +780,7 @@ def main():
 
     # Finish if there are no cameras
     if num_cameras == 0:
+
         # Clear camera list before releasing system
         cam_list.Clear()
 
@@ -761,32 +791,21 @@ def main():
         input('Done! Press Enter to exit...')
         return False
 
+    # Run example on all cameras
+    print('Running example for all cameras...')
+
     result = run_multiple_cameras(cam_list)
 
-    """    
-    # Run example on each camera
-    for i, cam in enumerate(cam_list):
+    print('Example complete... \n')
 
-        print('Running example for camera %d...' % i)
-
-        result &= run_single_camera(cam)
-        print('Camera %d example complete... \n' % i)
-    """
-
-    # Release reference to camera
-    # NOTE: Unlike the C++ examples, we cannot rely on pointer objects being automatically
-    # cleaned up when going out of scope.
-    # The usage of del is preferred to assigning the variable to None.
-    
     # Clear camera list before releasing system
     cam_list.Clear()
 
     # Release system instance
-    system.ReleaseInstance()    
+    system.ReleaseInstance()
 
     input('Done! Press Enter to exit...')
     return result
-
 
 if __name__ == '__main__':
     if main():
