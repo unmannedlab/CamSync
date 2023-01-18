@@ -14,7 +14,7 @@ class ChunkDataTypes:
     NODEMAP = 2
 
 
-CHOSEN_CHUNK_DATA_TYPE = ChunkDataTypes.IMAGE
+CHOSEN_CHUNK_DATA_TYPE = ChunkDataTypes.NODEMAP
 
 def configure_chunk_data(nodemap):
     """
