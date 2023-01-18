@@ -709,13 +709,16 @@ def run_multiple_cameras(cam_list):
         # *** LATER ***
         # Each camera needs to be deinitialized once all images have been
         # acquired.
+        
         for i, cam in enumerate(cam_list):
 
             # Initialize camera
             cam.Init()
+        
+
 
         # Acquire images on all cameras
-        result &= acquire_images(cam_list, cam_list.nodemap, cam_list.nodemap_tldevice)
+        result &= acquire_images(cam_list, cam_list.GetNodeMap(), cam_list.GetTLDeviceNodeMap())
 
         # Deinitialize each camera
         #
