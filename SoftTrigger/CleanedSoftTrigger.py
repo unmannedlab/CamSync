@@ -692,6 +692,8 @@ def run_multiple_cameras(cam_list):
 
         for i, cam in enumerate(cam_list):
 
+            nodemap = cam.GetNodeMap()
+
             # Retrieve TL device nodemap
             nodemap_tldevice = cam.GetTLDeviceNodeMap()
 
@@ -711,12 +713,6 @@ def run_multiple_cameras(cam_list):
         # acquired.
 
         for i, cam in enumerate(cam_list):
-
-            # Retrieve TL device nodemap
-            nodemap_tldevice = cam.GetTLDeviceNodeMap()
-
-            # Get Node Map
-            nodemap = cam.GetNodeMap()
 
             # Initialize camera
             cam.Init()
