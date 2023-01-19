@@ -30,7 +30,7 @@ import os
 import PySpin
 import sys
 
-NUM_IMAGES = 10  # number of images to grab
+NUM_IMAGES = 20  # number of images to grab
 
 
 class TriggerType:
