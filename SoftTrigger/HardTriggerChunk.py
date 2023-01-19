@@ -521,6 +521,13 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
                     image_converted.Save(filename)
                     print('Image saved at %s\n' % filename)
 
+                    # Display chunk data
+
+                    if CHOSEN_CHUNK_DATA_TYPE == ChunkDataTypes.IMAGE:
+                        result &= display_chunk_data_from_image(image_result)
+                    elif CHOSEN_CHUNK_DATA_TYPE == ChunkDataTypes.NODEMAP:
+                        result = display_chunk_data_from_nodemap(nodemap)
+
                     #  Release image
                     #
                     #  *** NOTES ***
