@@ -364,94 +364,64 @@ def grab_next_image_by_trigger(nodemap, cam):
     return result
 
 
-def acquire_images(cam, nodemap, nodemap_tldevice):
+def acquire_images(cam_list):
     """
-    This function acquires and saves 10 images from a device.
+    This function acquires and saves 10 images from each device.
 
-    :param cam: Camera to acquire images from.
-    :param nodemap: Device nodemap.
-    :param nodemap_tldevice: Transport layer device nodemap.
-    :type cam: CameraPtr
-    :type nodemap: INodeMap
-    :type nodemap_tldevice: INodeMap
+    :param cam_list: List of cameras
+    :type cam_list: CameraList
     :return: True if successful, False otherwise.
     :rtype: bool
     """
-    print('\n*** IMAGE ACQUISTION ***\n')
 
+    print('*** IMAGE ACQUISITION ***\n')
     try:
         result = True
-        # Set acquisition mode to continuous
-        #
-        #  *** NOTES ***
-        #  Because the example acquires and saves 10 images, setting acquisition
-        #  mode to continuous lets the example finish. If set to single frame
-        #  or multiframe (at a lower number of images), the example would just
-        #  hang. This would happen because the example has been written to
-        #  acquire 10 images while the camera would have been programmed to
-        #  retrieve less than that.
-        #
-        #  Setting the value of an enumeration node is slightly more complicated
-        #  than other node types. Two nodes must be retrieved: first, the
-        #  enumeration node is retrieved from the nodemap; and second, the entry
-        #  node is retrieved from the enumeration node. The integer value of the
-        #  entry node is then set as the new value of the enumeration node.
-        #
-        #  Notice that both the enumeration and the entry nodes are checked for
-        #  availability and readability/writability. Enumeration nodes are
-        #  generally readable and writable whereas their entry nodes are only
-        #  ever readable.
-        #
-        #  Retrieve enumeration node from nodemap
 
-        # In order to access the node entries, they have to be casted to a pointer type (CEnumerationPtr here)
-        node_acquisition_mode = PySpin.CEnumerationPtr(nodemap.GetNode('AcquisitionMode'))
-        if not PySpin.IsReadable(node_acquisition_mode) or not PySpin.IsWritable(node_acquisition_mode):
-            print('Unable to set acquisition mode to continuous (node retrieval). Aborting...')
-            return False
-
-        # Retrieve entry node from enumeration mode
-        node_acquisition_mode_continuous = node_acquisition_mode.GetEntryByName('Continuous')
-        if not PySpin.IsReadable(node_acquisition_mode_continuous):
-            print('Unable to set acquisition mode to continuous (entry retrieval). Aborting...')
-            return False
-
-        # Retrieve integer value from entry node
-        acquisition_mode_continuous = node_acquisition_mode_continuous.GetValue()
-
-        # Set integer value from entry node as new value of enumeration node
-        node_acquisition_mode.SetIntValue(acquisition_mode_continuous)
-
-        print('Acquisition mode set to continuous...')
-
-        # Begin acquiring images
+        # Prepare each camera to acquire images
         #
         # *** NOTES ***
-        # What happens when the camera begins acquiring images depends on the
-        # acquisition mode. Single frame captures only a single image, multi
-        # frame captures a set number of images, and continuous captures a
-        # continuous stream of images. As the example calls for the
-        # retrieval of 10 images, continuous mode has been set.
+        # For pseudo-simultaneous streaming, each camera is prepared as if it
+        # were just one, but in a loop. Notice that cameras are selected with
+        # an index. We demonstrate pseduo-simultaneous streaming because true
+        # simultaneous streaming would require multiple process or threads,
+        # which is too complex for an example.
         #
-        # *** LATER ***
-        # Image acquisition must be ended when no more images are needed.
-        cam.BeginAcquisition()
 
-        print('Acquiring images...')
+        for i, cam in enumerate(cam_list):
 
-        # Retrieve device serial number for filename
+            # Set acquisition mode to continuous
+            node_acquisition_mode = PySpin.CEnumerationPtr(cam.GetNodeMap().GetNode('AcquisitionMode'))
+            if not PySpin.IsReadable(node_acquisition_mode) or not PySpin.IsWritable(node_acquisition_mode):
+                print('Unable to set acquisition mode to continuous (node retrieval; camera %d). Aborting... \n' % i)
+                return False
+
+            node_acquisition_mode_continuous = node_acquisition_mode.GetEntryByName('Continuous')
+            if not PySpin.IsReadable(node_acquisition_mode_continuous):
+                print('Unable to set acquisition mode to continuous (entry \'continuous\' retrieval %d). \
+                Aborting... \n' % i)
+                return False
+
+            acquisition_mode_continuous = node_acquisition_mode_continuous.GetValue()
+
+            node_acquisition_mode.SetIntValue(acquisition_mode_continuous)
+
+            print('Camera %d acquisition mode set to continuous...' % i)
+
+            # Begin acquiring images
+            cam.BeginAcquisition()
+
+            print('Camera %d started acquiring images...' % i)
+
+            print()
+
+        # Retrieve, convert, and save images for each camera
         #
         # *** NOTES ***
-        # The device serial number is retrieved in order to keep cameras from
-        # overwriting one another. Grabbing image IDs could also accomplish
-        # this.
-        device_serial_number = ''
-        node_device_serial_number = PySpin.CStringPtr(nodemap_tldevice.GetNode('DeviceSerialNumber'))
-        if PySpin.IsReadable(node_device_serial_number):
-            device_serial_number = node_device_serial_number.GetValue()
-            print('Device serial number retrieved as %s...' % device_serial_number)
-
-        # Retrieve, convert, and save images
+        # In order to work with simultaneous camera streams, nested loops are
+        # needed. It is important that the inner loop be the one iterating
+        # through the cameras; otherwise, all images will be grabbed from a
+        # single camera before grabbing any images from another.
 
         # Create ImageProcessor instance for post processing images
         processor = PySpin.ImageProcessor()
@@ -463,92 +433,62 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
         # processor will default to NEAREST_NEIGHBOR method.
         processor.SetColorProcessing(PySpin.SPINNAKER_COLOR_PROCESSING_ALGORITHM_HQ_LINEAR)
 
-        for i in range(NUM_IMAGES):
-            try:
-                # Retrieve next received image
-                #
-                # *** NOTES ***
-                # Capturing an image houses images on the camera buffer. Trying
-                # to capture an image that does not exist will hang the camera.
-                #
-                # *** LATER ***
-                # Once an image from the buffer is saved and/or no longer
-                # needed, the image must be released in order to keep the
-                # buffer from filling up.
-                image_result = cam.GetNextImage(1000)
+        for n in range(NUM_IMAGES):
+            for i, cam in enumerate(cam_list):
+                try:
+                    # Retrieve device serial number for filename
+                    node_device_serial_number = PySpin.CStringPtr(cam.GetTLDeviceNodeMap().GetNode('DeviceSerialNumber'))
 
-                # Ensure image completion
-                #
-                # *** NOTES ***
-                # Images can be easily checked for completion. This should be
-                # done whenever a complete image is expected or required.
-                # Further, check image status for a little more insight into
-                # why an image is incomplete.
-                if image_result.IsIncomplete():
-                    print('Image incomplete with image status %d ...' % image_result.GetImageStatus())
-                else:
+                    if PySpin.IsReadable(node_device_serial_number):
+                        device_serial_number = node_device_serial_number.GetValue()
+                        print('Camera %d serial number set to %s...' % (i, device_serial_number))
 
-                    # Print image information
-                    #
-                    # *** NOTES ***
-                    # Images have quite a bit of available metadata including
-                    # things such as CRC, image status, and offset values, to
-                    # name a few.
-                    width = image_result.GetWidth()
-                    height = image_result.GetHeight()
-                    print('Grabbed Image %d, width = %d, height = %d' % (i, width, height))
+                    # Retrieve next received image and ensure image completion
+                    image_result = cam.GetNextImage(1000)
 
-                    # Convert image to mono 8
-                    #
-                    # *** NOTES ***
-                    # Images can be converted between pixel formats by using
-                    # the appropriate enumeration value. Unlike the original
-                    # image, the converted one does not need to be released as
-                    # it does not affect the camera buffer.
-                    #
-                    # When converting images, color processing algorithm is an
-                    # optional parameter.
-                    image_converted = processor.Convert(image_result, PySpin.PixelFormat_Mono8)
-
-                    # Create a unique filename
-                    if device_serial_number:
-                        filename = 'SoftSyncTest-%s-%d.jpg' % (device_serial_number, i)
+                    if image_result.IsIncomplete():
+                        print('Image incomplete with image status %d ... \n' % image_result.GetImageStatus())
                     else:
-                        filename = 'SoftSyncTest-%d.jpg' % i
+                        # Print image information
+                        width = image_result.GetWidth()
+                        height = image_result.GetHeight()
+                        print('Camera %d grabbed image %d, width = %d, height = %d' % (i, n, width, height))
 
-                    # Save image
-                    #
-                    # *** NOTES ***
-                    # The standard practice of the examples is to use device
-                    # serial numbers to keep images of one device from
-                    # overwriting those of another.
-                    image_converted.Save(filename)
-                    print('Image saved at %s' % filename)
+                        # Convert image to mono 8
+                        image_converted = processor.Convert(image_result, PySpin.PixelFormat_Mono8)
 
-                    # Display chunk data
+                        # Create a unique filename
+                        if device_serial_number:
+                            filename = 'AcquisitionMultipleCamera-%s-%d.jpg' % (device_serial_number, n)
+                        else:
+                            filename = 'AcquisitionMultipleCamera-%d-%d.jpg' % (i, n)
 
-                    if CHOSEN_CHUNK_DATA_TYPE == ChunkDataTypes.IMAGE:
-                        result &= display_chunk_data_from_image(image_result)
-                    elif CHOSEN_CHUNK_DATA_TYPE == ChunkDataTypes.NODEMAP:
-                        result = display_chunk_data_from_nodemap(nodemap)
+                        # Save image
+                        image_converted.Save(filename)
+                        print('Image saved at %s' % filename)
+
                     # Release image
-                    #
-                    # *** NOTES ***
-                    # Images retrieved directly from the camera (i.e. non-converted
-                    # images) need to be released in order to keep from filling the
-                    # buffer.
                     image_result.Release()
-                    print('')
+                    print()
 
-            except PySpin.SpinnakerException as ex:
-                print('Error: %s' % ex)
-                return False
-        # End acquisition
+                except PySpin.SpinnakerException as ex:
+                    print('Error: %s' % ex)
+                    result = False
+
+        # End acquisition for each camera
         #
         # *** NOTES ***
-        # Ending acquisition appropriately helps ensure that devices clean up
-        # properly and do not need to be power-cycled to maintain integrity.
-        cam.EndAcquisition()
+        # Notice that what is usually a one-step process is now two steps
+        # because of the additional step of selecting the camera. It is worth
+        # repeating that camera selection needs to be done once per loop.
+        #
+        # It is possible to interact with cameras through the camera list with
+        # GetByIndex(); this is an alternative to retrieving cameras as
+        # CameraPtr objects that can be quick and easy for small tasks.
+        for cam in cam_list:
+
+            # End acquisition
+            cam.EndAcquisition()
 
     except PySpin.SpinnakerException as ex:
         print('Error: %s' % ex)
@@ -630,20 +570,21 @@ def disable_chunk_data(nodemap):
     return result
 
 
-""" 
+
 def print_device_info(nodemap, cam_num):
     
+    """     
     This function prints the device information of the camera from the transport
     layer; please see NodeMapInfo example for more in-depth comments on printing
     device information from the nodemap.
-
+    
     :param nodemap: Transport layer device nodemap.
     :param cam_num: Camera number.
     :type nodemap: INodeMap
     :type cam_num: int
     :returns: True if successful, False otherwise.
     :rtype: bool
-    
+    """   
 
     print('Printing device information for camera %d... \n' % cam_num)
 
@@ -667,7 +608,7 @@ def print_device_info(nodemap, cam_num):
         return False
 
     return result
- """
+
 
 def run_multiple_cameras(cam_list):
     """
@@ -691,15 +632,15 @@ def run_multiple_cameras(cam_list):
         # retrieved both times as needed.
         print('*** DEVICE INFORMATION ***\n')
 
-       # for i, cam in enumerate(cam_list):
+        for i, cam in enumerate(cam_list):
 
-            #nodemap = cam.GetNodeMap()
+            nodemap = cam.GetNodeMap()
 
-            # Retrieve TL device nodemap
-            #nodemap_tldevice = cam.GetTLDeviceNodeMap()
+           # Retrieve TL device nodemap
+            nodemap_tldevice = cam.GetTLDeviceNodeMap()
 
-            # Print device information
-            #result &= print_device_info(nodemap_tldevice, i)
+           # Print device information
+            result &= print_device_info(nodemap_tldevice, i)
 
         # Initialize each camera
         #
@@ -715,23 +656,18 @@ def run_multiple_cameras(cam_list):
 
         for i, cam in enumerate(cam_list):
 
-            
             # Initialize camera
             cam.Init()
-        
-
-        for i, cam in enumerate(cam_list):
 
             # Configure chunk data
             if configure_chunk_data(cam.GetNodeMap()) is False:
                 return False
+        
 
-            # Acquire images on all cameras
-            result &= acquire_images(cam, cam.GetNodeMap(), cam.GetTLDeviceNodeMap())
+        # Acquire images on all cameras
+        result &= acquire_images(cam_list)
 
-            # # Disable chunk data
-            # if disable_chunk_data(cam.GetNodeMap()) is False:
-            #     return False
+
 
         # Deinitialize each camera
         #
@@ -740,6 +676,9 @@ def run_multiple_cameras(cam_list):
         # selecting the camera and then deinitializing it.
         for cam in cam_list:
 
+            # Disable chunk data
+            if disable_chunk_data(cam.GetNodeMap()) is False:
+                return False
             # Deinitialize camera
             cam.DeInit()
 
