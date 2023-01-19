@@ -343,6 +343,7 @@ def grab_next_image_by_trigger(nodemap, cam):
         # When an image is retrieved, it is plucked from the stream.
 
         if CHOSEN_TRIGGER == TriggerType.SOFTWARE:
+
             # Execute software trigger
             node_softwaretrigger_cmd = PySpin.CCommandPtr(nodemap.GetNode('TriggerSoftware'))
             if not PySpin.IsWritable(node_softwaretrigger_cmd):
@@ -690,12 +691,12 @@ def run_multiple_cameras(cam_list):
         # retrieved both times as needed.
         print('*** DEVICE INFORMATION ***\n')
 
-        for i, cam in enumerate(cam_list):
+       # for i, cam in enumerate(cam_list):
 
-            nodemap = cam.GetNodeMap()
+            #nodemap = cam.GetNodeMap()
 
             # Retrieve TL device nodemap
-            nodemap_tldevice = cam.GetTLDeviceNodeMap()
+            #nodemap_tldevice = cam.GetTLDeviceNodeMap()
 
             # Print device information
             #result &= print_device_info(nodemap_tldevice, i)
@@ -714,13 +715,23 @@ def run_multiple_cameras(cam_list):
 
         for i, cam in enumerate(cam_list):
 
+            
             # Initialize camera
             cam.Init()
         
 
+        for i, cam in enumerate(cam_list):
 
-        # Acquire images on all cameras
-        result &= acquire_images(cam_list, nodemap, nodemap_tldevice)
+            # Configure chunk data
+            if configure_chunk_data(cam.GetNodeMap()) is False:
+                return False
+
+            # Acquire images on all cameras
+            result &= acquire_images(cam, cam.GetNodeMap(), cam.GetTLDeviceNodeMap())
+
+            # # Disable chunk data
+            # if disable_chunk_data(cam.GetNodeMap()) is False:
+            #     return False
 
         # Deinitialize each camera
         #
@@ -749,7 +760,6 @@ def main():
     """
     Example entry point; please see Enumeration example for more in-depth
     comments on preparing and cleaning up the system.
-
     :return: True if successful, False otherwise.
     :rtype: bool
     """
