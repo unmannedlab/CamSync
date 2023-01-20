@@ -1,30 +1,4 @@
-# coding=utf-8
-# =============================================================================
-# Copyright (c) 2001-2022 FLIR Systems, Inc. All Rights Reserved.
-#
-# This software is the confidential and proprietary information of FLIR
-# Integrated Imaging Solutions, Inc. ("Confidential Information"). You
-# shall not disclose such Confidential Information and shall use it only in
-# accordance with the terms of the license agreement you entered into
-# with FLIR Integrated Imaging Solutions, Inc. (FLIR).
-#
-# FLIR MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE SUITABILITY OF THE
-# SOFTWARE, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE
-# IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
-# PURPOSE, OR NON-INFRINGEMENT. FLIR SHALL NOT BE LIABLE FOR ANY DAMAGES
-# SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
-# THIS SOFTWARE OR ITS DERIVATIVES.
-# =============================================================================
-#
-#  Trigger.py shows how to trigger the camera. It relies on information
-#  provided in the Enumeration, Acquisition, and NodeMapInfo examples.
-#
-#  It can also be helpful to familiarize yourself with the ImageFormatControl
-#  and Exposure examples. As they are somewhat shorter and simpler, either
-#  provides a strong introduction to camera customization.
-#
-#  This example shows the process of configuring, using, and cleaning up a
-#  camera for use with both a software and a hardware trigger.
+# TRY ADDING THREADS TO THIS
 
 import os
 import PySpin
@@ -799,10 +773,10 @@ def main():
 
     # Run example on each camera
     for i, cam in enumerate(cam_list):
-
         print('Running example for camera %d...' % i)
 
-        result &= run_single_camera(cam)
+        result &= run_single_camera(cam_list.GetBySerial('17528370'))
+        result &= run_single_camera(cam_list.GetBySerial('18060270'))
         print('Camera %d example complete... \n' % i)
 
     # Release reference to camera
