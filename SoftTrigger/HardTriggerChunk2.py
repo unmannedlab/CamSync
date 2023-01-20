@@ -777,8 +777,8 @@ def main():
     for i, cam in enumerate(cam_list):
         print('Running example for camera %d...' % i)
 
-        result &= run_single_camera(cam_list.GetBySerial('17528370'))
-        #result &= run_single_camera(cam_list.GetBySerial('18060270'))
+        #result &= run_single_camera(cam_list.GetBySerial('17528370'))
+        result &= run_single_camera(cam_list.GetBySerial('18060270'))
         print('Camera %d example complete... \n' % i)
 
     # Release reference to camera
