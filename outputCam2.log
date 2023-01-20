@@ -1,0 +1,788 @@
+python3 HardTriggerChunk2.py
+Library version: 3.0.0.118
+Number of cameras detected: 2
+Running example for camera 0...
+*** DEVICE INFORMATION ***
+
+DeviceID: 00B09D0B7632_C1A8C865_FFFFFF00_C1A8C801
+DeviceSerialNumber: 17528370
+DeviceUserID: 
+DeviceVendorName: Point Grey Research
+DeviceModelName: Blackfly BFLY-PGE-20E4C
+DeviceVersion: FW:v1.43.3.01 FPGA:v2.02
+DeviceBootloaderVersion: Node not readable
+DeviceType: GigEVision
+DeviceDisplayName: Point Grey Research
+DeviceAccessStatus: OpenReadOnly
+DeviceLinkSpeed: 1000
+DeviceDriverVersion: none : 0.0.0.0
+DeviceIsUpdater: 0
+GenICamXMLLocation: Device
+GenICamXMLPath: 
+GUIXMLLocation: Device
+GUIXMLPath: Input.xml
+GevCCP: OpenAccess
+GevDeviceMACAddress: 0xb09d0b7632
+GevDeviceIPAddress: 0xc1a8c865
+GevDeviceSubnetMask: 0xffffff00
+GevDeviceGateway: 0xc1a8c801
+GevVersionMajor: 1
+GevVersionMinor: 2
+GevDeviceModeIsBigEndian: 0
+GevDeviceReadAndWriteTimeout: 100000
+GevDeviceMaximumRetryCount: 3
+GevDevicePort: 0
+GevDeviceDiscoverMaximumPacketSize: Node not readable
+GevDeviceMaximumPacketSize: 576
+GevDeviceIsWrongSubnet: 0
+GevDeviceAutoForceIP: 0
+GevDeviceForceIP: 0
+GevDeviceForceIPAddress: 0
+GevDeviceForceSubnetMask: 0
+GevDeviceForceGateway: 0
+*** CONFIGURING TRIGGER ***
+
+Note that if the application / user software triggers faster than frame time, the trigger may be dropped / skipped by the camera.
+
+If several frames are needed per trigger, a more reliable alternative for such case, is to use the multi-frame mode.
+
+
+Hardware trigger chose ...
+Trigger mode disabled...
+Trigger selector set to frame start...
+Trigger source set to hardware...
+Trigger mode turned back on...
+
+*** CONFIGURING CHUNK DATA ***
+
+Chunk mode activated...
+Enabling entries...
+	 CRC: enabled
+	 FrameCounter: enabled
+	 OffsetX: enabled
+	 OffsetY: enabled
+	 Width: enabled
+	 Height: enabled
+	 ExposureTime: enabled
+	 Gain: enabled
+	 BlackLevel: enabled
+	 PixelFormat: enabled
+	 DynamicPixelRangeMin: enabled
+	 DynamicPixelRangeMax: enabled
+	 Timestamp: enabled
+*** IMAGE ACQUISITION ***
+
+Acquisition mode set to continuous...
+Acquiring images...
+Device serial number retrieved as 17528370...
+Use the hardware to trigger image acquisition.
+Grabbed Image 0, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265217223027
+2023-01-20 16:13:51.539284
+Use the hardware to trigger image acquisition.
+Grabbed Image 1, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265229925018
+2023-01-20 16:13:51.639756
+Use the hardware to trigger image acquisition.
+Grabbed Image 2, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265242502619
+2023-01-20 16:13:51.739186
+Use the hardware to trigger image acquisition.
+Grabbed Image 3, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265254988515
+2023-01-20 16:13:51.838254
+Use the hardware to trigger image acquisition.
+Grabbed Image 4, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265267617619
+2023-01-20 16:13:51.938788
+Use the hardware to trigger image acquisition.
+Grabbed Image 5, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265280182571
+2023-01-20 16:13:52.039354
+Use the hardware to trigger image acquisition.
+Grabbed Image 6, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265292743703
+2023-01-20 16:13:52.139851
+Use the hardware to trigger image acquisition.
+Grabbed Image 7, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265305328201
+2023-01-20 16:13:52.240569
+Use the hardware to trigger image acquisition.
+Grabbed Image 8, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265317896494
+2023-01-20 16:13:52.341291
+Use the hardware to trigger image acquisition.
+Grabbed Image 9, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265330469248
+2023-01-20 16:13:52.465694
+Use the hardware to trigger image acquisition.
+Grabbed Image 10, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265343126902
+2023-01-20 16:13:52.542833
+Use the hardware to trigger image acquisition.
+Grabbed Image 11, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265355643076
+2023-01-20 16:13:52.666799
+Use the hardware to trigger image acquisition.
+Grabbed Image 12, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265368224044
+2023-01-20 16:13:52.765060
+Use the hardware to trigger image acquisition.
+Grabbed Image 13, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265380809046
+2023-01-20 16:13:52.844264
+Use the hardware to trigger image acquisition.
+Grabbed Image 14, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265393369430
+2023-01-20 16:13:52.967035
+Use the hardware to trigger image acquisition.
+Grabbed Image 15, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265405854329
+2023-01-20 16:13:53.044062
+Use the hardware to trigger image acquisition.
+Grabbed Image 16, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265418398890
+2023-01-20 16:13:53.166901
+Use the hardware to trigger image acquisition.
+Grabbed Image 17, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265431020461
+2023-01-20 16:13:53.267691
+Use the hardware to trigger image acquisition.
+Grabbed Image 18, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265443569386
+2023-01-20 16:13:53.345777
+Use the hardware to trigger image acquisition.
+Grabbed Image 19, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265456142659
+2023-01-20 16:13:53.472028
+Use the hardware to trigger image acquisition.
+Grabbed Image 20, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265468724263
+2023-01-20 16:13:53.555115
+Use the hardware to trigger image acquisition.
+Grabbed Image 21, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265481293522
+2023-01-20 16:13:53.656646
+Use the hardware to trigger image acquisition.
+Grabbed Image 22, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265493865514
+2023-01-20 16:13:53.750085
+Use the hardware to trigger image acquisition.
+Grabbed Image 23, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265506438100
+2023-01-20 16:13:53.850084
+Use the hardware to trigger image acquisition.
+Grabbed Image 24, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265519010004
+2023-01-20 16:13:53.950975
+Use the hardware to trigger image acquisition.
+Grabbed Image 25, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265531667185
+2023-01-20 16:13:54.051640
+Use the hardware to trigger image acquisition.
+Grabbed Image 26, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265544182932
+2023-01-20 16:13:54.151905
+Use the hardware to trigger image acquisition.
+Grabbed Image 27, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265556763666
+2023-01-20 16:13:54.252583
+Use the hardware to trigger image acquisition.
+Grabbed Image 28, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265569348083
+2023-01-20 16:13:54.352459
+Use the hardware to trigger image acquisition.
+Grabbed Image 29, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265581908533
+2023-01-20 16:13:54.452722
+Use the hardware to trigger image acquisition.
+Grabbed Image 30, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265594393330
+2023-01-20 16:13:54.553784
+Use the hardware to trigger image acquisition.
+Grabbed Image 31, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265606938868
+2023-01-20 16:13:54.661189
+Use the hardware to trigger image acquisition.
+Grabbed Image 32, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265619560490
+2023-01-20 16:13:54.754661
+Use the hardware to trigger image acquisition.
+Grabbed Image 33, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265632109532
+2023-01-20 16:13:54.857069
+Use the hardware to trigger image acquisition.
+Grabbed Image 34, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265644681838
+2023-01-20 16:13:54.956340
+Use the hardware to trigger image acquisition.
+Grabbed Image 35, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265657262822
+2023-01-20 16:13:55.055552
+Use the hardware to trigger image acquisition.
+Grabbed Image 36, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265669831588
+2023-01-20 16:13:55.156974
+Use the hardware to trigger image acquisition.
+Grabbed Image 37, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265682489222
+2023-01-20 16:13:55.258571
+Use the hardware to trigger image acquisition.
+Grabbed Image 38, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265695109680
+2023-01-20 16:13:55.358334
+Use the hardware to trigger image acquisition.
+Grabbed Image 39, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265707621042
+2023-01-20 16:13:55.459167
+Use the hardware to trigger image acquisition.
+Grabbed Image 40, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265720217951
+2023-01-20 16:13:55.559874
+Use the hardware to trigger image acquisition.
+Grabbed Image 41, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265732794209
+2023-01-20 16:13:55.661283
+Use the hardware to trigger image acquisition.
+Grabbed Image 42, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265745353393
+2023-01-20 16:13:55.771967
+Use the hardware to trigger image acquisition.
+Grabbed Image 43, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265757934178
+2023-01-20 16:13:55.861420
+Use the hardware to trigger image acquisition.
+Grabbed Image 44, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265770506586
+2023-01-20 16:13:55.962290
+Use the hardware to trigger image acquisition.
+Grabbed Image 45, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265782998519
+2023-01-20 16:13:56.063273
+Use the hardware to trigger image acquisition.
+Grabbed Image 46, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265795546422
+2023-01-20 16:13:56.162046
+Use the hardware to trigger image acquisition.
+Grabbed Image 47, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265808162989
+2023-01-20 16:13:56.291998
+Use the hardware to trigger image acquisition.
+Grabbed Image 48, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265820715342
+2023-01-20 16:13:56.363530
+Use the hardware to trigger image acquisition.
+Grabbed Image 49, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 265833288507
+2023-01-20 16:13:56.464195
+Disabling entries...
+	 CRC: disabled
+	 FrameCounter: disabled
+	 OffsetX: disabled
+	 OffsetY: disabled
+	 Width: disabled
+	 Height: disabled
+	 ExposureTime: disabled
+	 Gain: disabled
+	 BlackLevel: disabled
+	 PixelFormat: disabled
+	 DynamicPixelRangeMin: disabled
+	 DynamicPixelRangeMax: disabled
+	 Timestamp: disabled
+Chunk mode deactivated...
+Trigger mode disabled...
+Camera 0 example complete... 
+
+Running example for camera 1...
+*** DEVICE INFORMATION ***
+
+DeviceID: 00B09D0B7632_C1A8C865_FFFFFF00_C1A8C801
+DeviceSerialNumber: 17528370
+DeviceUserID: 
+DeviceVendorName: Point Grey Research
+DeviceModelName: Blackfly BFLY-PGE-20E4C
+DeviceVersion: FW:v1.43.3.01 FPGA:v2.02
+DeviceBootloaderVersion: Node not readable
+DeviceType: GigEVision
+DeviceDisplayName: Point Grey Research
+DeviceAccessStatus: OpenReadOnly
+DeviceLinkSpeed: 1000
+DeviceDriverVersion: none : 0.0.0.0
+DeviceIsUpdater: 0
+GenICamXMLLocation: Device
+GenICamXMLPath: 
+GUIXMLLocation: Device
+GUIXMLPath: Input.xml
+GevCCP: OpenAccess
+GevDeviceMACAddress: 0xb09d0b7632
+GevDeviceIPAddress: 0xc1a8c865
+GevDeviceSubnetMask: 0xffffff00
+GevDeviceGateway: 0xc1a8c801
+GevVersionMajor: 1
+GevVersionMinor: 2
+GevDeviceModeIsBigEndian: 0
+GevDeviceReadAndWriteTimeout: 100000
+GevDeviceMaximumRetryCount: 3
+GevDevicePort: 0
+GevDeviceDiscoverMaximumPacketSize: Node not readable
+GevDeviceMaximumPacketSize: 576
+GevDeviceIsWrongSubnet: 0
+GevDeviceAutoForceIP: 0
+GevDeviceForceIP: 0
+GevDeviceForceIPAddress: 0
+GevDeviceForceSubnetMask: 0
+GevDeviceForceGateway: 0
+*** CONFIGURING TRIGGER ***
+
+Note that if the application / user software triggers faster than frame time, the trigger may be dropped / skipped by the camera.
+
+If several frames are needed per trigger, a more reliable alternative for such case, is to use the multi-frame mode.
+
+
+Hardware trigger chose ...
+Trigger mode disabled...
+Trigger selector set to frame start...
+Trigger source set to hardware...
+Trigger mode turned back on...
+
+*** CONFIGURING CHUNK DATA ***
+
+Chunk mode activated...
+Enabling entries...
+	 CRC: enabled
+	 FrameCounter: enabled
+	 OffsetX: enabled
+	 OffsetY: enabled
+	 Width: enabled
+	 Height: enabled
+	 ExposureTime: enabled
+	 Gain: enabled
+	 BlackLevel: enabled
+	 PixelFormat: enabled
+	 DynamicPixelRangeMin: enabled
+	 DynamicPixelRangeMax: enabled
+	 Timestamp: enabled
+*** IMAGE ACQUISITION ***
+
+Acquisition mode set to continuous...
+Acquiring images...
+Device serial number retrieved as 17528370...
+Use the hardware to trigger image acquisition.
+Grabbed Image 0, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266015755701
+2023-01-20 16:13:57.926942
+Use the hardware to trigger image acquisition.
+Grabbed Image 1, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266028170501
+2023-01-20 16:13:58.023965
+Use the hardware to trigger image acquisition.
+Grabbed Image 2, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266040807367
+2023-01-20 16:13:58.124180
+Use the hardware to trigger image acquisition.
+Grabbed Image 3, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266053484949
+2023-01-20 16:13:58.254317
+Use the hardware to trigger image acquisition.
+Grabbed Image 4, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266065973897
+2023-01-20 16:13:58.351026
+Use the hardware to trigger image acquisition.
+Grabbed Image 5, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266078566991
+2023-01-20 16:13:58.426312
+Use the hardware to trigger image acquisition.
+Grabbed Image 6, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266091156061
+2023-01-20 16:13:58.556505
+Use the hardware to trigger image acquisition.
+Grabbed Image 7, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266103712453
+2023-01-20 16:13:58.627362
+Use the hardware to trigger image acquisition.
+Grabbed Image 8, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266116212666
+2023-01-20 16:13:58.756734
+Use the hardware to trigger image acquisition.
+Grabbed Image 9, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266128744460
+2023-01-20 16:13:58.854482
+Use the hardware to trigger image acquisition.
+Grabbed Image 10, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266141369913
+2023-01-20 16:13:58.957371
+Use the hardware to trigger image acquisition.
+Grabbed Image 11, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266153921366
+2023-01-20 16:13:59.028977
+Use the hardware to trigger image acquisition.
+Grabbed Image 12, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266166489715
+2023-01-20 16:13:59.157985
+Use the hardware to trigger image acquisition.
+Grabbed Image 13, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266179070734
+2023-01-20 16:13:59.258337
+Use the hardware to trigger image acquisition.
+Grabbed Image 14, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266191639968
+2023-01-20 16:13:59.358408
+Use the hardware to trigger image acquisition.
+Grabbed Image 15, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266204213068
+2023-01-20 16:13:59.431552
+Use the hardware to trigger image acquisition.
+Grabbed Image 16, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266216785446
+2023-01-20 16:13:59.558916
+Use the hardware to trigger image acquisition.
+Grabbed Image 17, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266229442418
+2023-01-20 16:13:59.659654
+Use the hardware to trigger image acquisition.
+Grabbed Image 18, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266242047688
+2023-01-20 16:13:59.762744
+Use the hardware to trigger image acquisition.
+Grabbed Image 19, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266254571614
+2023-01-20 16:13:59.834218
+Use the hardware to trigger image acquisition.
+Grabbed Image 20, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266267165511
+2023-01-20 16:13:59.934972
+Use the hardware to trigger image acquisition.
+Grabbed Image 21, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266279742390
+2023-01-20 16:14:00.035668
+Use the hardware to trigger image acquisition.
+Grabbed Image 22, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266292226445
+2023-01-20 16:14:00.163364
+Use the hardware to trigger image acquisition.
+Grabbed Image 23, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266304763056
+2023-01-20 16:14:00.235894
+Use the hardware to trigger image acquisition.
+Grabbed Image 24, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266317387827
+2023-01-20 16:14:00.366449
+Use the hardware to trigger image acquisition.
+Grabbed Image 25, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266329936594
+2023-01-20 16:14:00.464230
+Use the hardware to trigger image acquisition.
+Grabbed Image 26, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266342508397
+2023-01-20 16:14:00.537559
+Use the hardware to trigger image acquisition.
+Grabbed Image 27, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266355089706
+2023-01-20 16:14:00.638567
+Use the hardware to trigger image acquisition.
+Grabbed Image 28, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266367657857
+2023-01-20 16:14:00.739137
+Use the hardware to trigger image acquisition.
+Grabbed Image 29, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266380229954
+2023-01-20 16:14:00.839819
+Use the hardware to trigger image acquisition.
+Grabbed Image 30, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266392802088
+2023-01-20 16:14:00.940487
+Use the hardware to trigger image acquisition.
+Grabbed Image 31, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266405459447
+2023-01-20 16:14:01.041783
+Use the hardware to trigger image acquisition.
+Grabbed Image 32, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266418064086
+2023-01-20 16:14:01.142420
+Use the hardware to trigger image acquisition.
+Grabbed Image 33, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266430588205
+2023-01-20 16:14:01.242545
+Use the hardware to trigger image acquisition.
+Grabbed Image 34, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266443181080
+2023-01-20 16:14:01.343249
+Use the hardware to trigger image acquisition.
+Grabbed Image 35, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266455757451
+2023-01-20 16:14:01.444174
+Use the hardware to trigger image acquisition.
+Grabbed Image 36, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266468240229
+2023-01-20 16:14:01.543664
+Use the hardware to trigger image acquisition.
+Grabbed Image 37, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266480775685
+2023-01-20 16:14:01.643989
+Use the hardware to trigger image acquisition.
+Grabbed Image 38, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266493400451
+2023-01-20 16:14:01.744924
+Use the hardware to trigger image acquisition.
+Grabbed Image 39, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266505948776
+2023-01-20 16:14:01.845699
+Use the hardware to trigger image acquisition.
+Grabbed Image 40, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266518521051
+2023-01-20 16:14:01.945959
+Use the hardware to trigger image acquisition.
+Grabbed Image 41, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266531101887
+2023-01-20 16:14:02.046990
+Use the hardware to trigger image acquisition.
+Grabbed Image 42, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266543669321
+2023-01-20 16:14:02.147156
+Use the hardware to trigger image acquisition.
+Grabbed Image 43, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266556241475
+2023-01-20 16:14:02.247645
+Use the hardware to trigger image acquisition.
+Grabbed Image 44, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266568812642
+2023-01-20 16:14:02.348349
+Use the hardware to trigger image acquisition.
+Grabbed Image 45, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266581469324
+2023-01-20 16:14:02.449662
+Use the hardware to trigger image acquisition.
+Grabbed Image 46, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266594074996
+2023-01-20 16:14:02.550871
+Use the hardware to trigger image acquisition.
+Grabbed Image 47, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266606597839
+2023-01-20 16:14:02.650893
+Use the hardware to trigger image acquisition.
+Grabbed Image 48, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266619190226
+2023-01-20 16:14:02.751635
+Use the hardware to trigger image acquisition.
+Grabbed Image 49, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Timestamp: 266631765345
+2023-01-20 16:14:02.851923
+Disabling entries...
+	 CRC: disabled
+	 FrameCounter: disabled
+	 OffsetX: disabled
+	 OffsetY: disabled
+	 Width: disabled
+	 Height: disabled
+	 ExposureTime: disabled
+	 Gain: disabled
+	 BlackLevel: disabled
+	 PixelFormat: disabled
+	 DynamicPixelRangeMin: disabled
+	 DynamicPixelRangeMax: disabled
+	 Timestamp: disabled
+Chunk mode deactivated...
+Trigger mode disabled...
+Camera 1 example complete... 
+
+Done! Press Enter to exit...
