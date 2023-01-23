@@ -786,7 +786,6 @@ def main():
     # NOTE: Unlike the C++ examples, we cannot rely on pointer objects being automatically
     # cleaned up when going out of scope.
     # The usage of del is preferred to assigning the variable to None.
-    del cam
 
     # Clear camera list before releasing system
     cam_list.Clear()
