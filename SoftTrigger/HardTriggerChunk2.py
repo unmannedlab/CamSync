@@ -5,7 +5,7 @@ import PySpin
 import sys
 import datetime
 
-NUM_IMAGES = 20  # number of images to grab
+NUM_IMAGES = 50  # number of images to grab
 
 global timeholder
 
@@ -189,9 +189,9 @@ def display_chunk_data_from_image(image):
         # ChunkData object and accessed with getter functions.
         chunk_data = image.GetChunkData()
 
-        # # Retrieve exposure time (recorded in microseconds)
-        # exposure_time = chunk_data.GetExposureTime()
-        # print('\tExposure time: {}'.format(exposure_time))
+        # Retrieve exposure time (recorded in microseconds)
+        exposure_time = chunk_data.GetExposureTime()
+        print('\tExposure time: {}'.format(exposure_time))
 
         # # Retrieve frame ID
         # frame_id = chunk_data.GetFrameID()
@@ -778,12 +778,12 @@ def main():
         return False
 
     # Run example on each camera
-    for i, cam in enumerate(cam_list):
-        print('Running example for camera %d...' % i)
+    
+    print('Running example for camera ...')
 
-        #result &= run_single_camera(cam_list.GetBySerial('17528370'))
-        result &= run_single_camera(cam_list.GetBySerial('18060270'))
-        print('Camera %d example complete... \n' % i)
+    #result &= run_single_camera(cam_list.GetBySerial('17528370'))
+    result &= run_single_camera(cam_list.GetBySerial('18060270'))
+    print('Camera example complete... \n')
 
     # Release reference to camera
     # NOTE: Unlike the C++ examples, we cannot rely on pointer objects being automatically
