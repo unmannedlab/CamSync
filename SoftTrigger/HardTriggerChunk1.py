@@ -7,6 +7,8 @@ import datetime
 
 NUM_IMAGES = 20  # number of images to grab
 
+global timeholder
+
 
 class TriggerType:
     SOFTWARE = 1
@@ -219,7 +221,7 @@ def display_chunk_data_from_image(image):
         # Retrieve timestamp
         timestamp = chunk_data.GetTimestamp()
         print('\tTimestamp: {}'.format(timestamp))
-        print(datetime.datetime.now())
+        print(timeholder)
 
         # Retrieve width; width recorded in pixels
         width = chunk_data.GetWidth()
@@ -447,12 +449,13 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
 
         for i in range(NUM_IMAGES):
             try:
-
+                global timeholder
                 #  Retrieve the next image from the trigger
                 result &= grab_next_image_by_trigger(nodemap, cam)
-
+                timeholder = datetime.datetime.utcnow()
                 #  Retrieve next received image
                 image_result = cam.GetNextImage(1000)
+                
 
                 #  Ensure image completion
                 if image_result.IsIncomplete():
@@ -494,9 +497,8 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
                     #  The standard practice of the examples is to use device
                     #  serial numbers to keep images of one device from
                     #  overwriting those of another.
-                    image_converted.Save(filename)
-                    print('Image saved at %s\n' % filename)
-
+                    # image_converted.Save(filename)
+                    # print('Image saved at %s\n' % filename) 
                     # Display chunk data
 
                     if CHOSEN_CHUNK_DATA_TYPE == ChunkDataTypes.IMAGE:

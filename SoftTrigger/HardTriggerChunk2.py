@@ -494,8 +494,8 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
                     #  The standard practice of the examples is to use device
                     #  serial numbers to keep images of one device from
                     #  overwriting those of another.
-                    image_converted.Save(filename)
-                    print('Image saved at %s\n' % filename)
+                    # image_converted.Save(filename)
+                    # print('Image saved at %s\n' % filename)
 
                     # Display chunk data
 
