@@ -7,6 +7,7 @@ import datetime
 
 NUM_IMAGES = 20  # number of images to grab
 
+global timeholder
 
 class TriggerType:
     SOFTWARE = 1
@@ -219,7 +220,7 @@ def display_chunk_data_from_image(image):
         # Retrieve timestamp
         timestamp = chunk_data.GetTimestamp()
         print('\tTimestamp: {}'.format(timestamp))
-        print(datetime.datetime.now())
+        print(timeholder)
 
         # Retrieve width; width recorded in pixels
         width = chunk_data.GetWidth()
@@ -448,8 +449,11 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
         for i in range(NUM_IMAGES):
             try:
 
+                global timeholder
+
                 #  Retrieve the next image from the trigger
                 result &= grab_next_image_by_trigger(nodemap, cam)
+                timeholder = datetime.datetime.utcnow()
 
                 #  Retrieve next received image
                 image_result = cam.GetNextImage(1000)
@@ -735,15 +739,15 @@ def main():
     # Since this application saves images in the current folder
     # we must ensure that we have permission to write to this folder.
     # If we do not have permission, fail right away.
-    try:
-        test_file = open('test.txt', 'w+')
-    except IOError:
-        print('Unable to write to current directory. Please check permissions.')
-        input('Press Enter to exit...')
-        return False
+    # try:
+    #     test_file = open('test.txt', 'w+')
+    # except IOError:
+    #     print('Unable to write to current directory. Please check permissions.')
+    #     input('Press Enter to exit...')
+    #     return False
 
-    test_file.close()
-    os.remove(test_file.name)
+    # test_file.close()
+    # os.remove(test_file.name)
 
     result = True
 
@@ -770,7 +774,7 @@ def main():
         system.ReleaseInstance()
 
         print('Not enough cameras!')
-        input('Done! Press Enter to exit...')
+        #input('Done! Press Enter to exit...')
         return False
 
     # Run example on each camera
@@ -793,7 +797,9 @@ def main():
     # Release system instance
     system.ReleaseInstance()
 
-    input('Done! Press Enter to exit...')
+    result = True
+
+    #input('Done! Press Enter to exit...')
     return result
 
 

@@ -737,15 +737,15 @@ def main():
     # Since this application saves images in the current folder
     # we must ensure that we have permission to write to this folder.
     # If we do not have permission, fail right away.
-    try:
-        test_file = open('test.txt', 'w+')
-    except IOError:
-        print('Unable to write to current directory. Please check permissions.')
-        input('Press Enter to exit...')
-        return False
+    # try:
+    #     test_file = open('test.txt', 'w+')
+    # except IOError:
+    #     print('Unable to write to current directory. Please check permissions.')
+    #     input('Press Enter to exit...')
+    #     return False
 
-    test_file.close()
-    os.remove(test_file.name)
+    # test_file.close()
+    # os.remove(test_file.name)
 
     result = True
 
@@ -772,7 +772,7 @@ def main():
         system.ReleaseInstance()
 
         print('Not enough cameras!')
-        input('Done! Press Enter to exit...')
+        #input('Done! Press Enter to exit...')
         return False
 
     # Run example on each camera
@@ -795,7 +795,9 @@ def main():
     # Release system instance
     system.ReleaseInstance()
 
-    input('Done! Press Enter to exit...')
+    result = True
+
+    #input('Done! Press Enter to exit...')
     return result
 
 
