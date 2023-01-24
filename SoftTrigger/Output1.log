@@ -1,0 +1,544 @@
+Library version: 3.0.0.118
+Number of cameras detected: 4
+Running example for camera ...
+*** DEVICE INFORMATION ***
+
+DeviceID: 00B09D0B7632_C1A8C865_FFFFFF00_C1A8C801
+DeviceSerialNumber: 17528370
+DeviceUserID: 
+DeviceVendorName: Point Grey Research
+DeviceModelName: Blackfly BFLY-PGE-20E4C
+DeviceVersion: FW:v1.43.3.01 FPGA:v2.02
+DeviceBootloaderVersion: Node not readable
+DeviceType: GigEVision
+DeviceDisplayName: Point Grey Research
+DeviceAccessStatus: OpenReadOnly
+DeviceLinkSpeed: 1000
+DeviceDriverVersion: none : 0.0.0.0
+DeviceIsUpdater: 0
+GenICamXMLLocation: Device
+GenICamXMLPath: 
+GUIXMLLocation: Device
+GUIXMLPath: Input.xml
+GevCCP: OpenAccess
+GevDeviceMACAddress: 0xb09d0b7632
+GevDeviceIPAddress: 0xc1a8c865
+GevDeviceSubnetMask: 0xffffff00
+GevDeviceGateway: 0xc1a8c801
+GevVersionMajor: 1
+GevVersionMinor: 2
+GevDeviceModeIsBigEndian: 0
+GevDeviceReadAndWriteTimeout: 100000
+GevDeviceMaximumRetryCount: 3
+GevDevicePort: 0
+GevDeviceDiscoverMaximumPacketSize: Node not readable
+GevDeviceMaximumPacketSize: 576
+GevDeviceIsWrongSubnet: 0
+GevDeviceAutoForceIP: 0
+GevDeviceForceIP: 0
+GevDeviceForceIPAddress: 0
+GevDeviceForceSubnetMask: 0
+GevDeviceForceGateway: 0
+*** CONFIGURING TRIGGER ***
+
+Note that if the application / user software triggers faster than frame time, the trigger may be dropped / skipped by the camera.
+
+If several frames are needed per trigger, a more reliable alternative for such case, is to use the multi-frame mode.
+
+
+Hardware trigger chose ...
+Trigger mode disabled...
+Trigger selector set to frame start...
+Trigger source set to hardware...
+Trigger mode turned back on...
+
+*** CONFIGURING CHUNK DATA ***
+
+Chunk mode activated...
+Enabling entries...
+	 CRC: enabled
+	 FrameCounter: enabled
+	 OffsetX: enabled
+	 OffsetY: enabled
+	 Width: enabled
+	 Height: enabled
+	 ExposureTime: enabled
+	 Gain: enabled
+	 BlackLevel: enabled
+	 PixelFormat: enabled
+	 DynamicPixelRangeMin: enabled
+	 DynamicPixelRangeMax: enabled
+	 Timestamp: enabled
+*** IMAGE ACQUISITION ***
+
+Acquisition mode set to continuous...
+Acquiring images...
+Device serial number retrieved as 17528370...
+Use the hardware to trigger image acquisition.
+Grabbed Image 0, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37832.558155059814
+	Timestamp: 364492328821
+1674519058063654518
+	Error in Chunk and Sys: 1674516142125023950
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 1, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37315.66667556763
+	Timestamp: 364499871408
+1674519058107839301
+	Error in Chunk and Sys: 1674516142108868037
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 2, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36637.187004089355
+	Timestamp: 364507349339
+1674519058169133546
+	Error in Chunk and Sys: 1674516142110338834
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 3, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36249.45878982544
+	Timestamp: 364514806864
+1674519058226359012
+	Error in Chunk and Sys: 1674516142107904100
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 4, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36734.10415649414
+	Timestamp: 364522301330
+1674519058290337977
+	Error in Chunk and Sys: 1674516142111927337
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 5, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37380.27811050415
+	Timestamp: 364529904459
+1674519058344950132
+	Error in Chunk and Sys: 1674516142105714460
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 6, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36798.715591430664
+	Timestamp: 364537528370
+1674519058406109655
+	Error in Chunk and Sys: 1674516142105882695
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 7, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36249.45878982544
+	Timestamp: 364544997705
+1674519058467244890
+	Error in Chunk and Sys: 1674516142107263250
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 8, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36798.715591430664
+	Timestamp: 364552471521
+1674519058526941278
+	Error in Chunk and Sys: 1674516142107169110
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 9, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37541.80669784546
+	Timestamp: 364560083150
+1674519058586959521
+	Error in Chunk and Sys: 1674516142106294321
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 10, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36863.32702636719
+	Timestamp: 364567718241
+1674519058648323829
+	Error in Chunk and Sys: 1674516142106577901
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 11, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36217.15307235718
+	Timestamp: 364575175765
+1674519058709082062
+	Error in Chunk and Sys: 1674516142107675942
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 12, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36863.32702636719
+	Timestamp: 364582637471
+1674519058773782742
+	Error in Chunk and Sys: 1674516142112682974
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 13, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37315.66667556763
+	Timestamp: 364590260970
+1674519058827890136
+	Error in Chunk and Sys: 1674516142105802376
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 14, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37477.195262908936
+	Timestamp: 364597860249
+1674519058889267267
+	Error in Chunk and Sys: 1674516142106385275
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 15, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36604.881286621094
+	Timestamp: 364605422795
+1674519058949785358
+	Error in Chunk and Sys: 1674516142106402998
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 16, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36507.96413421631
+	Timestamp: 364612856714
+1674519059013651597
+	Error in Chunk and Sys: 1674516142110797885
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 17, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37541.80669784546
+	Timestamp: 364620386825
+1674519059070040381
+	Error in Chunk and Sys: 1674516142106945781
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 18, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37864.863872528076
+	Timestamp: 364628058512
+1674519059129718533
+	Error in Chunk and Sys: 1674516142105250437
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 19, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36701.79843902588
+	Timestamp: 364635641586
+1674519059191265574
+	Error in Chunk and Sys: 1674516142106132886
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 20, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36540.26985168457
+	Timestamp: 364643038828
+1674519059253350076
+	Error in Chunk and Sys: 1674516142109039452
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 21, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37024.855613708496
+	Timestamp: 364650561238
+1674519059311229301
+	Error in Chunk and Sys: 1674516142106739397
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 22, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37735.64100265503
+	Timestamp: 364658163752
+1674519059371405219
+	Error in Chunk and Sys: 1674516142106095203
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 23, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37089.46704864502
+	Timestamp: 364665794845
+1674519059442410192
+	Error in Chunk and Sys: 1674516142116051432
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 24, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36572.57556915283
+	Timestamp: 364673256759
+1674519059493543297
+	Error in Chunk and Sys: 1674516142107489225
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 25, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37121.77276611328
+	Timestamp: 364680734792
+1674519059553373188
+	Error in Chunk and Sys: 1674516142107494852
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 26, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37897.16958999634
+	Timestamp: 364688345077
+1674519059613180645
+	Error in Chunk and Sys: 1674516142106420029
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 27, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37186.384201049805
+	Timestamp: 364695984619
+1674519059674248227
+	Error in Chunk and Sys: 1674516142106371275
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 28, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36443.352699279785
+	Timestamp: 364703438883
+1674519059734728717
+	Error in Chunk and Sys: 1674516142107217653
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 29, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37186.384201049805
+	Timestamp: 364710889012
+1674519059795074996
+	Error in Chunk and Sys: 1674516142107962900
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 30, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37897.16958999634
+	Timestamp: 364718525273
+1674519059854491595
+	Error in Chunk and Sys: 1674516142106289411
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 31, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37186.384201049805
+	Timestamp: 364726156529
+1674519059915158774
+	Error in Chunk and Sys: 1674516142105906542
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 32, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36443.352699279785
+	Timestamp: 364733611124
+1674519059977036189
+	Error in Chunk and Sys: 1674516142108147197
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 33, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37186.384201049805
+	Timestamp: 364741062169
+1674519060040925540
+	Error in Chunk and Sys: 1674516142112428188
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 34, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37606.41813278198
+	Timestamp: 364748698984
+1674519060100404578
+	Error in Chunk and Sys: 1674516142110812706
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 35, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37089.46704864502
+	Timestamp: 364756294774
+1674519060156554926
+	Error in Chunk and Sys: 1674516142106196734
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 36, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36443.352699279785
+	Timestamp: 364763774200
+1674519060217437261
+	Error in Chunk and Sys: 1674516142107243661
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 37, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37057.16133117676
+	Timestamp: 364771237136
+1674519060277241465
+	Error in Chunk and Sys: 1674516142107344377
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 38, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37671.029567718506
+	Timestamp: 364778858001
+1674519060336879926
+	Error in Chunk and Sys: 1674516142106015918
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 39, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37057.16133117676
+	Timestamp: 364786477920
+1674519060398214204
+	Error in Chunk and Sys: 1674516142106390844
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 40, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36411.04698181152
+	Timestamp: 364793944279
+1674519060458885215
+	Error in Chunk and Sys: 1674516142107330983
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 41, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37057.16133117676
+	Timestamp: 364801406687
+1674519060546974666
+	Error in Chunk and Sys: 1674516142135721170
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 42, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37509.5009803772
+	Timestamp: 364809030853
+1674519060577747268
+	Error in Chunk and Sys: 1674516142105500444
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 43, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37671.029567718506
+	Timestamp: 364816630152
+1674519060656519334
+	Error in Chunk and Sys: 1674516142123478118
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 44, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36798.715591430664
+	Timestamp: 364824194696
+1674519060699770752
+	Error in Chunk and Sys: 1674516142106213184
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 45, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36572.57556915283
+	Timestamp: 364831629012
+1674519060785376623
+	Error in Chunk and Sys: 1674516142132344527
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 46, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37024.855613708496
+	Timestamp: 364839144398
+1674519060830904345
+	Error in Chunk and Sys: 1674516142117749161
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 47, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37767.94672012329
+	Timestamp: 364846744155
+1674519060879590458
+	Error in Chunk and Sys: 1674516142105637218
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 48, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 37121.77276611328
+	Timestamp: 364854379379
+1674519060940310901
+	Error in Chunk and Sys: 1674516142105275869
+	Width: 1600
+Use the hardware to trigger image acquisition.
+Grabbed Image 49, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 36475.65841674805
+	Timestamp: 364861841618
+1674519061001830875
+	Error in Chunk and Sys: 1674516142107097931
+	Width: 1600
+Disabling entries...
+	 CRC: disabled
+	 FrameCounter: disabled
+	 OffsetX: disabled
+	 OffsetY: disabled
+	 Width: disabled
+	 Height: disabled
+	 ExposureTime: disabled
+	 Gain: disabled
+	 BlackLevel: disabled
+	 PixelFormat: disabled
+	 DynamicPixelRangeMin: disabled
+	 DynamicPixelRangeMax: disabled
+	 Timestamp: disabled
+Chunk mode deactivated...
+Trigger mode disabled...
+Camera example complete... 
+
