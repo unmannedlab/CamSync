@@ -3,7 +3,7 @@
 import os
 import PySpin
 import sys
-import datetime
+import time
 
 NUM_IMAGES = 50  # number of images to grab
 
@@ -222,6 +222,7 @@ def display_chunk_data_from_image(image):
         timestamp = chunk_data.GetTimestamp()
         print('\tTimestamp: {}'.format(timestamp))
         print(timeholder)
+        print('\tError in Chunk and Sys: %d' % (timeholder - timestamp*8))
 
         # Retrieve width; width recorded in pixels
         width = chunk_data.GetWidth()
@@ -452,7 +453,7 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
                 global timeholder
                 #  Retrieve the next image from the trigger
                 result &= grab_next_image_by_trigger(nodemap, cam)
-                timeholder = datetime.datetime.utcnow()
+                timeholder = time.time_ns()
                 #  Retrieve next received image
                 image_result = cam.GetNextImage(1000)
                 
