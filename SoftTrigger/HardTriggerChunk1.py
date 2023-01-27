@@ -5,7 +5,7 @@ import PySpin
 import sys
 import time
 
-NUM_IMAGES = 50  # number of images to grab
+NUM_IMAGES = 1000  # number of images to grab
 
 global timeholder
 
@@ -194,9 +194,9 @@ def display_chunk_data_from_image(image):
         exposure_time = chunk_data.GetExposureTime()
         print('\tExposure time: {}'.format(exposure_time))
 
-        # # Retrieve frame ID
-        # frame_id = chunk_data.GetFrameID()
-        # print('\tFrame ID: {}'.format(frame_id))
+        # Retrieve frame ID
+        frame_id = chunk_data.GetFrameID()
+        print('\tFrame ID: {}'.format(frame_id))
 
         # # Retrieve gain; gain recorded in decibels
         # gain = chunk_data.GetGain()
@@ -222,7 +222,7 @@ def display_chunk_data_from_image(image):
         timestamp = chunk_data.GetTimestamp()
         print('\tTimestamp: {}'.format(timestamp))
         print(timeholder)
-        print('\tError in Chunk and Sys: %d' % (timeholder - timestamp*8))
+        print('\tError in Chunk and Sys: %d' % (timeholder - (timestamp*8 + exposure_time)))
 
         # Retrieve width; width recorded in pixels
         width = chunk_data.GetWidth()
