@@ -2,8 +2,10 @@ import os
 import PySpin
 import sys
 import time
+import statistics
+import datetime
 
-NUM_IMAGES = 10  # number of images to grab
+NUM_IMAGES = 1000000  # number of images to grab
 
 class TriggerType:
     SOFTWARE = 1
@@ -18,6 +20,23 @@ class ChunkDataTypes:
 
 
 CHOSEN_CHUNK_DATA_TYPE = ChunkDataTypes.IMAGE
+
+def compute_timestamp_offset(cam):
+    timestamp_offsets = []
+    for i in range(100):
+        # Latch timestamp. This basically "freezes" the current camera timer into a variable that can be read with
+        # TimestampLatchValue()
+        cam.TimestampControlLatch.Execute()
+
+        # Compute timestamp offset in seconds; note that timestamp latch value is in nanoseconds
+        timestamp_offset = datetime.datetime.now().timestamp() - cam.TimestampLatchValue.GetValue()/1e9
+
+        # Append
+        timestamp_offsets.append(timestamp_offset)
+        offset = statistics.median(timestamp_offsets)
+        del timestamp_offsets
+    # Return the median value   
+    return offset
 
 def configure_chunk_data(nodemap):
     """
@@ -216,8 +235,8 @@ def display_chunk_data_from_image(image):
         # Retrieve timestamp
         timestamp = chunk_data.GetTimestamp()
         print('\tTimestamp: {}'.format(timestamp))
-        print('\t System Time: {}'.format(timeholder))
-        print('\tError in Chunk and Sys: %d' % (timeholder - (timestamp*8 + exposure_time)))
+        # print('\t System Time: {}'.format(timeholder))
+        # print('\tError in Chunk and Sys: %d' % (timeholder - (timestamp*8 + exposure_time)))
 
         # Retrieve width; width recorded in pixels
         width = chunk_data.GetWidth()
@@ -374,7 +393,7 @@ def grab_next_image_by_trigger(cam_list):
 
     return result
 
-def acquire_images(cam_list):
+def acquire_images(cam_list, timestamp_offset):
     """
     This function acquires and saves 10 images from each device.
 
@@ -468,8 +487,8 @@ def acquire_images(cam_list):
                         height = image_result.GetHeight()
                         print('Camera %d grabbed image %d, width = %d, height = %d' % (i, n, width, height))
                         display_chunk_data_from_image(image_result)
-
-                        print('\t Timestamp from image.GetTimeStamp(): {}'.format(image_result.GetTimeStamp()))
+                        print('\t Image Timestamp from timestamp_offset: {}'.format(timestamp_offset + image_result.GetTimeStamp()/1e9))
+                       # print('\t Timestamp from image.GetTimeStamp(): {}'.format(image_result.GetTimeStamp()))
 
                     # Release image
                     image_result.Release()
@@ -617,9 +636,11 @@ def run_multiple_cameras(cam_list):
             # Initialize camera
             cam.Init()
             configure_trigger(cam)
-
+            configure_chunk_data(cam.GetNodeMap())
+            t_offset = compute_timestamp_offset(cam)
+        
         # Acquire images on all cameras
-        result &= acquire_images(cam_list)
+        result &= acquire_images(cam_list, t_offset)
 
         # Deinitialize each camera
         #
