@@ -49,7 +49,7 @@ class ChunkDataTypes:
     NODEMAP = 2
 
 
-CHOSEN_CHUNK_DATA_TYPE = ChunkDataTypes.NODEMAP
+CHOSEN_CHUNK_DATA_TYPE = ChunkDataTypes.IMAGE
 
 
 def configure_chunk_data(nodemap):
@@ -63,6 +63,7 @@ def configure_chunk_data(nodemap):
     :type nodemap: INodeMap
     :return: True if successful, False otherwise
     :rtype: bool
+
     """
     try:
         result = True
@@ -403,7 +404,7 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
                 # Once an image from the buffer is saved and/or no longer
                 # needed, the image must be released in order to keep the
                 # buffer from filling up.
-                image_result = cam.GetNextImage(1000)
+                image_result = cam.GetNextImage(2000)
 
                 # Ensure image completion
                 #
@@ -414,6 +415,10 @@ def acquire_images(cam, nodemap, nodemap_tldevice):
                 # why an image is incomplete.
                 if image_result.IsIncomplete():
                     print('Image incomplete with image status %d ...' % image_result.GetImageStatus())
+                    if CHOSEN_CHUNK_DATA_TYPE == ChunkDataTypes.IMAGE:
+                        result &= display_chunk_data_from_image(image_result)
+                    elif CHOSEN_CHUNK_DATA_TYPE == ChunkDataTypes.NODEMAP:
+                        result = display_chunk_data_from_nodemap(nodemap)
                 else:
 
                     # Print image information

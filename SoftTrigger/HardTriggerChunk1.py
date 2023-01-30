@@ -221,7 +221,7 @@ def display_chunk_data_from_image(image):
         # Retrieve timestamp
         timestamp = chunk_data.GetTimestamp()
         print('\tTimestamp: {}'.format(timestamp))
-        print(timeholder)
+        print('\t System Time: {}'.format(timeholder))
         print('\tError in Chunk and Sys: %d' % (timeholder - (timestamp*8 + exposure_time)))
 
         # Retrieve width; width recorded in pixels

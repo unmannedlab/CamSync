@@ -240,7 +240,6 @@ def run_multiple_cameras(cam_list):
         # Each camera needs to be deinitialized once all images have been
         # acquired.
         for i, cam in enumerate(cam_list):
-
             # Initialize camera
             cam.Init()
 
