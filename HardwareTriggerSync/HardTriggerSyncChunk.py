@@ -458,7 +458,7 @@ def acquire_images(cam_list):
                         print('Camera %d serial number set to %s...' % (i, device_serial_number))
 
                     # Retrieve next received image and ensure image completion
-                    image_result = cam.GetNextImage(30)
+                    image_result = cam.GetNextImage(50)
 
                     if image_result.IsIncomplete():
                         print('Image incomplete with image status %d ... \n' % image_result.GetImageStatus())
@@ -468,6 +468,8 @@ def acquire_images(cam_list):
                         height = image_result.GetHeight()
                         print('Camera %d grabbed image %d, width = %d, height = %d' % (i, n, width, height))
                         display_chunk_data_from_image(image_result)
+
+                        print('\t Timestamp from image.GetTimeStamp(): {}'.format(image_result.GetTimeStamp()))
 
                     # Release image
                     image_result.Release()
