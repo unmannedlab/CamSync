@@ -20,9 +20,11 @@ class ChunkDataTypes:
 CHOSEN_CHUNK_DATA_TYPE = ChunkDataTypes.IMAGE
 
 def compute_timestamp_offset(cam):
+    nodemap = cam.GetNodeMap()
     # Latch timestamp. This basically "freezes" the current camera timer into a variable that can be read with
-    cam.GetNodeMap().GetNode('GevTimestampControlLatch').Execute()
-    camera_time = cam.GetNodeMap().GetNode('GevTimeStampValue').GetValue()
+    TimestampControlLatch = PySpin.CCommandPtr(nodemap.GetNode('GevTimestampControlLatch'))
+    TimestampControlLatch.Execute()
+    camera_time = nodemap.GetNode('GevTimeStampValue').GetValue()
     # Compute timestamp offset in seconds; note that timestamp latch value is in nanoseconds
     timestamp_offset = datetime.datetime.now().timestamp() - camera_time/1e9
 
