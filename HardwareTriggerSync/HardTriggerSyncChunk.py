@@ -11,32 +11,23 @@ class TriggerType:
     SOFTWARE = 1
     HARDWARE = 2
 
-
-CHOSEN_TRIGGER = TriggerType.SOFTWARE
+CHOSEN_TRIGGER = TriggerType.HARDWARE
 
 class ChunkDataTypes:
     IMAGE = 1
     NODEMAP = 2
 
-
 CHOSEN_CHUNK_DATA_TYPE = ChunkDataTypes.IMAGE
 
 def compute_timestamp_offset(cam):
-    timestamp_offsets = []
-    for i in range(100):
-        # Latch timestamp. This basically "freezes" the current camera timer into a variable that can be read with
-        # TimestampLatchValue()
-        cam.TimestampControlLatch.Execute()
+    # Latch timestamp. This basically "freezes" the current camera timer into a variable that can be read with
+    cam.GetNodeMap().GetNode('GevTimestampControlLatch').Execute()
+    camera_time = cam.GetNodeMap().GetNode('GevTimeStampValue').GetValue()
+    # Compute timestamp offset in seconds; note that timestamp latch value is in nanoseconds
+    timestamp_offset = datetime.datetime.now().timestamp() - camera_time/1e9
 
-        # Compute timestamp offset in seconds; note that timestamp latch value is in nanoseconds
-        timestamp_offset = datetime.datetime.now().timestamp() - cam.TimestampLatchValue.GetValue()/1e9
-
-        # Append
-        timestamp_offsets.append(timestamp_offset)
-        offset = statistics.median(timestamp_offsets)
-        del timestamp_offsets
     # Return the median value   
-    return offset
+    return timestamp_offset
 
 def configure_chunk_data(nodemap):
     """
@@ -234,7 +225,8 @@ def display_chunk_data_from_image(image):
 
         # Retrieve timestamp
         timestamp = chunk_data.GetTimestamp()
-        print('\tTimestamp: {}'.format(timestamp))
+        print('\tChunk Timestamp: {}'.format(timestamp))
+        # print('\tImage Timestamp: {}'.format(image.GetTimeStamp()/1e9))
         # print('\t System Time: {}'.format(timeholder))
         # print('\tError in Chunk and Sys: %d' % (timeholder - (timestamp*8 + exposure_time)))
 
@@ -393,7 +385,7 @@ def grab_next_image_by_trigger(cam_list):
 
     return result
 
-def acquire_images(cam_list, timestamp_offset):
+def acquire_images(cam_list):
     """
     This function acquires and saves 10 images from each device.
 
@@ -487,8 +479,8 @@ def acquire_images(cam_list, timestamp_offset):
                         height = image_result.GetHeight()
                         print('Camera %d grabbed image %d, width = %d, height = %d' % (i, n, width, height))
                         display_chunk_data_from_image(image_result)
-                        print('\t Image Timestamp from timestamp_offset: {}'.format(timestamp_offset + image_result.GetTimeStamp()/1e9))
-                       # print('\t Timestamp from image.GetTimeStamp(): {}'.format(image_result.GetTimeStamp()))
+                        print('\t Image Timestamp from timestamp_offset: {}'.format(compute_timestamp_offset(cam) + image_result.GetChunkData().GetTimeStamp()/1e9))
+                        print('\t Timestamp from image.GetTimeStamp(): {}'.format(image_result.GetTimeStamp()))
 
                     # Release image
                     image_result.Release()
@@ -608,7 +600,7 @@ def run_multiple_cameras(cam_list):
         # *** NOTES ***
         # This example retrieves information from the transport layer nodemap
         # twice: once to print device information and once to grab the device
-        # serial number. Rather than caching the nodem#ap, each nodemap is
+        # serial number. Rather than caching the nodemap, each nodemap is
         # retrieved both times as needed.
         print('*** DEVICE INFORMATION ***\n')
 
@@ -637,10 +629,9 @@ def run_multiple_cameras(cam_list):
             cam.Init()
             configure_trigger(cam)
             configure_chunk_data(cam.GetNodeMap())
-            t_offset = compute_timestamp_offset(cam)
-        
+         
         # Acquire images on all cameras
-        result &= acquire_images(cam_list, t_offset)
+        result &= acquire_images(cam_list)
 
         # Deinitialize each camera
         #
@@ -674,19 +665,6 @@ def main():
     :return: True if successful, False otherwise.
     :rtype: bool
     """
-
-    # Since this application saves images in the current folder
-    # we must ensure that we have permission to write to this folder.
-    # If we do not have permission, fail right away.
-    try:
-        test_file = open('test.txt', 'w+')
-    except IOError:
-        print('Unable to write to current directory. Please check permissions.')
-        input('Press Enter to exit...')
-        return False
-
-    test_file.close()
-    os.remove(test_file.name)
 
     result = True
 
