@@ -195,6 +195,7 @@ def display_chunk_data_from_image(image):
         # *** NOTES ***
         # When retrieving chunk data from an image, the data is stored in a
         # ChunkData object and accessed with getter functions.
+        global chunk_data
         chunk_data = image.GetChunkData()
 
         # Retrieve exposure time (recorded in microseconds)
@@ -460,7 +461,6 @@ def acquire_images(cam_list):
         for n in range(NUM_IMAGES):
             global timeholder
             grab_next_image_by_trigger(cam_list)
-            timeholder = time.time_ns()
             for i, cam in enumerate(cam_list):
                 try:
                     # Retrieve device serial number for filename
@@ -472,7 +472,7 @@ def acquire_images(cam_list):
 
                     # Retrieve next received image and ensure image completion
                     image_result = cam.GetNextImage(50)
-
+                                        
                     if image_result.IsIncomplete():
                         print('Image incomplete with image status %d ... \n' % image_result.GetImageStatus())
                     else:
@@ -481,7 +481,7 @@ def acquire_images(cam_list):
                         height = image_result.GetHeight()
                         print('Camera %d grabbed image %d, width = %d, height = %d' % (i, n, width, height))
                         display_chunk_data_from_image(image_result)
-                        print('\t Image Timestamp from timestamp_offset: {}'.format(compute_timestamp_offset(cam) + image_result.GetChunkData().GetTimeStamp()/1e9))
+                        print('\t Image Timestamp from timestamp_offset: {}'.format(compute_timestamp_offset(cam) + chunk_data.GetTimeStamp()/1e9))
                         print('\t Timestamp from image.GetTimeStamp(): {}'.format(image_result.GetTimeStamp()))
 
                     # Release image
