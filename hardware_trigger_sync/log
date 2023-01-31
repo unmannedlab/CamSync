@@ -1,0 +1,4460 @@
+Library version: 3.0.0.118
+Number of cameras detected: 2
+Running example for all cameras...
+*** DEVICE INFORMATION ***
+
+Printing device information for camera 0... 
+
+DeviceID: 00B09D1393EE_C3A8C865_FFFFFF00_C3A8C801
+DeviceSerialNumber: 18060270
+DeviceUserID: 
+DeviceVendorName: Point Grey Research
+DeviceModelName: Blackfly BFLY-PGE-20E4C
+DeviceVersion: FW:v1.43.3.01 FPGA:v2.02
+DeviceBootloaderVersion: Node not readable
+DeviceType: GigEVision
+DeviceDisplayName: Point Grey Research
+DeviceAccessStatus: OpenReadOnly
+DeviceLinkSpeed: 1000
+DeviceDriverVersion: none : 0.0.0.0
+DeviceIsUpdater: 0
+GenICamXMLLocation: Device
+GenICamXMLPath: 
+GUIXMLLocation: Device
+GUIXMLPath: Input.xml
+GevCCP: OpenAccess
+GevDeviceMACAddress: 0xb09d1393ee
+GevDeviceIPAddress: 0xc3a8c865
+GevDeviceSubnetMask: 0xffffff00
+GevDeviceGateway: 0xc3a8c801
+GevVersionMajor: 1
+GevVersionMinor: 2
+GevDeviceModeIsBigEndian: 0
+GevDeviceReadAndWriteTimeout: 100000
+GevDeviceMaximumRetryCount: 3
+GevDevicePort: 0
+GevDeviceDiscoverMaximumPacketSize: Node not readable
+GevDeviceMaximumPacketSize: 576
+GevDeviceIsWrongSubnet: 0
+GevDeviceAutoForceIP: 0
+GevDeviceForceIP: 0
+GevDeviceForceIPAddress: 0
+GevDeviceForceSubnetMask: 0
+GevDeviceForceGateway: 0
+
+Printing device information for camera 1... 
+
+DeviceID: 00B09D0B7632_C1A8C865_FFFFFF00_C1A8C801
+DeviceSerialNumber: 17528370
+DeviceUserID: 
+DeviceVendorName: Point Grey Research
+DeviceModelName: Blackfly BFLY-PGE-20E4C
+DeviceVersion: FW:v1.43.3.01 FPGA:v2.02
+DeviceBootloaderVersion: Node not readable
+DeviceType: GigEVision
+DeviceDisplayName: Point Grey Research
+DeviceAccessStatus: OpenReadOnly
+DeviceLinkSpeed: 1000
+DeviceDriverVersion: none : 0.0.0.0
+DeviceIsUpdater: 0
+GenICamXMLLocation: Device
+GenICamXMLPath: 
+GUIXMLLocation: Device
+GUIXMLPath: Input.xml
+GevCCP: OpenAccess
+GevDeviceMACAddress: 0xb09d0b7632
+GevDeviceIPAddress: 0xc1a8c865
+GevDeviceSubnetMask: 0xffffff00
+GevDeviceGateway: 0xc1a8c801
+GevVersionMajor: 1
+GevVersionMinor: 2
+GevDeviceModeIsBigEndian: 0
+GevDeviceReadAndWriteTimeout: 100000
+GevDeviceMaximumRetryCount: 3
+GevDevicePort: 0
+GevDeviceDiscoverMaximumPacketSize: Node not readable
+GevDeviceMaximumPacketSize: 576
+GevDeviceIsWrongSubnet: 0
+GevDeviceAutoForceIP: 0
+GevDeviceForceIP: 0
+GevDeviceForceIPAddress: 0
+GevDeviceForceSubnetMask: 0
+GevDeviceForceGateway: 0
+
+*** CONFIGURING TRIGGER ***
+
+Note that if the application / user software triggers faster than frame time, the trigger may be dropped / skipped by the camera.
+
+If several frames are needed per trigger, a more reliable alternative for such case, is to use the multi-frame mode.
+
+
+Hardware trigger chose ...
+Trigger mode disabled...
+Trigger selector set to frame start...
+Trigger source set to hardware...
+Trigger mode turned back on...
+
+*** CONFIGURING CHUNK DATA ***
+
+Chunk mode activated...
+Enabling entries...
+	 CRC: enabled
+	 FrameCounter: enabled
+	 OffsetX: enabled
+	 OffsetY: enabled
+	 Width: enabled
+	 Height: enabled
+	 ExposureTime: enabled
+	 Gain: enabled
+	 BlackLevel: enabled
+	 PixelFormat: enabled
+	 DynamicPixelRangeMin: enabled
+	 DynamicPixelRangeMax: enabled
+	 Timestamp: enabled
+*** CONFIGURING TRIGGER ***
+
+Note that if the application / user software triggers faster than frame time, the trigger may be dropped / skipped by the camera.
+
+If several frames are needed per trigger, a more reliable alternative for such case, is to use the multi-frame mode.
+
+
+Hardware trigger chose ...
+Trigger mode disabled...
+Trigger selector set to frame start...
+Trigger source set to hardware...
+Trigger mode turned back on...
+
+*** CONFIGURING CHUNK DATA ***
+
+Chunk mode activated...
+Enabling entries...
+	 CRC: enabled
+	 FrameCounter: enabled
+	 OffsetX: enabled
+	 OffsetY: enabled
+	 Width: enabled
+	 Height: enabled
+	 ExposureTime: enabled
+	 Gain: enabled
+	 BlackLevel: enabled
+	 PixelFormat: enabled
+	 DynamicPixelRangeMin: enabled
+	 DynamicPixelRangeMax: enabled
+	 Timestamp: enabled
+*** IMAGE ACQUISITION ***
+
+Camera 0 acquisition mode set to continuous...
+Camera 0 started acquiring images...
+
+Camera 1 acquisition mode set to continuous...
+Camera 1 started acquiring images...
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Error: Spinnaker: Failed waiting for EventData on NEW_BUFFER_DATA event. [-1011]
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 35, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14086.246490478516
+	Frame ID: 1
+	Chunk Timestamp: 327566370961
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.1805925
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 36, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14215.469360351562
+	Frame ID: 1
+	Chunk Timestamp: 327608645706
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.1841364
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 36, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13843.894004821777
+	Frame ID: 2
+	Chunk Timestamp: 327572659942
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.2309737
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 37, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14280.080795288086
+	Frame ID: 2
+	Chunk Timestamp: 327614934549
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.2345567
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 37, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13795.435428619385
+	Frame ID: 3
+	Chunk Timestamp: 327578918217
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.28157
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 38, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14280.080795288086
+	Frame ID: 3
+	Chunk Timestamp: 327621231389
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.2851424
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 38, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13924.717903137207
+	Frame ID: 4
+	Chunk Timestamp: 327585200668
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.3312387
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 39, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14506.220817565918
+	Frame ID: 4
+	Chunk Timestamp: 327627519734
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.3346498
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 39, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14215.469360351562
+	Frame ID: 5
+	Chunk Timestamp: 327591505208
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.3807292
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 40, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14603.137969970703
+	Frame ID: 5
+	Chunk Timestamp: 327633836669
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.3831391
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 40, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 6
+	Chunk Timestamp: 327597830515
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.4312701
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 41, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14457.762241363525
+	Frame ID: 6
+	Chunk Timestamp: 327640136967
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.4336631
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 41, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14167.01078414917
+	Frame ID: 7
+	Chunk Timestamp: 327604138992
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.4818096
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 42, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14522.373676300049
+	Frame ID: 7
+	Chunk Timestamp: 327646407745
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.4840653
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 42, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14247.775077819824
+	Frame ID: 8
+	Chunk Timestamp: 327610401372
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.531928
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 43, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14522.373676300049
+	Frame ID: 8
+	Chunk Timestamp: 327652704299
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.5343606
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 43, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14263.927936553955
+	Frame ID: 9
+	Chunk Timestamp: 327616700276
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.5825515
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 44, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14506.220817565918
+	Frame ID: 9
+	Chunk Timestamp: 327658993057
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.585006
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 44, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14231.622219085693
+	Frame ID: 10
+	Chunk Timestamp: 327622990234
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.6326628
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 45, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14522.373676300049
+	Frame ID: 10
+	Chunk Timestamp: 327665278793
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.635021
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 45, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14247.775077819824
+	Frame ID: 11
+	Chunk Timestamp: 327629274286
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.6828084
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 46, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14522.373676300049
+	Frame ID: 11
+	Chunk Timestamp: 327671569427
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.6851666
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 46, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14247.775077819824
+	Frame ID: 12
+	Chunk Timestamp: 327635564585
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.7332053
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 47, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14183.1636428833
+	Frame ID: 12
+	Chunk Timestamp: 327677857894
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.7355695
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 47, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13973.1764793396
+	Frame ID: 13
+	Chunk Timestamp: 327641853011
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.7836678
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 48, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13973.1764793396
+	Frame ID: 13
+	Chunk Timestamp: 327684103612
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.7871468
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 48, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13779.282569885254
+	Frame ID: 14
+	Chunk Timestamp: 327648106918
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.8347106
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 49, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13908.565044403076
+	Frame ID: 14
+	Chunk Timestamp: 327690365559
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.838172
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 49, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13698.5182762146
+	Frame ID: 15
+	Chunk Timestamp: 327654371464
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.8838031
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 50, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13746.976852416992
+	Frame ID: 15
+	Chunk Timestamp: 327696645421
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.8861816
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 50, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13504.68397140503
+	Frame ID: 16
+	Chunk Timestamp: 327660648910
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.9339256
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 51, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13553.142547607422
+	Frame ID: 16
+	Chunk Timestamp: 327702913630
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.9374228
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 51, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13310.849666595459
+	Frame ID: 17
+	Chunk Timestamp: 327666912607
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.9838228
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 52, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13407.766819000244
+	Frame ID: 17
+	Chunk Timestamp: 327709177190
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131969.9863436
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 52, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13149.32107925415
+	Frame ID: 18
+	Chunk Timestamp: 327673176416
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.0342615
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 53, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13262.391090393066
+	Frame ID: 18
+	Chunk Timestamp: 327715446929
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.0366387
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 53, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12987.792491912842
+	Frame ID: 19
+	Chunk Timestamp: 327679444117
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.084186
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 54, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13100.862503051758
+	Frame ID: 19
+	Chunk Timestamp: 327721716898
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.0864263
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 54, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12858.51001739502
+	Frame ID: 20
+	Chunk Timestamp: 327685711969
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.134582
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 55, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12955.427169799805
+	Frame ID: 20
+	Chunk Timestamp: 327727984573
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.1369517
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 55, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12713.134288787842
+	Frame ID: 21
+	Chunk Timestamp: 327691983916
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.1844933
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 56, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12842.357158660889
+	Frame ID: 21
+	Chunk Timestamp: 327734254348
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.1868668
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 56, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12616.217136383057
+	Frame ID: 22
+	Chunk Timestamp: 327698252934
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.2348628
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 57, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12971.580028533936
+	Frame ID: 22
+	Chunk Timestamp: 327740527557
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.2371728
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 57, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12729.287147521973
+	Frame ID: 23
+	Chunk Timestamp: 327704528182
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.2848015
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 58, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12923.121452331543
+	Frame ID: 23
+	Chunk Timestamp: 327746830724
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.2871573
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 58, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12680.82857131958
+	Frame ID: 24
+	Chunk Timestamp: 327710829783
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.3353815
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 59, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12906.968593597412
+	Frame ID: 24
+	Chunk Timestamp: 327753112482
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.3378603
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 59, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12680.82857131958
+	Frame ID: 25
+	Chunk Timestamp: 327717110941
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.3855162
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 60, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12939.274311065674
+	Frame ID: 25
+	Chunk Timestamp: 327759397852
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.3879063
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 60, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12696.981430053711
+	Frame ID: 26
+	Chunk Timestamp: 327723399357
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.4358969
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 61, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12923.121452331543
+	Frame ID: 26
+	Chunk Timestamp: 327765689783
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.438358
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 61, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12680.82857131958
+	Frame ID: 27
+	Chunk Timestamp: 327729687362
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.4861815
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 62, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12923.121452331543
+	Frame ID: 27
+	Chunk Timestamp: 327771975982
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.4886885
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 62, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12680.82857131958
+	Frame ID: 28
+	Chunk Timestamp: 327735974466
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.5364025
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 63, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13133.16822052002
+	Frame ID: 28
+	Chunk Timestamp: 327778263539
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.5386202
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 63, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12890.815734863281
+	Frame ID: 29
+	Chunk Timestamp: 327742262023
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.5865514
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 64, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13391.613960266113
+	Frame ID: 29
+	Chunk Timestamp: 327784577000
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.5889983
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 64, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13133.16822052002
+	Frame ID: 30
+	Chunk Timestamp: 327748575398
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.6373448
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 65, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13617.753982543945
+	Frame ID: 30
+	Chunk Timestamp: 327790896372
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.6397781
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 65, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13407.766819000244
+	Frame ID: 31
+	Chunk Timestamp: 327754893107
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.6879804
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 66, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13973.1764793396
+	Frame ID: 31
+	Chunk Timestamp: 327797212275
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.6903956
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 66, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13795.435428619385
+	Frame ID: 32
+	Chunk Timestamp: 327761214767
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.7388346
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 67, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14280.080795288086
+	Frame ID: 32
+	Chunk Timestamp: 327803544011
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.741188
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 67, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14037.787914276123
+	Frame ID: 33
+	Chunk Timestamp: 327767550328
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.788964
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 68, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 33
+	Chunk Timestamp: 327809869465
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.791371
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 68, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14167.01078414917
+	Frame ID: 34
+	Chunk Timestamp: 327773867965
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.8394947
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 69, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14441.609382629395
+	Frame ID: 34
+	Chunk Timestamp: 327816168828
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.841919
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 69, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14344.69223022461
+	Frame ID: 35
+	Chunk Timestamp: 327780171406
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.8899043
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 70, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14360.84508895874
+	Frame ID: 35
+	Chunk Timestamp: 327822464472
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.8923185
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 70, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14183.1636428833
+	Frame ID: 36
+	Chunk Timestamp: 327786479914
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.9405234
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 71, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14393.150806427002
+	Frame ID: 36
+	Chunk Timestamp: 327828741821
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.9428992
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 71, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14231.622219085693
+	Frame ID: 37
+	Chunk Timestamp: 327792748397
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.9917138
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 72, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14393.150806427002
+	Frame ID: 37
+	Chunk Timestamp: 327835033075
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131970.9951637
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 72, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14247.775077819824
+	Frame ID: 38
+	Chunk Timestamp: 327799042022
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.0418804
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 73, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 38
+	Chunk Timestamp: 327841320831
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.0453765
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 73, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14215.469360351562
+	Frame ID: 39
+	Chunk Timestamp: 327805331593
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.0921679
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 74, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14393.150806427002
+	Frame ID: 39
+	Chunk Timestamp: 327847606038
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.0958335
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 74, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14231.622219085693
+	Frame ID: 40
+	Chunk Timestamp: 327811614603
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.1425734
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 75, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14102.399349212646
+	Frame ID: 40
+	Chunk Timestamp: 327853895446
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.1463108
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 75, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13957.023620605469
+	Frame ID: 41
+	Chunk Timestamp: 327817904520
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.1927397
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 76, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13908.565044403076
+	Frame ID: 41
+	Chunk Timestamp: 327860146570
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.1961677
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 76, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13779.282569885254
+	Frame ID: 42
+	Chunk Timestamp: 327824157979
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.242837
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 77, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13860.106468200684
+	Frame ID: 42
+	Chunk Timestamp: 327866410395
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.246356
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 77, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13682.365417480469
+	Frame ID: 43
+	Chunk Timestamp: 327830423385
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.2929697
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 78, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13682.365417480469
+	Frame ID: 43
+	Chunk Timestamp: 327872691787
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.2963748
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 78, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13504.68397140503
+	Frame ID: 44
+	Chunk Timestamp: 327836698313
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.3431509
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 79, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13553.142547607422
+	Frame ID: 44
+	Chunk Timestamp: 327878956822
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.3468478
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 79, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13294.696807861328
+	Frame ID: 45
+	Chunk Timestamp: 327842962254
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.3931441
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 80, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13375.461101531982
+	Frame ID: 45
+	Chunk Timestamp: 327885228032
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.3965695
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 80, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13133.16822052002
+	Frame ID: 46
+	Chunk Timestamp: 327849224609
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.4434235
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 81, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13165.473937988281
+	Frame ID: 46
+	Chunk Timestamp: 327891492960
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.4469676
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 81, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13020.098209381104
+	Frame ID: 47
+	Chunk Timestamp: 327855491658
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.4934485
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 82, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13052.403926849365
+	Frame ID: 47
+	Chunk Timestamp: 327897753855
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.496904
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 82, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12858.51001739502
+	Frame ID: 48
+	Chunk Timestamp: 327861764185
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.5436237
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 83, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12939.274311065674
+	Frame ID: 48
+	Chunk Timestamp: 327904026702
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.5470355
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 83, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12713.134288787842
+	Frame ID: 49
+	Chunk Timestamp: 327868030746
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.5936875
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 84, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12793.898582458496
+	Frame ID: 49
+	Chunk Timestamp: 327910299194
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.596999
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 84, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12616.217136383057
+	Frame ID: 50
+	Chunk Timestamp: 327874300369
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.643793
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 85, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12923.121452331543
+	Frame ID: 50
+	Chunk Timestamp: 327916568608
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.6471786
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 85, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12729.287147521973
+	Frame ID: 51
+	Chunk Timestamp: 327880575449
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.6931958
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 86, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12890.815734863281
+	Frame ID: 51
+	Chunk Timestamp: 327922872395
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.695492
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 86, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12680.82857131958
+	Frame ID: 52
+	Chunk Timestamp: 327886877329
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.7436044
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 87, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12874.66287612915
+	Frame ID: 52
+	Chunk Timestamp: 327929155608
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.7460055
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 87, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12680.82857131958
+	Frame ID: 53
+	Chunk Timestamp: 327893158065
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.7938447
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 88, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12890.815734863281
+	Frame ID: 53
+	Chunk Timestamp: 327935440734
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.7959073
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 88, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12696.981430053711
+	Frame ID: 54
+	Chunk Timestamp: 327899446070
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.8441424
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 89, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12890.815734863281
+	Frame ID: 54
+	Chunk Timestamp: 327941730056
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.8463774
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 89, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12680.82857131958
+	Frame ID: 55
+	Chunk Timestamp: 327905734888
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.894362
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 90, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12890.815734863281
+	Frame ID: 55
+	Chunk Timestamp: 327948017801
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.8966227
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 90, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12874.66287612915
+	Frame ID: 56
+	Chunk Timestamp: 327912020268
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.9447162
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 91, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13165.473937988281
+	Frame ID: 56
+	Chunk Timestamp: 327954305053
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.9470062
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 91, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13117.015361785889
+	Frame ID: 57
+	Chunk Timestamp: 327918330942
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.995181
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 92, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13391.613960266113
+	Frame ID: 57
+	Chunk Timestamp: 327960626063
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131971.9974413
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 92, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13327.00252532959
+	Frame ID: 58
+	Chunk Timestamp: 327924648396
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.0456464
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 93, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13617.753982543945
+	Frame ID: 58
+	Chunk Timestamp: 327966941004
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.0478659
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 93, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13617.753982543945
+	Frame ID: 59
+	Chunk Timestamp: 327930962076
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.0961308
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 94, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13989.32933807373
+	Frame ID: 59
+	Chunk Timestamp: 327973256846
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.0983477
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 94, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13940.870761871338
+	Frame ID: 60
+	Chunk Timestamp: 327937285771
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.1467924
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 95, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14280.080795288086
+	Frame ID: 60
+	Chunk Timestamp: 327979590616
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.1491132
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 95, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14167.01078414917
+	Frame ID: 61
+	Chunk Timestamp: 327943613235
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.1974583
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 96, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 61
+	Chunk Timestamp: 327985914072
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.2000728
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 96, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14263.927936553955
+	Frame ID: 62
+	Chunk Timestamp: 327949928619
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.2479484
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 97, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14441.609382629395
+	Frame ID: 62
+	Chunk Timestamp: 327992213302
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.2502828
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 97, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14344.69223022461
+	Frame ID: 63
+	Chunk Timestamp: 327956227030
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.2984157
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 98, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14360.84508895874
+	Frame ID: 63
+	Chunk Timestamp: 327998508565
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.3006938
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 98, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14263.927936553955
+	Frame ID: 64
+	Chunk Timestamp: 327962525522
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.3487616
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 99, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14393.150806427002
+	Frame ID: 64
+	Chunk Timestamp: 328004786005
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.3510673
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 99, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14296.233654022217
+	Frame ID: 65
+	Chunk Timestamp: 327968802602
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.3989778
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 100, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14393.150806427002
+	Frame ID: 65
+	Chunk Timestamp: 328011077407
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.401106
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 100, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14296.233654022217
+	Frame ID: 66
+	Chunk Timestamp: 327975093658
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.4491222
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 101, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 66
+	Chunk Timestamp: 328017364262
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.4513767
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 101, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14280.080795288086
+	Frame ID: 67
+	Chunk Timestamp: 327981381149
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.4994802
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 102, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14393.150806427002
+	Frame ID: 67
+	Chunk Timestamp: 328023649307
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.501811
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 102, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14296.233654022217
+	Frame ID: 68
+	Chunk Timestamp: 327987666147
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.5499325
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 103, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14118.552207946777
+	Frame ID: 68
+	Chunk Timestamp: 328029938730
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.5520732
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 103, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13973.1764793396
+	Frame ID: 69
+	Chunk Timestamp: 327993955627
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.600225
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 104, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13908.565044403076
+	Frame ID: 69
+	Chunk Timestamp: 328036192047
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.6025198
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 104, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13763.129711151123
+	Frame ID: 70
+	Chunk Timestamp: 328000202814
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.6500874
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 105, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13811.588287353516
+	Frame ID: 70
+	Chunk Timestamp: 328042453196
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.6523125
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 105, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13698.5182762146
+	Frame ID: 71
+	Chunk Timestamp: 328006463872
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.700382
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 106, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13666.212558746338
+	Frame ID: 71
+	Chunk Timestamp: 328048728495
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.7027895
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 106, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13504.68397140503
+	Frame ID: 72
+	Chunk Timestamp: 328012742039
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.750455
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 107, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13472.378253936768
+	Frame ID: 72
+	Chunk Timestamp: 328054997680
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.7528908
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 107, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13294.696807861328
+	Frame ID: 73
+	Chunk Timestamp: 328019006545
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.800835
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 108, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13327.00252532959
+	Frame ID: 73
+	Chunk Timestamp: 328061260757
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.8033934
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 108, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13149.32107925415
+	Frame ID: 74
+	Chunk Timestamp: 328025267410
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.850637
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 109, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13181.626796722412
+	Frame ID: 74
+	Chunk Timestamp: 328067530207
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.8531432
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 109, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13020.098209381104
+	Frame ID: 75
+	Chunk Timestamp: 328031537007
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.9009836
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 110, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13020.098209381104
+	Frame ID: 75
+	Chunk Timestamp: 328073799158
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.9034781
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 110, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12858.51001739502
+	Frame ID: 76
+	Chunk Timestamp: 328037808069
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.9511478
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 111, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12923.121452331543
+	Frame ID: 76
+	Chunk Timestamp: 328080066665
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131972.9534771
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 111, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12713.134288787842
+	Frame ID: 77
+	Chunk Timestamp: 328044075490
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.001249
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 112, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13036.251068115234
+	Frame ID: 77
+	Chunk Timestamp: 328086342000
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.0035229
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 112, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12858.51001739502
+	Frame ID: 78
+	Chunk Timestamp: 328050344100
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.0514808
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 113, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12777.745723724365
+	Frame ID: 78
+	Chunk Timestamp: 328092642908
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.0540214
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 113, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12810.051441192627
+	Frame ID: 79
+	Chunk Timestamp: 328056649546
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.1019456
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 114, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12906.968593597412
+	Frame ID: 79
+	Chunk Timestamp: 328098897755
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.104226
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 114, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12793.898582458496
+	Frame ID: 80
+	Chunk Timestamp: 328062930567
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.1519651
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 115, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12906.968593597412
+	Frame ID: 80
+	Chunk Timestamp: 328105201125
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.1545
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 115, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12826.204299926758
+	Frame ID: 81
+	Chunk Timestamp: 328069214813
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.2023058
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 116, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12858.51001739502
+	Frame ID: 81
+	Chunk Timestamp: 328111488764
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.2051065
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 116, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12810.051441192627
+	Frame ID: 82
+	Chunk Timestamp: 328075507451
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.252576
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 117, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12890.815734863281
+	Frame ID: 82
+	Chunk Timestamp: 328117769948
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.2548964
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 117, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12810.051441192627
+	Frame ID: 83
+	Chunk Timestamp: 328081792943
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.3029144
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 118, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13100.862503051758
+	Frame ID: 83
+	Chunk Timestamp: 328124061599
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.3052971
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 118, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13003.945350646973
+	Frame ID: 84
+	Chunk Timestamp: 328088080408
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.3533196
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 119, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13230.085372924805
+	Frame ID: 84
+	Chunk Timestamp: 328130374801
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.3555496
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 119, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13246.238231658936
+	Frame ID: 85
+	Chunk Timestamp: 328094392471
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.4036903
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 120, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13472.378253936768
+	Frame ID: 85
+	Chunk Timestamp: 328136678822
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.4061415
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 120, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13472.378253936768
+	Frame ID: 86
+	Chunk Timestamp: 328100709752
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.4542468
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 121, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13730.823993682861
+	Frame ID: 86
+	Chunk Timestamp: 328142996515
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.4566066
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 121, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13763.129711151123
+	Frame ID: 87
+	Chunk Timestamp: 328107025660
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.5055203
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 122, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14086.246490478516
+	Frame ID: 87
+	Chunk Timestamp: 328149316034
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.5090425
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 122, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14086.246490478516
+	Frame ID: 88
+	Chunk Timestamp: 328113349431
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.5563967
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 123, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14247.775077819824
+	Frame ID: 88
+	Chunk Timestamp: 328155648193
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.5598478
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 123, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14247.775077819824
+	Frame ID: 89
+	Chunk Timestamp: 328119677434
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.607146
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 124, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 89
+	Chunk Timestamp: 328161955729
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.610687
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 124, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14328.539371490479
+	Frame ID: 90
+	Chunk Timestamp: 328125983693
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.6574097
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 125, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14457.762241363525
+	Frame ID: 90
+	Chunk Timestamp: 328168259684
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.6608176
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 125, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14215.469360351562
+	Frame ID: 91
+	Chunk Timestamp: 328132282440
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.7069538
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 126, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14360.84508895874
+	Frame ID: 91
+	Chunk Timestamp: 328174557001
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.7093854
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 126, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14263.927936553955
+	Frame ID: 92
+	Chunk Timestamp: 328138555679
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.7570157
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 127, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14393.150806427002
+	Frame ID: 92
+	Chunk Timestamp: 328180832112
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.7593124
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 127, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14263.927936553955
+	Frame ID: 93
+	Chunk Timestamp: 328144848968
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.8073914
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 128, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14409.303665161133
+	Frame ID: 93
+	Chunk Timestamp: 328187123311
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.8101254
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 128, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14247.775077819824
+	Frame ID: 94
+	Chunk Timestamp: 328151136123
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.8586693
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 129, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14393.150806427002
+	Frame ID: 94
+	Chunk Timestamp: 328193412409
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.862232
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 129, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14263.927936553955
+	Frame ID: 95
+	Chunk Timestamp: 328157420959
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.910088
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 130, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14393.150806427002
+	Frame ID: 95
+	Chunk Timestamp: 328199697702
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.913575
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 130, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14263.927936553955
+	Frame ID: 96
+	Chunk Timestamp: 328163710037
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.9591265
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 131, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14053.940773010254
+	Frame ID: 96
+	Chunk Timestamp: 328205984970
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131973.9624524
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 131, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13940.870761871338
+	Frame ID: 97
+	Chunk Timestamp: 328169997563
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.0105102
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 132, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13843.894004821777
+	Frame ID: 97
+	Chunk Timestamp: 328212229771
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.0139735
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 132, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13746.976852416992
+	Frame ID: 98
+	Chunk Timestamp: 328176244562
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.06056
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 133, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13779.282569885254
+	Frame ID: 98
+	Chunk Timestamp: 328218490880
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.0654325
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 133, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13682.365417480469
+	Frame ID: 99
+	Chunk Timestamp: 328182506393
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.1107142
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 134, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13617.753982543945
+	Frame ID: 99
+	Chunk Timestamp: 328224770538
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.1143508
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 134, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13488.531112670898
+	Frame ID: 100
+	Chunk Timestamp: 328188787633
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.1598074
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 135, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13423.919677734375
+	Frame ID: 100
+	Chunk Timestamp: 328231037994
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.1632595
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 135, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13278.543949127197
+	Frame ID: 101
+	Chunk Timestamp: 328195050333
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.2091722
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 136, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13278.543949127197
+	Frame ID: 101
+	Chunk Timestamp: 328237301198
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.2117496
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 136, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13133.16822052002
+	Frame ID: 102
+	Chunk Timestamp: 328201311614
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.260963
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 137, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13133.16822052002
+	Frame ID: 102
+	Chunk Timestamp: 328243570007
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.2643096
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 137, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13003.945350646973
+	Frame ID: 103
+	Chunk Timestamp: 328207580251
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.3107162
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 138, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12971.580028533936
+	Frame ID: 103
+	Chunk Timestamp: 328249839273
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.3141773
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 138, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12842.357158660889
+	Frame ID: 104
+	Chunk Timestamp: 328213851664
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.359342
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 139, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12874.66287612915
+	Frame ID: 104
+	Chunk Timestamp: 328256106409
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.3616638
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 139, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12696.981430053711
+	Frame ID: 105
+	Chunk Timestamp: 328220119521
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.4097366
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 140, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12987.792491912842
+	Frame ID: 105
+	Chunk Timestamp: 328262381825
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.4120398
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 140, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12842.357158660889
+	Frame ID: 106
+	Chunk Timestamp: 328226388620
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.4595764
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 141, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12939.274311065674
+	Frame ID: 106
+	Chunk Timestamp: 328268683522
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.4618855
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 141, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12793.898582458496
+	Frame ID: 107
+	Chunk Timestamp: 328232693969
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.5099988
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 142, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12939.274311065674
+	Frame ID: 107
+	Chunk Timestamp: 328274964426
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.5122852
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 142, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12777.745723724365
+	Frame ID: 108
+	Chunk Timestamp: 328238975194
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.5603313
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 143, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12955.427169799805
+	Frame ID: 108
+	Chunk Timestamp: 328281251586
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.562621
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 143, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12810.051441192627
+	Frame ID: 109
+	Chunk Timestamp: 328245260920
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.6105456
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 144, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12939.274311065674
+	Frame ID: 109
+	Chunk Timestamp: 328287541559
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.6128008
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 144, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12793.898582458496
+	Frame ID: 110
+	Chunk Timestamp: 328251552057
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.6607277
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 145, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12939.274311065674
+	Frame ID: 110
+	Chunk Timestamp: 328293826619
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.66293
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 145, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12793.898582458496
+	Frame ID: 111
+	Chunk Timestamp: 328257837625
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.7116003
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 146, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13149.32107925415
+	Frame ID: 111
+	Chunk Timestamp: 328300114537
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.714828
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 146, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13052.403926849365
+	Frame ID: 112
+	Chunk Timestamp: 328264125325
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.7613964
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 147, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13343.15538406372
+	Frame ID: 112
+	Chunk Timestamp: 328306428131
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.7636616
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 147, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13262.391090393066
+	Frame ID: 113
+	Chunk Timestamp: 328270445632
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.8119805
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 148, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13601.601123809814
+	Frame ID: 113
+	Chunk Timestamp: 328312740091
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.8142684
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 148, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13536.989688873291
+	Frame ID: 114
+	Chunk Timestamp: 328276759221
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.8624005
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 149, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13827.741146087646
+	Frame ID: 114
+	Chunk Timestamp: 328319060038
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.8647032
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 149, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13860.106468200684
+	Frame ID: 115
+	Chunk Timestamp: 328283080500
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.9131296
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 150, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14199.316501617432
+	Frame ID: 115
+	Chunk Timestamp: 328325375050
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.9153106
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 150, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14150.857925415039
+	Frame ID: 116
+	Chunk Timestamp: 328289407928
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.9637678
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 151, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 116
+	Chunk Timestamp: 328331709075
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131974.9661055
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 151, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14247.775077819824
+	Frame ID: 117
+	Chunk Timestamp: 328295731623
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.014251
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 152, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14425.456523895264
+	Frame ID: 117
+	Chunk Timestamp: 328338018107
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.0165806
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 152, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 118
+	Chunk Timestamp: 328302030532
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.064629
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 153, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14328.539371490479
+	Frame ID: 118
+	Chunk Timestamp: 328344311151
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.066861
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 153, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14263.927936553955
+	Frame ID: 119
+	Chunk Timestamp: 328308333445
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.1151469
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 154, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 119
+	Chunk Timestamp: 328350585616
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.1174493
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 154, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14296.233654022217
+	Frame ID: 120
+	Chunk Timestamp: 328314606368
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.1655676
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 155, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 120
+	Chunk Timestamp: 328356878768
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.1682012
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 155, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14312.386512756348
+	Frame ID: 121
+	Chunk Timestamp: 328320897094
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.2179859
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 156, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14360.84508895874
+	Frame ID: 121
+	Chunk Timestamp: 328363166107
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.221406
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 156, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14296.233654022217
+	Frame ID: 122
+	Chunk Timestamp: 328327186340
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.2671113
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 157, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 122
+	Chunk Timestamp: 328369451334
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.270612
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 157, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14296.233654022217
+	Frame ID: 123
+	Chunk Timestamp: 328333472351
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.3184485
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 158, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 123
+	Chunk Timestamp: 328375740300
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.322217
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 158, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14021.635055541992
+	Frame ID: 124
+	Chunk Timestamp: 328339759562
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.3687837
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 159, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14037.787914276123
+	Frame ID: 124
+	Chunk Timestamp: 328382027725
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.3721962
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 159, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13827.741146087646
+	Frame ID: 125
+	Chunk Timestamp: 328346012298
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.4186332
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 160, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13892.412185668945
+	Frame ID: 125
+	Chunk Timestamp: 328388272735
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.4222107
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 160, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13746.976852416992
+	Frame ID: 126
+	Chunk Timestamp: 328352274902
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.4677489
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 161, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13779.282569885254
+	Frame ID: 126
+	Chunk Timestamp: 328394541758
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.4711993
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 161, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13553.142547607422
+	Frame ID: 127
+	Chunk Timestamp: 328358552490
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.5180836
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 162, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13585.448265075684
+	Frame ID: 127
+	Chunk Timestamp: 328400814748
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.5216043
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 162, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13359.308242797852
+	Frame ID: 128
+	Chunk Timestamp: 328364815648
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.5669289
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 163, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13375.461101531982
+	Frame ID: 128
+	Chunk Timestamp: 328407077906
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.569107
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 163, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13197.779655456543
+	Frame ID: 129
+	Chunk Timestamp: 328371079025
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.617307
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 164, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13327.00252532959
+	Frame ID: 129
+	Chunk Timestamp: 328413339589
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.619628
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 164, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13084.709644317627
+	Frame ID: 130
+	Chunk Timestamp: 328377346206
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.6671798
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 165, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13117.015361785889
+	Frame ID: 130
+	Chunk Timestamp: 328419620742
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.669497
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 165, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12923.121452331543
+	Frame ID: 131
+	Chunk Timestamp: 328383620208
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.717587
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 166, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12971.580028533936
+	Frame ID: 131
+	Chunk Timestamp: 328425882395
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.719762
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 166, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12777.745723724365
+	Frame ID: 132
+	Chunk Timestamp: 328389888061
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.7679806
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 167, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12874.66287612915
+	Frame ID: 132
+	Chunk Timestamp: 328432152165
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.7705219
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 167, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12680.82857131958
+	Frame ID: 133
+	Chunk Timestamp: 328396157435
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.8178072
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 168, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12987.792491912842
+	Frame ID: 133
+	Chunk Timestamp: 328438427942
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.8201501
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 168, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12793.898582458496
+	Frame ID: 134
+	Chunk Timestamp: 328402432795
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.86812
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 169, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12939.274311065674
+	Frame ID: 134
+	Chunk Timestamp: 328444729369
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.8704846
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 169, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12745.440006256104
+	Frame ID: 135
+	Chunk Timestamp: 328408734929
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.9186316
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 170, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12939.274311065674
+	Frame ID: 135
+	Chunk Timestamp: 328451011484
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.9214401
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 170, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12745.440006256104
+	Frame ID: 136
+	Chunk Timestamp: 328415016535
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.9684515
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 171, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12955.427169799805
+	Frame ID: 136
+	Chunk Timestamp: 328457298980
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131975.9705818
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 171, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12761.592864990234
+	Frame ID: 137
+	Chunk Timestamp: 328421303619
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.0188608
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 172, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12939.274311065674
+	Frame ID: 137
+	Chunk Timestamp: 328463588409
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.021175
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 172, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12745.440006256104
+	Frame ID: 138
+	Chunk Timestamp: 328427593139
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.0691814
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 173, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12939.274311065674
+	Frame ID: 138
+	Chunk Timestamp: 328469873580
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.0714457
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 173, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12939.274311065674
+	Frame ID: 139
+	Chunk Timestamp: 328433878509
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.1197584
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 174, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13149.32107925415
+	Frame ID: 139
+	Chunk Timestamp: 328476161254
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.1220279
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 174, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13181.626796722412
+	Frame ID: 140
+	Chunk Timestamp: 328440190200
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.1700826
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 175, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13407.766819000244
+	Frame ID: 140
+	Chunk Timestamp: 328482475168
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.1722853
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 175, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13343.15538406372
+	Frame ID: 141
+	Chunk Timestamp: 328446508148
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.221667
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 176, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13633.906841278076
+	Frame ID: 141
+	Chunk Timestamp: 328488794667
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.2265463
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 176, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13666.212558746338
+	Frame ID: 142
+	Chunk Timestamp: 328452815938
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.270941
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 177, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13989.32933807373
+	Frame ID: 142
+	Chunk Timestamp: 328495110412
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.2731435
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 177, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13973.1764793396
+	Frame ID: 143
+	Chunk Timestamp: 328459143498
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.3219073
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 178, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14296.233654022217
+	Frame ID: 143
+	Chunk Timestamp: 328501442255
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.324321
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 178, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14199.316501617432
+	Frame ID: 144
+	Chunk Timestamp: 328465469431
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.3721952
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 179, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14393.150806427002
+	Frame ID: 144
+	Chunk Timestamp: 328507768320
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.3743994
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 179, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14296.233654022217
+	Frame ID: 145
+	Chunk Timestamp: 328471784912
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.42282
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 180, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14457.762241363525
+	Frame ID: 145
+	Chunk Timestamp: 328514067723
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.4251204
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 180, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 146
+	Chunk Timestamp: 328478084716
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.4731584
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 181, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 146
+	Chunk Timestamp: 328520363677
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.4753988
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 181, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14296.233654022217
+	Frame ID: 147
+	Chunk Timestamp: 328484382369
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.523692
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 182, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14409.303665161133
+	Frame ID: 147
+	Chunk Timestamp: 328526640578
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.5260077
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 182, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14328.539371490479
+	Frame ID: 148
+	Chunk Timestamp: 328490660237
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.5739903
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 183, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14409.303665161133
+	Frame ID: 148
+	Chunk Timestamp: 328532932403
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.5762608
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 183, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14328.539371490479
+	Frame ID: 149
+	Chunk Timestamp: 328496951603
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.6243644
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 184, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14393.150806427002
+	Frame ID: 149
+	Chunk Timestamp: 328539220433
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.6266165
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 184, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14312.386512756348
+	Frame ID: 150
+	Chunk Timestamp: 328503239985
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.6744163
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 185, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14409.303665161133
+	Frame ID: 150
+	Chunk Timestamp: 328545506250
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.67693
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 185, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14053.940773010254
+	Frame ID: 151
+	Chunk Timestamp: 328509525222
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.7249181
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 186, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14070.093631744385
+	Frame ID: 151
+	Chunk Timestamp: 328551795877
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.727196
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 186, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13908.565044403076
+	Frame ID: 152
+	Chunk Timestamp: 328515780680
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.7751505
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 187, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13860.106468200684
+	Frame ID: 152
+	Chunk Timestamp: 328558040929
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.7778563
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 187, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13827.741146087646
+	Frame ID: 153
+	Chunk Timestamp: 328522050409
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.8250527
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 188, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13795.435428619385
+	Frame ID: 153
+	Chunk Timestamp: 328564302947
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.8272395
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 188, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13617.753982543945
+	Frame ID: 154
+	Chunk Timestamp: 328528328821
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.875047
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 189, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13633.906841278076
+	Frame ID: 154
+	Chunk Timestamp: 328570582865
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.8771758
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 189, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13423.919677734375
+	Frame ID: 155
+	Chunk Timestamp: 328534590123
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.9261627
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 190, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13440.072536468506
+	Frame ID: 155
+	Chunk Timestamp: 328576850677
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.9295223
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 190, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13262.391090393066
+	Frame ID: 156
+	Chunk Timestamp: 328540854156
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.9751315
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 191, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13246.238231658936
+	Frame ID: 156
+	Chunk Timestamp: 328583114578
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131976.9773393
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 191, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13133.16822052002
+	Frame ID: 157
+	Chunk Timestamp: 328547121973
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.0255854
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 192, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13133.16822052002
+	Frame ID: 157
+	Chunk Timestamp: 328589378890
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.0278955
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 192, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12987.792491912842
+	Frame ID: 158
+	Chunk Timestamp: 328553394048
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.075813
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 193, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13020.098209381104
+	Frame ID: 158
+	Chunk Timestamp: 328595652552
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.0781474
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 193, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12842.357158660889
+	Frame ID: 159
+	Chunk Timestamp: 328559664057
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.1256893
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 194, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12874.66287612915
+	Frame ID: 159
+	Chunk Timestamp: 328601926345
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.1279383
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 194, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12745.440006256104
+	Frame ID: 160
+	Chunk Timestamp: 328565934030
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.1758506
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 195, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13003.945350646973
+	Frame ID: 160
+	Chunk Timestamp: 328608196426
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.1781392
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 195, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12858.51001739502
+	Frame ID: 161
+	Chunk Timestamp: 328572209767
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.2262356
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 196, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12971.580028533936
+	Frame ID: 161
+	Chunk Timestamp: 328614500137
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.2286487
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 196, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12810.051441192627
+	Frame ID: 162
+	Chunk Timestamp: 328578511962
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.2764428
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 197, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12955.427169799805
+	Frame ID: 162
+	Chunk Timestamp: 328620784464
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.278694
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 197, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12810.051441192627
+	Frame ID: 163
+	Chunk Timestamp: 328584793441
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.3267314
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 198, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12971.580028533936
+	Frame ID: 163
+	Chunk Timestamp: 328627069788
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.328965
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 198, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12826.204299926758
+	Frame ID: 164
+	Chunk Timestamp: 328591081085
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.3773751
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 199, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12971.580028533936
+	Frame ID: 164
+	Chunk Timestamp: 328633359471
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.3795402
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 199, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12810.051441192627
+	Frame ID: 165
+	Chunk Timestamp: 328597370951
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.4274142
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 200, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12971.580028533936
+	Frame ID: 165
+	Chunk Timestamp: 328639647593
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.4298182
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 200, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12810.051441192627
+	Frame ID: 166
+	Chunk Timestamp: 328603656870
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.477919
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 201, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13181.626796722412
+	Frame ID: 166
+	Chunk Timestamp: 328645935246
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.4802127
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 201, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13020.098209381104
+	Frame ID: 167
+	Chunk Timestamp: 328609944712
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.5279884
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 202, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13375.461101531982
+	Frame ID: 167
+	Chunk Timestamp: 328652249323
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.5303247
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 202, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13262.391090393066
+	Frame ID: 168
+	Chunk Timestamp: 328616258412
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.5797539
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 203, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13650.059700012207
+	Frame ID: 168
+	Chunk Timestamp: 328658561528
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.5833094
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 203, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13553.142547607422
+	Frame ID: 169
+	Chunk Timestamp: 328622576242
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.6312954
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 204, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14005.482196807861
+	Frame ID: 169
+	Chunk Timestamp: 328664883615
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.6348374
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 204, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13860.106468200684
+	Frame ID: 170
+	Chunk Timestamp: 328628900146
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.6818178
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 205, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14167.01078414917
+	Frame ID: 170
+	Chunk Timestamp: 328671215158
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.6851792
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 205, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14150.857925415039
+	Frame ID: 171
+	Chunk Timestamp: 328635226343
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.7313664
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 206, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14360.84508895874
+	Frame ID: 171
+	Chunk Timestamp: 328677522908
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.734891
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 206, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14328.539371490479
+	Frame ID: 172
+	Chunk Timestamp: 328641550567
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.7830906
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 207, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14473.915100097656
+	Frame ID: 172
+	Chunk Timestamp: 328683834991
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.7866642
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 207, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14409.303665161133
+	Frame ID: 173
+	Chunk Timestamp: 328647860493
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.8325975
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 208, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14328.539371490479
+	Frame ID: 173
+	Chunk Timestamp: 328690137206
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.83607
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 208, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14296.233654022217
+	Frame ID: 174
+	Chunk Timestamp: 328654159037
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.8820667
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 209, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14393.150806427002
+	Frame ID: 174
+	Chunk Timestamp: 328696407496
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.8843145
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 209, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14344.69223022461
+	Frame ID: 175
+	Chunk Timestamp: 328660433410
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.932198
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 210, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14393.150806427002
+	Frame ID: 175
+	Chunk Timestamp: 328702703353
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.9345715
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 210, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14344.69223022461
+	Frame ID: 176
+	Chunk Timestamp: 328666727081
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.9822605
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 211, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14376.997947692871
+	Frame ID: 176
+	Chunk Timestamp: 328708991358
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131977.9845889
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 211, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14328.539371490479
+	Frame ID: 177
+	Chunk Timestamp: 328673014958
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.0327373
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 212, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14167.01078414917
+	Frame ID: 177
+	Chunk Timestamp: 328715277023
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.0351596
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 212, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14070.093631744385
+	Frame ID: 178
+	Chunk Timestamp: 328679301198
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.0828393
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 213, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 14037.787914276123
+	Frame ID: 178
+	Chunk Timestamp: 328721539250
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.0850854
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 213, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13924.717903137207
+	Frame ID: 179
+	Chunk Timestamp: 328685557057
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.1332479
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 214, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13924.717903137207
+	Frame ID: 179
+	Chunk Timestamp: 328727811223
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.1355278
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 214, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13843.894004821777
+	Frame ID: 180
+	Chunk Timestamp: 328691826792
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.1829994
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 215, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13763.129711151123
+	Frame ID: 180
+	Chunk Timestamp: 328734085138
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.18523
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 215, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13633.906841278076
+	Frame ID: 181
+	Chunk Timestamp: 328698104115
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.2335026
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 216, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13585.448265075684
+	Frame ID: 181
+	Chunk Timestamp: 328740352432
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.2368517
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 216, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13440.072536468506
+	Frame ID: 182
+	Chunk Timestamp: 328704365997
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.2854717
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 217, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13440.072536468506
+	Frame ID: 182
+	Chunk Timestamp: 328746618265
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.289829
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 217, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13278.543949127197
+	Frame ID: 183
+	Chunk Timestamp: 328710629104
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.333785
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 218, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13278.543949127197
+	Frame ID: 183
+	Chunk Timestamp: 328752887649
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.3364537
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 218, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13149.32107925415
+	Frame ID: 184
+	Chunk Timestamp: 328716897486
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.3838933
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 219, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13133.16822052002
+	Frame ID: 184
+	Chunk Timestamp: 328759155232
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.3861713
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 219, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13003.945350646973
+	Frame ID: 185
+	Chunk Timestamp: 328723168848
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.4340405
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 220, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13020.098209381104
+	Frame ID: 185
+	Chunk Timestamp: 328765425028
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.436652
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 220, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12858.51001739502
+	Frame ID: 186
+	Chunk Timestamp: 328729438313
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.484008
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 221, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12890.815734863281
+	Frame ID: 186
+	Chunk Timestamp: 328771698389
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.4863534
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 221, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12713.134288787842
+	Frame ID: 187
+	Chunk Timestamp: 328735707224
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.534371
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 222, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13020.098209381104
+	Frame ID: 187
+	Chunk Timestamp: 328777969970
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.5376458
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 222, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12616.217136383057
+	Frame ID: 188
+	Chunk Timestamp: 328741976369
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.5842462
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 223, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12971.580028533936
+	Frame ID: 188
+	Chunk Timestamp: 328784272969
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.586593
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 223, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12729.287147521973
+	Frame ID: 189
+	Chunk Timestamp: 328748251200
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.6344445
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 224, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12745.440006256104
+	Frame ID: 189
+	Chunk Timestamp: 328790553939
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.6369205
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 224, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12680.82857131958
+	Frame ID: 190
+	Chunk Timestamp: 328754552429
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.6850648
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 225, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12906.968593597412
+	Frame ID: 190
+	Chunk Timestamp: 328796812835
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.6873589
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 225, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12680.82857131958
+	Frame ID: 191
+	Chunk Timestamp: 328760833501
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.7351878
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 226, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12874.66287612915
+	Frame ID: 191
+	Chunk Timestamp: 328803119918
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.7376122
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 226, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12696.981430053711
+	Frame ID: 192
+	Chunk Timestamp: 328767121256
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.7855492
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 227, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12842.357158660889
+	Frame ID: 192
+	Chunk Timestamp: 328809403762
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.7879758
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 227, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12680.82857131958
+	Frame ID: 193
+	Chunk Timestamp: 328773410446
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.836422
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 228, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13084.709644317627
+	Frame ID: 193
+	Chunk Timestamp: 328815687336
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.8395162
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 228, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 12987.792491912842
+	Frame ID: 194
+	Chunk Timestamp: 328779696075
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.8870394
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 229, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13327.00252532959
+	Frame ID: 194
+	Chunk Timestamp: 328822004562
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.8906202
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 229, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13181.626796722412
+	Frame ID: 195
+	Chunk Timestamp: 328786021112
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.9377022
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 230, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13536.989688873291
+	Frame ID: 195
+	Chunk Timestamp: 328828321995
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.9411392
+
+Camera 1 serial number set to 17528370...
+Camera 1 grabbed image 230, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13472.378253936768
+	Frame ID: 196
+	Chunk Timestamp: 328792332900
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.9881444
+
+Use the hardware to trigger image acquisition.
+Camera 0 serial number set to 18060270...
+Camera 0 grabbed image 231, width = 1600, height = 1200
+Printing chunk data from image...
+<class 'PySpin.ImagePtr'>
+	Exposure time: 13779.282569885254
+	Frame ID: 196
+	Chunk Timestamp: 328834635492
+	Width: 1600
+	 Image Timestamp from timestamp_offset: 1675131978.9916916
+
+Camera 1 serial number set to 17528370...
+Traceback (most recent call last):
+  File "HardTriggerSyncChunk.py", line 718, in <module>
+    if main():
+  File "HardTriggerSyncChunk.py", line 704, in main
+    result = run_multiple_cameras(cam_list)
+  File "HardTriggerSyncChunk.py", line 637, in run_multiple_cameras
+    result &= acquire_images(cam_list)
+  File "HardTriggerSyncChunk.py", line 475, in acquire_images
+    image_result = cam.GetNextImage(50)
+  File "/home/golfcart2/.local/lib/python3.8/site-packages/PySpin.py", line 34320, in GetNextImage
+    return _PySpin._SWIG_CamPtr_GetNextImage(self, *args)
+KeyboardInterrupt
+terminate called after throwing an instance of 'Spinnaker::Exception'
+  what():  Spinnaker: Can't clear a camera because something still holds a reference to the camera [-1004]
