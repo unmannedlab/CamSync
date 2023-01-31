@@ -24,7 +24,7 @@ def compute_timestamp_offset(cam):
     # Latch timestamp. This basically "freezes" the current camera timer into a variable that can be read with
     TimestampControlLatch = PySpin.CCommandPtr(nodemap.GetNode('GevTimestampControlLatch'))
     TimestampControlLatch.Execute()
-    camera_time = nodemap.GetNode('GevTimeStampValue').GetValue()
+    camera_time = PySpin.CIntegerPtr(nodemap.GetNode('GevTimeStampValue')).GetValue()
     # Compute timestamp offset in seconds; note that timestamp latch value is in nanoseconds
     timestamp_offset = datetime.datetime.now().timestamp() - camera_time/1e9
 
