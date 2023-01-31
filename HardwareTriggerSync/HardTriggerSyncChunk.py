@@ -24,7 +24,7 @@ def compute_timestamp_offset(cam):
     # Latch timestamp. This basically "freezes" the current camera timer into a variable that can be read with
     TimestampControlLatch = PySpin.CCommandPtr(nodemap.GetNode('GevTimestampControlLatch'))
     TimestampControlLatch.Execute()
-    camera_time = PySpin.CIntegerPtr(nodemap.GetNode('GevTimeStampValue')).GetValue()
+    camera_time = PySpin.CIntegerPtr(nodemap.GetNode('GevTimestampValue')).GetValue()
     # Compute timestamp offset in seconds; note that timestamp latch value is in nanoseconds
     timestamp_offset = datetime.datetime.now().timestamp() - camera_time/1e9
 
@@ -195,6 +195,7 @@ def display_chunk_data_from_image(image):
         # *** NOTES ***
         # When retrieving chunk data from an image, the data is stored in a
         # ChunkData object and accessed with getter functions.
+        global chunk_data
         chunk_data = image.GetChunkData()
 
         # Retrieve exposure time (recorded in microseconds)
@@ -481,8 +482,8 @@ def acquire_images(cam_list):
                         height = image_result.GetHeight()
                         print('Camera %d grabbed image %d, width = %d, height = %d' % (i, n, width, height))
                         display_chunk_data_from_image(image_result)
-                        print('\t Image Timestamp from timestamp_offset: {}'.format(compute_timestamp_offset(cam) + image_result.GetChunkData().GetTimeStamp()/1e9))
-                        print('\t Timestamp from image.GetTimeStamp(): {}'.format(image_result.GetTimeStamp()))
+                        print('\t Image Timestamp from timestamp_offset: {}'.format(compute_timestamp_offset(cam) + chunk_data.GetTimestamp()/1e9))
+                        # print('\t Timestamp from image.GetTimeStamp(): {}'.format(image_result.GetTimestamp()))
 
                     # Release image
                     image_result.Release()
