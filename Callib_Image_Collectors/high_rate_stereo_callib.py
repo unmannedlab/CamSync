@@ -5,6 +5,8 @@ import time
 import statistics
 import datetime
 
+# Assuming Hardware trigger is running at 10Hz
+
 NUM_IMAGES = 1000000  # number of images to grab
 
 class TriggerType:
