@@ -200,7 +200,7 @@ def display_chunk_data_from_image(image):
 
         # Retrieve exposure time (recorded in microseconds)
         exposure_time = chunk_data.GetExposureTime()
-        print('\tExposure time: {}'.format(exposure_time))
+        print('\tExposure time in microseconds: {}'.format(exposure_time))
 
         # Retrieve frame ID
         frame_id = chunk_data.GetFrameID()
@@ -228,7 +228,7 @@ def display_chunk_data_from_image(image):
 
         # Retrieve timestamp
         timestamp = chunk_data.GetTimestamp()
-        print('\tChunk Timestamp: {}'.format(timestamp))
+        print('\tChunk Timestamp in ns: {}'.format(timestamp))
         # print('\tImage Timestamp: {}'.format(image.GetTimeStamp()/1e9))
         # print('\t System Time: {}'.format(timeholder))
         # print('\tError in Chunk and Sys: %d' % (timeholder - (timestamp*8 + exposure_time)))
@@ -482,7 +482,7 @@ def acquire_images(cam_list):
                         height = image_result.GetHeight()
                         print('Camera %d grabbed image %d, width = %d, height = %d' % (i, n, width, height))
                         display_chunk_data_from_image(image_result)
-                        print('\t Image Timestamp from timestamp_offset: {}'.format(compute_timestamp_offset(cam) + chunk_data.GetTimestamp()/1e9))
+                        print('\t Image Timestamp from timestamp_offset in s: {}'.format(compute_timestamp_offset(cam) + image_result.GetTimestamp()/1e9))
                         # print('\t Timestamp from image.GetTimeStamp(): {}'.format(image_result.GetTimestamp()))
 
                     # Release image
