@@ -9,7 +9,7 @@ import datetime
 
 TriggerRate = 10
 
-AcquisitionDelay = TriggerRate + 15
+AcquisitionDelay = TriggerRate + 20
 
 NUM_IMAGES = 1000000  # number of images to grab
 
