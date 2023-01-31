@@ -7,6 +7,10 @@ import datetime
 
 # Assuming Hardware trigger is running at 10Hz
 
+TriggerRate = 10
+
+AcquisitionDelay = TriggerRate + 15
+
 NUM_IMAGES = 1000000  # number of images to grab
 
 class TriggerType:
@@ -577,7 +581,7 @@ def acquire_images(cam_list):
                         print('Camera %d serial number set to %s...' % (i, device_serial_number))
 
                     # Retrieve next received image and ensure image completion
-                    image_result = cam.GetNextImage(110)
+                    image_result = cam.GetNextImage(AcquisitionDelay)
 
                     if image_result.IsIncomplete():
                         print('Image incomplete with image status %d ... \n' % image_result.GetImageStatus())
