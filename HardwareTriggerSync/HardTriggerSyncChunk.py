@@ -24,7 +24,7 @@ def compute_timestamp_offset(cam):
     # Latch timestamp. This basically "freezes" the current camera timer into a variable that can be read with
     TimestampControlLatch = PySpin.CCommandPtr(nodemap.GetNode('GevTimestampControlLatch'))
     TimestampControlLatch.Execute()
-    camera_time = PySpin.CIntegerPtr(nodemap.GetNode('GevTimeStampValue')).GetValue()
+    camera_time = PySpin.CIntegerPtr(nodemap.GetNode('GevTimestampValue')).GetValue()
     # Compute timestamp offset in seconds; note that timestamp latch value is in nanoseconds
     timestamp_offset = datetime.datetime.now().timestamp() - camera_time/1e9
 
@@ -229,10 +229,7 @@ def display_chunk_data_from_image(image):
         # Retrieve timestamp
         timestamp = chunk_data.GetTimestamp()
         print('\tChunk Timestamp: {}'.format(timestamp))
-        # print('\tImage Timestamp: {}'.format(image.GetTimeStamp()/1e9))
-        # print('\t System Time: {}'.format(timeholder))
-        # print('\tError in Chunk and Sys: %d' % (timeholder - (timestamp*8 + exposure_time)))
-
+        
         # Retrieve width; width recorded in pixels
         width = chunk_data.GetWidth()
         print('\tWidth: {}'.format(width))
@@ -461,6 +458,7 @@ def acquire_images(cam_list):
         for n in range(NUM_IMAGES):
             global timeholder
             grab_next_image_by_trigger(cam_list)
+            timeholder = time.time_ns()
             for i, cam in enumerate(cam_list):
                 try:
                     # Retrieve device serial number for filename
@@ -472,7 +470,7 @@ def acquire_images(cam_list):
 
                     # Retrieve next received image and ensure image completion
                     image_result = cam.GetNextImage(50)
-                                        
+
                     if image_result.IsIncomplete():
                         print('Image incomplete with image status %d ... \n' % image_result.GetImageStatus())
                     else:
@@ -481,8 +479,9 @@ def acquire_images(cam_list):
                         height = image_result.GetHeight()
                         print('Camera %d grabbed image %d, width = %d, height = %d' % (i, n, width, height))
                         display_chunk_data_from_image(image_result)
-                        print('\t Image Timestamp from timestamp_offset: {}'.format(compute_timestamp_offset(cam) + chunk_data.GetTimeStamp()/1e9))
-                        print('\t Timestamp from image.GetTimeStamp(): {}'.format(image_result.GetTimeStamp()))
+                        print('\tTimestamp from image.GetTimeStamp(): {}'.format(image_result.GetTimestamp()))
+                        print('\tImage Timestamp from timestamp_offset: {}'.format(compute_timestamp_offset(cam) + chunk_data.GetTimestamp()/1e9))
+                        
 
                     # Release image
                     image_result.Release()
