@@ -228,7 +228,7 @@ def display_chunk_data_from_image(image):
 
         # Retrieve timestamp
         timestamp = chunk_data.GetTimestamp()
-        print('\tChunk Timestamp in ns: {}'.format(timestamp))
+        print('\tChunk Timestamp (mutliply by 8 to get in ns): {}'.format(timestamp))
         # print('\tImage Timestamp: {}'.format(image.GetTimeStamp()/1e9))
         # print('\t System Time: {}'.format(timeholder))
         # print('\tError in Chunk and Sys: %d' % (timeholder - (timestamp*8 + exposure_time)))
@@ -482,7 +482,7 @@ def acquire_images(cam_list):
                         height = image_result.GetHeight()
                         print('Camera %d grabbed image %d, width = %d, height = %d' % (i, n, width, height))
                         display_chunk_data_from_image(image_result)
-                        print('\t Image Timestamp from timestamp_offset in s: {}'.format(compute_timestamp_offset(cam) + image_result.GetTimestamp()/1e9))
+                        print('\t Image Timestamp from timestamp_offset in s: {}'.format(compute_timestamp_offset(cam) + image_result.GetTimeStamp()/1e9))
                         # print('\t Timestamp from image.GetTimeStamp(): {}'.format(image_result.GetTimestamp()))
 
                     # Release image
