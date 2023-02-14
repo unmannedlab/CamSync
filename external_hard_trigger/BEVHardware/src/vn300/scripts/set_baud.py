@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 from read_vn300 import gps;
 import serial;
 import time;
