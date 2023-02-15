@@ -10,7 +10,7 @@
       camera itself. Use the parameter 'control_frame_rate' to enable manual frame 
       rate control, and 'frame_rate' to set the frame rate value. -->
   <arg name="control_frame_rate"        default="False" />
-  <arg name="frame_rate"                default="30" />
+  <arg name="frame_rate"                default="50" />
 
   <!-- Disabling ISP will dramatically increase frame-rate. However, it can only be 
       disabled when using Bayer encoding (e.g. BayerRG8)-->
@@ -18,7 +18,7 @@
   <arg name="encoding"                  default="BayerRG8" />
   <arg name="color_balance"             default="Continuous" /> <!-- Off, Once, or Continuous -->
 
-  <group ns="center_camera_manager">
+  <group ns="center">
     <!-- Nodelet manager -->
     <node pkg="nodelet" type="nodelet" name="center_camera_nodelet_manager" args="manager" cwd="node" output="screen"/>
 
@@ -35,9 +35,9 @@
       <param name="exposure_auto"                   value="Off">
       <param name="exposure_time"                   value="20000.0"/>
 
-      <!-- Frame rate -->
+      <!-- Frame rate 
       <param name="acquisition_frame_rate_enable"   value="$(arg control_frame_rate)" />
-      <param name="acquisition_frame_rate"          value="$(arg frame_rate)" />
+      <param name="acquisition_frame_rate"          value="$(arg frame_rate)" /> -->
 
       <!-- Image Processing -->
       <param name="isp_enable"                      value="$(arg isp_enable)" />
@@ -59,11 +59,12 @@
     <!-- Debayering nodelet -->
     <node pkg="nodelet" type="nodelet" name="center_image_proc_debayer"
           args="load image_proc/debayer center_camera_nodelet_manager">
+    </node>
 
     </group>
 
 
-    <group ns="front_left">
+    <group ns="left">
 
     <node pkg="nodelet" type="nodelet" name="left"
           args="load spinnaker_camera_driver/SpinnakerCameraNodelet left_camera_nodelet_manager" >
@@ -77,9 +78,9 @@
       <param name="exposure_auto"                   value="Off">
       <param name="exposure_time"                   value="20000.0"/>
 
-      <!-- Frame rate -->
+      <!-- Frame rate 
       <param name="acquisition_frame_rate_enable"   value="$(arg control_frame_rate)" />
-      <param name="acquisition_frame_rate"          value="$(arg frame_rate)" />
+      <param name="acquisition_frame_rate"          value="$(arg frame_rate)" /> -->
 
       <!-- Image Processing -->
       <param name="isp_enable"                      value="$(arg isp_enable)" />
@@ -104,7 +105,7 @@
     </node>
     </group>
 
-    <group ns="front_right">     
+    <group ns="right">     
 
     <!-- Camera nodelet -->
     <node pkg="nodelet" type="nodelet" name="right"
@@ -119,9 +120,9 @@
       <param name="exposure_auto"                   value="Off">
       <param name="exposure_time"                   value="20000.0"/>
 
-      <!-- Frame rate -->
+      <!-- Frame rate 
       <param name="acquisition_frame_rate_enable"   value="$(arg control_frame_rate)" />
-      <param name="acquisition_frame_rate"          value="$(arg frame_rate)" />
+      <param name="acquisition_frame_rate"          value="$(arg frame_rate)" /> -->
 
       <!-- Image Processing -->
       <param name="isp_enable"                      value="$(arg isp_enable)" />
@@ -144,4 +145,5 @@
           args="load image_proc/debayer right_camera_nodelet_manager">
     </node>
     </group>
+    
 </launch>

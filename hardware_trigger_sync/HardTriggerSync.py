@@ -587,7 +587,7 @@ def acquire_images(cam_list):
                         height = image_result.GetHeight()
                         print('Camera %d grabbed image %d, width = %d, height = %d' % (i, n, width, height))
                         display_chunk_data_from_image(image_result)
-                        print('\t Image Timestamp from timestamp_offset in s: {}'.format(compute_timestamp_offset(cam) + image_result.GetTimeStamp()/1e9))
+                        print('\tImage Timestamp from timestamp_offset in s: {}'.format(compute_timestamp_offset(cam) + image_result.GetTimeStamp()/1e9))
                         # print('\t Timestamp from image.GetTimeStamp(): {}'.format(image_result.GetTimestamp()))
 
                     # Release image
