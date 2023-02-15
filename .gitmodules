@@ -1,0 +1,13 @@
+[submodule "external_hard_trigger/BEVHardware/src/vectornav"]
+	path = external_hard_trigger/BEVHardware/src/vectornav
+	url = https://github.com/dawonn/vectornav.git
+[submodule "external_hard_trigger/BEVHardware/src/pointgrey_camera_driver"]
+	path = external_hard_trigger/BEVHardware/src/pointgrey_camera_driver
+	url = https://github.com/ros-drivers/pointgrey_camera_driver.git
+[submodule "external_hard_trigger/BEVHardware/src/velodyne"]
+	path = external_hard_trigger/BEVHardware/src/velodyne
+	url = https://github.com/ros-drivers/velodyne.git
+[submodule "external_hard_trigger/BEVHardware/src/flir_camera_driver"]
+	path = external_hard_trigger/BEVHardware/src/flir_camera_driver
+	url = https://github.com/ros-drivers/flir_camera_driver.git
+	branch = noetic-devel
