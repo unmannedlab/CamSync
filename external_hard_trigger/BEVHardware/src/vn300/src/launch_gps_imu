@@ -1,0 +1,4 @@
+cd ..
+cd scripts
+python set_baud.py
+roslaunch vn300 vn200.launch
