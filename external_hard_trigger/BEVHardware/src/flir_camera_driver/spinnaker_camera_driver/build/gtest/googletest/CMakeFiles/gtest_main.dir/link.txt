@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC -g  -shared -Wl,-soname,libgtest_maind.so -o ../lib/libgtest_maind.so CMakeFiles/gtest_main.dir/src/gtest_main.cc.o  -Wl,-rpath,/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build/gtest/lib ../lib/libgtestd.so -lpthread 

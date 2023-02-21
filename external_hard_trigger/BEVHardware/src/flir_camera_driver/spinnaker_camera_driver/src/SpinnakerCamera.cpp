@@ -301,6 +301,7 @@ void SpinnakerCamera::start()
 {
   try
   {
+    
     // Check if camera is connected
     if (pCam_ && !captureRunning_)
     {
@@ -337,12 +338,13 @@ void SpinnakerCamera::grabImage(sensor_msgs::Image* image, const std::string& fr
   std::lock_guard<std::mutex> scopedLock(mutex_);
 
   // Check if Camera is connected and Running
+  regrab:
   if (pCam_ && captureRunning_)
   {
     // Handle "Image Retrieval" Exception
     try
     {
-      Spinnaker::ImagePtr image_ptr = pCam_->GetNextImage(timeout_);
+      Spinnaker::ImagePtr image_ptr = pCam_->GetNextImage();
       //  std::string format(image_ptr->GetPixelFormatName());
       //  std::printf("\033[100m format: %s \n", format.c_str());
 
@@ -456,8 +458,10 @@ void SpinnakerCamera::grabImage(sensor_msgs::Image* image, const std::string& fr
     catch (const Spinnaker::Exception& e)
     {
       throw std::runtime_error("[SpinnakerCamera::grabImage] Failed to retrieve buffer with error: " +
-                               std::string(e.what()));
+                               std::string(e.what()));  
+      
     }
+    
   }
   else if (pCam_)
   {

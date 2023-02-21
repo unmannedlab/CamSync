@@ -173,7 +173,7 @@ int main(int argc, char * argv[])
   int SensorBaudrate;
   int async_output_rate;
   int imu_output_rate;
-  int SyncOutSkipCount;
+  int sync_out_skip_count;
 
   // Sensor IMURATE (800Hz by default, used to configure device)
   int SensorImuRate;
@@ -189,7 +189,7 @@ int main(int argc, char * argv[])
   pn.param<std::string>("serial_port", SensorPort, "/dev/ttyUSB0");
   pn.param<int>("serial_baud", SensorBaudrate, 115200);
   pn.param<int>("fixed_imu_rate", SensorImuRate, 800);
-  pn.param<int>("sync_out_skip_count", SyncOutSkipCount, 5);
+  pn.param<int>("sync_out_skip_count", sync_out_skip_count, 0);
 
   //Call to set covariances
   if (pn.getParam("linear_accel_covariance", rpc_temp)) {
@@ -293,7 +293,7 @@ int main(int argc, char * argv[])
   ROS_INFO("Package Receive Rate: %d Hz", package_rate);
   ROS_INFO("General Publish Rate: %d Hz", async_output_rate);
   ROS_INFO("IMU Publish Rate: %d Hz", imu_output_rate);
-  
+
   // Set the device info for passing to the packet callback function
   user_data.device_family = vs.determineDeviceFamily();
 
@@ -304,13 +304,9 @@ int main(int argc, char * argv[])
   syncer.syncOutMode = SYNCOUTMODE_IMUREADY;
   syncer.syncOutPolarity = SYNCOUTPOLARITY_NEGATIVE;
   syncer.syncOutPulseWidth = 2000000;
-  syncer.syncOutSkipFactor = SyncOutSkipCount;
+  syncer.syncOutSkipFactor = sync_out_skip_count;
 
   vs.writeSynchronizationControl(syncer, true);
-  ROS_INFO("Setting synchronization control.......\n");
-  ROS_INFO("\t Sync Out Mode set to IMUREADY");
-  ROS_INFO("\t Sync Out pulse width set to 2000000ns");
-  ROS_INFO("\t Skip Factor set to %d", SyncOutSkipCount);
 
   // Configure binary output message
   BinaryOutputRegister bor(

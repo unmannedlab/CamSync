@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build",
+  "command": "/usr/bin/g++  -DCm3_EXPORTS -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"spinnaker_camera_driver\\\" -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build/devel/include -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/include -isystem /opt/spinnaker/include -isystem /opt/ros/noetic/include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -g -fPIC   -std=c++11 -Wall -Wextra -o CMakeFiles/Cm3.dir/src/cm3.cpp.o -c /home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/cm3.cpp",
+  "file": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/cm3.cpp"
+},
+{
+  "directory": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build",
+  "command": "/usr/bin/g++  -DCamera_EXPORTS -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"spinnaker_camera_driver\\\" -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build/devel/include -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/include -isystem /opt/spinnaker/include -isystem /opt/ros/noetic/include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -g -fPIC   -std=c++11 -Wall -Wextra -o CMakeFiles/Camera.dir/src/camera.cpp.o -c /home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/camera.cpp",
+  "file": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/camera.cpp"
+},
+{
+  "directory": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"spinnaker_camera_driver\\\" -DSpinnakerCameraLib_EXPORTS -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build/devel/include -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/include -isystem /opt/spinnaker/include -isystem /opt/ros/noetic/include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -g -fPIC   -std=c++11 -Wall -Wextra -o CMakeFiles/SpinnakerCameraLib.dir/src/SpinnakerCamera.cpp.o -c /home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/SpinnakerCamera.cpp",
+  "file": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/SpinnakerCamera.cpp"
+},
+{
+  "directory": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"spinnaker_camera_driver\\\" -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build/devel/include -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/include -isystem /opt/spinnaker/include -isystem /opt/ros/noetic/include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -g   -std=c++11 -Wall -Wextra -o CMakeFiles/spinnaker_camera_node.dir/src/node.cpp.o -c /home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/node.cpp",
+  "file": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/node.cpp"
+},
+{
+  "directory": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"spinnaker_camera_driver\\\" -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build/devel/include -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/include -isystem /opt/spinnaker/include -isystem /opt/ros/noetic/include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -g   -std=c++11 -Wall -Wextra -o CMakeFiles/spinnaker_test_node.dir/src/spinnaker_test_node.cpp.o -c /home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/spinnaker_test_node.cpp",
+  "file": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/spinnaker_test_node.cpp"
+},
+{
+  "directory": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"spinnaker_camera_driver\\\" -DSpinnakerCameraNodelet_EXPORTS -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build/devel/include -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/include -isystem /opt/spinnaker/include -isystem /opt/ros/noetic/include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -g -fPIC   -std=c++11 -Wall -Wextra -o CMakeFiles/SpinnakerCameraNodelet.dir/src/nodelet.cpp.o -c /home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/nodelet.cpp",
+  "file": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/nodelet.cpp"
+},
+{
+  "directory": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build",
+  "command": "/usr/bin/g++  -DDiagnostics_EXPORTS -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"spinnaker_camera_driver\\\" -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build/devel/include -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/include -isystem /opt/spinnaker/include -isystem /opt/ros/noetic/include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -g -fPIC   -std=c++11 -Wall -Wextra -o CMakeFiles/Diagnostics.dir/src/diagnostics.cpp.o -c /home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/diagnostics.cpp",
+  "file": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/diagnostics.cpp"
+},
+{
+  "directory": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build",
+  "command": "/usr/bin/g++  -DGh3_EXPORTS -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"spinnaker_camera_driver\\\" -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build/devel/include -I/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/include -isystem /opt/spinnaker/include -isystem /opt/ros/noetic/include -isystem /opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -g -fPIC   -std=c++11 -Wall -Wextra -o CMakeFiles/Gh3.dir/src/gh3.cpp.o -c /home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/gh3.cpp",
+  "file": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/src/gh3.cpp"
+},
+{
+  "directory": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build/gtest/googlemock",
+  "command": "/usr/bin/g++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_main_EXPORTS -isystem /usr/src/googletest/googlemock/include -isystem /usr/src/googletest/googlemock -isystem /usr/src/googletest/googletest/include -isystem /usr/src/googletest/googletest  -g -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++11 -Wall -Wextra -DGTEST_HAS_PTHREAD=1 -std=c++11 -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /usr/src/googletest/googlemock/src/gmock_main.cc",
+  "file": "/usr/src/googletest/googlemock/src/gmock_main.cc"
+},
+{
+  "directory": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build/gtest/googlemock",
+  "command": "/usr/bin/g++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_EXPORTS -I/usr/src/googletest/googlemock/include -I/usr/src/googletest/googlemock -isystem /usr/src/googletest/googletest/include -isystem /usr/src/googletest/googletest  -g -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++11 -Wall -Wextra -DGTEST_HAS_PTHREAD=1 -std=c++11 -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /usr/src/googletest/googlemock/src/gmock-all.cc",
+  "file": "/usr/src/googletest/googlemock/src/gmock-all.cc"
+},
+{
+  "directory": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build/gtest/googletest",
+  "command": "/usr/bin/g++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_main_EXPORTS -isystem /usr/src/googletest/googletest/include -isystem /usr/src/googletest/googletest  -g -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++11 -Wall -Wextra -DGTEST_HAS_PTHREAD=1 -std=c++11 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /usr/src/googletest/googletest/src/gtest_main.cc",
+  "file": "/usr/src/googletest/googletest/src/gtest_main.cc"
+},
+{
+  "directory": "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build/gtest/googletest",
+  "command": "/usr/bin/g++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_EXPORTS -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest  -g -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++11 -Wall -Wextra -std=c++11 -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /usr/src/googletest/googletest/src/gtest-all.cc",
+  "file": "/usr/src/googletest/googletest/src/gtest-all.cc"
+}
+]

@@ -431,6 +431,7 @@ private:
   * This function continues until the thread is interupted.  Responsible for getting sensor_msgs::Image and publishing
   * them.
   */
+  
   void devicePoll()
   {
     ROS_INFO_ONCE("devicePoll");
@@ -554,6 +555,7 @@ private:
           }
 
           break;
+
         case CONNECTED:
           // Try starting the camera
           try
@@ -574,54 +576,56 @@ private:
             }
             state = ERROR;
           }
-
           break;
+        
         case STARTED:
-        regrab:
+          
           try
-          {
-            wfov_camera_msgs::WFOVImagePtr wfov_image(new wfov_camera_msgs::WFOVImage);
-            // Get the image from the camera library
-            NODELET_DEBUG_ONCE("Starting a new grab from camera with serial {%d}.", spinnaker_.getSerial());            
-            spinnaker_.grabImage(&wfov_image->image, frame_id_);
+          {                
+              wfov_camera_msgs::WFOVImagePtr wfov_image(new wfov_camera_msgs::WFOVImage);
+              // Get the image from the camera library
+              NODELET_DEBUG_ONCE("Starting a new grab from camera with serial {%d}.", spinnaker_.getSerial());
+              spinnaker_.grabImage(&wfov_image->image, frame_id_);
 
-            // Set other values
-            wfov_image->header.frame_id = frame_id_;
+              // Set other values
+              wfov_image->header.frame_id = frame_id_;
 
-            wfov_image->gain = gain_;
-            wfov_image->white_balance_blue = wb_blue_;
-            wfov_image->white_balance_red = wb_red_;
+              wfov_image->gain = gain_;
+              wfov_image->white_balance_blue = wb_blue_;
+              wfov_image->white_balance_red = wb_red_;
 
-            // wfov_image->temperature = spinnaker_.getCameraTemperature();
+              // wfov_image->temperature = spinnaker_.getCameraTemperature();
 
-            ros::Time time = ros::Time::now() + ros::Duration(config_.time_offset);
-            wfov_image->header.stamp = time;
-            wfov_image->image.header.stamp = time;
+              ros::Time time = ros::Time::now() + ros::Duration(config_.time_offset);
+              wfov_image->header.stamp = time;
+              wfov_image->image.header.stamp = time;
 
-            // Set the CameraInfo message
-            ci_.reset(new sensor_msgs::CameraInfo(cinfo_->getCameraInfo()));
-            ci_->header.stamp = wfov_image->image.header.stamp;
-            ci_->header.frame_id = wfov_image->header.frame_id;
-            // The height, width, distortion model, and parameters are all filled in by camera info manager.
-            ci_->binning_x = binning_x_;
-            ci_->binning_y = binning_y_;
-            ci_->roi.x_offset = roi_x_offset_;
-            ci_->roi.y_offset = roi_y_offset_;
-            ci_->roi.height = roi_height_;
-            ci_->roi.width = roi_width_;
-            ci_->roi.do_rectify = do_rectify_;
+              // Set the CameraInfo message
+              ci_.reset(new sensor_msgs::CameraInfo(cinfo_->getCameraInfo()));
+              ci_->header.stamp = wfov_image->image.header.stamp;
+              ci_->header.frame_id = wfov_image->header.frame_id;
+              // The height, width, distortion model, and parameters are all filled in by camera info manager.
+              ci_->binning_x = binning_x_;
+              ci_->binning_y = binning_y_;
+              ci_->roi.x_offset = roi_x_offset_;
+              ci_->roi.y_offset = roi_y_offset_;
+              ci_->roi.height = roi_height_;
+              ci_->roi.width = roi_width_;
+              ci_->roi.do_rectify = do_rectify_;
+              ci_->latch_time_offset = config_.time_offset;
 
-            wfov_image->info = *ci_;
+              wfov_image->info = *ci_;
 
-            // Publish the full message
-            pub_->publish(wfov_image);
+              // Publish the full message
+              pub_->publish(wfov_image);
 
-            // Publish the message using standard image transport
-            if (it_pub_.getNumSubscribers() > 0)
-            {
-              sensor_msgs::ImagePtr image(new sensor_msgs::Image(wfov_image->image));
-              it_pub_.publish(image, ci_);
-            }
+              // Publish the message using standard image transport
+              if (it_pub_.getNumSubscribers() > 0)
+              {
+                sensor_msgs::ImagePtr image(new sensor_msgs::Image(wfov_image->image));
+                it_pub_.publish(image, ci_);
+              }
+                        
           }
           catch (CameraTimeoutException& e)
           {
@@ -631,12 +635,10 @@ private:
           catch (std::runtime_error& e)
           {
             NODELET_ERROR("%s", e.what());
-            state = ERROR;
-            goto regrab;
-
+            state = ERROR;    
           }
-
           break;
+
         default:
           NODELET_ERROR("Unknown camera state %d!", state);
       }

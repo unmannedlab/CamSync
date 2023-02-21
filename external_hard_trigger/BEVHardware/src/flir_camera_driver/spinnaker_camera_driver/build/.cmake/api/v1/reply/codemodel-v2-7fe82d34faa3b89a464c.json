@@ -1,0 +1,969 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.2"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						40,
+						41,
+						42,
+						43,
+						44,
+						45,
+						46,
+						47,
+						48,
+						49,
+						50,
+						51,
+						52,
+						53,
+						54,
+						55,
+						56,
+						57,
+						58,
+						59,
+						60,
+						61,
+						62,
+						63,
+						64,
+						65,
+						66,
+						67,
+						68,
+						69,
+						70,
+						71,
+						72,
+						73,
+						74,
+						75,
+						76,
+						77,
+						78,
+						79,
+						80,
+						81,
+						82,
+						83,
+						84,
+						85,
+						86,
+						87,
+						88,
+						89,
+						90,
+						91
+					]
+				},
+				{
+					"build" : "gtest",
+					"childIndexes" : 
+					[
+						2
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "/usr/src/googletest"
+				},
+				{
+					"build" : "gtest/googlemock",
+					"childIndexes" : 
+					[
+						3
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6.4"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "/usr/src/googletest/googlemock",
+					"targetIndexes" : 
+					[
+						36,
+						37
+					]
+				},
+				{
+					"build" : "gtest/googletest",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "/usr/src/googletest/googletest",
+					"targetIndexes" : 
+					[
+						38,
+						39
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "spinnaker_camera_driver",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						40,
+						41,
+						42,
+						43,
+						44,
+						45,
+						46,
+						47,
+						48,
+						49,
+						50,
+						51,
+						52,
+						53,
+						54,
+						55,
+						56,
+						57,
+						58,
+						59,
+						60,
+						61,
+						62,
+						63,
+						64,
+						65,
+						66,
+						67,
+						68,
+						69,
+						70,
+						71,
+						72,
+						73,
+						74,
+						75,
+						76,
+						77,
+						78,
+						79,
+						80,
+						81,
+						82,
+						83,
+						84,
+						85,
+						86,
+						87,
+						88,
+						89,
+						90,
+						91
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "googletest-distribution",
+					"parentIndex" : 0
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "gmock",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						36,
+						37
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "gtest",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						38,
+						39
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Camera::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Camera-Debug-b7f1281634ab1488c1a7.json",
+					"name" : "Camera",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Cm3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Cm3-Debug-380687d6eb4fc6f3d85e.json",
+					"name" : "Cm3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Diagnostics::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Diagnostics-Debug-a1dcf15885d031ea7f9e.json",
+					"name" : "Diagnostics",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Gh3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Gh3-Debug-99b65c2fc0903bd9d5b4.json",
+					"name" : "Gh3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SpinnakerCameraLib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SpinnakerCameraLib-Debug-09531e867ec9c041d193.json",
+					"name" : "SpinnakerCameraLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SpinnakerCameraNodelet::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SpinnakerCameraNodelet-Debug-1d51844087b46a1fc761.json",
+					"name" : "SpinnakerCameraNodelet",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_run_tests_spinnaker_camera_driver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_run_tests_spinnaker_camera_driver-Debug-f4fd93d9cfbef2fbef20.json",
+					"name" : "_run_tests_spinnaker_camera_driver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_run_tests_spinnaker_camera_driver_roslaunch-check::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_run_tests_spinnaker_camera_driver_roslaunch-check-Debug-6fb03df28d560d2003d2.json",
+					"name" : "_run_tests_spinnaker_camera_driver_roslaunch-check",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_run_tests_spinnaker_camera_driver_roslaunch-check_launch_camera.launch::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_run_tests_spinnaker_camera_driver_roslaunch-check_launch_camera.launch-Debug-8f0c072aab934ec0f20d.json",
+					"name" : "_run_tests_spinnaker_camera_driver_roslaunch-check_launch_camera.launch",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_run_tests_spinnaker_camera_driver_roslint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_run_tests_spinnaker_camera_driver_roslint-Debug-ba943e31b9e917f8bda9.json",
+					"name" : "_run_tests_spinnaker_camera_driver_roslint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_run_tests_spinnaker_camera_driver_roslint_package::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_run_tests_spinnaker_camera_driver_roslint_package-Debug-c77fe80cfb87f9722991.json",
+					"name" : "_run_tests_spinnaker_camera_driver_roslint_package",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bond_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bond_generate_messages_cpp-Debug-0e41c36d75ef6906786f.json",
+					"name" : "bond_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bond_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bond_generate_messages_eus-Debug-d6aff7fa57ed24f5520f.json",
+					"name" : "bond_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bond_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bond_generate_messages_lisp-Debug-da16f5f62ee9c4275f0c.json",
+					"name" : "bond_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bond_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bond_generate_messages_nodejs-Debug-5b993d7775eb5c9975ec.json",
+					"name" : "bond_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bond_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bond_generate_messages_py-Debug-8389a45d17d9b167cfd7.json",
+					"name" : "bond_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "clean_test_results::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clean_test_results-Debug-4be04a19c13d8a538bd1.json",
+					"name" : "clean_test_results",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "clean_test_results_spinnaker_camera_driver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clean_test_results_spinnaker_camera_driver-Debug-03c3fa9959bf013acae4.json",
+					"name" : "clean_test_results_spinnaker_camera_driver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "diagnostic_msgs_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-diagnostic_msgs_generate_messages_cpp-Debug-92f825cb01bfae52aa55.json",
+					"name" : "diagnostic_msgs_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "diagnostic_msgs_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-diagnostic_msgs_generate_messages_eus-Debug-102be1dc335336e68ef4.json",
+					"name" : "diagnostic_msgs_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "diagnostic_msgs_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-diagnostic_msgs_generate_messages_lisp-Debug-5ffc828e4887ccd881f8.json",
+					"name" : "diagnostic_msgs_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "diagnostic_msgs_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-diagnostic_msgs_generate_messages_nodejs-Debug-2c44e13553ceed309532.json",
+					"name" : "diagnostic_msgs_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "diagnostic_msgs_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-diagnostic_msgs_generate_messages_py-Debug-1b6ba3d89820b03612a2.json",
+					"name" : "diagnostic_msgs_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "download_extra_data::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-download_extra_data-Debug-6ee1a46173a258d784e3.json",
+					"name" : "download_extra_data",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "doxygen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-doxygen-Debug-1aaedb04f99db988352d.json",
+					"name" : "doxygen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamic_reconfigure_gencfg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamic_reconfigure_gencfg-Debug-09fc1dd3eafb822d137b.json",
+					"name" : "dynamic_reconfigure_gencfg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamic_reconfigure_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamic_reconfigure_generate_messages_cpp-Debug-b8ecb43c566e877737c7.json",
+					"name" : "dynamic_reconfigure_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamic_reconfigure_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamic_reconfigure_generate_messages_eus-Debug-c46347941a7a9b687013.json",
+					"name" : "dynamic_reconfigure_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamic_reconfigure_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamic_reconfigure_generate_messages_lisp-Debug-b199cb8bad34aca41364.json",
+					"name" : "dynamic_reconfigure_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamic_reconfigure_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamic_reconfigure_generate_messages_nodejs-Debug-d358116ade7fa7749e18.json",
+					"name" : "dynamic_reconfigure_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dynamic_reconfigure_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dynamic_reconfigure_generate_messages_py-Debug-1abeb0d6698f3b65484a.json",
+					"name" : "dynamic_reconfigure_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "geometry_msgs_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-geometry_msgs_generate_messages_cpp-Debug-42a0dbe1f8b00010e754.json",
+					"name" : "geometry_msgs_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "geometry_msgs_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-geometry_msgs_generate_messages_eus-Debug-03624d6a48c48e5101ab.json",
+					"name" : "geometry_msgs_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "geometry_msgs_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-geometry_msgs_generate_messages_lisp-Debug-0d965c24384e5cb7a22b.json",
+					"name" : "geometry_msgs_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "geometry_msgs_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-geometry_msgs_generate_messages_nodejs-Debug-6ae2c9376152d028548c.json",
+					"name" : "geometry_msgs_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "geometry_msgs_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-geometry_msgs_generate_messages_py-Debug-abe041c1d5c154b2a428.json",
+					"name" : "geometry_msgs_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gmock::@e3f94eedc5dc07131386",
+					"jsonFile" : "target-gmock-Debug-8dbda770c16a505afff5.json",
+					"name" : "gmock",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gmock_main::@e3f94eedc5dc07131386",
+					"jsonFile" : "target-gmock_main-Debug-3ace13fc844a678b8628.json",
+					"name" : "gmock_main",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gtest::@b738d542747fbb7ea6e3",
+					"jsonFile" : "target-gtest-Debug-7357076eeb6e81cd74a1.json",
+					"name" : "gtest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gtest_main::@b738d542747fbb7ea6e3",
+					"jsonFile" : "target-gtest_main-Debug-b4b95a35c7602179db8b.json",
+					"name" : "gtest_main",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "image_exposure_msgs_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-image_exposure_msgs_generate_messages_cpp-Debug-4aad43c5b2cb594a280b.json",
+					"name" : "image_exposure_msgs_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "image_exposure_msgs_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-image_exposure_msgs_generate_messages_eus-Debug-db660c92c8307f1ef22c.json",
+					"name" : "image_exposure_msgs_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "image_exposure_msgs_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-image_exposure_msgs_generate_messages_lisp-Debug-ac46c5293072266ac0bb.json",
+					"name" : "image_exposure_msgs_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "image_exposure_msgs_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-image_exposure_msgs_generate_messages_nodejs-Debug-acde3f40ae2d43940f8b.json",
+					"name" : "image_exposure_msgs_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "image_exposure_msgs_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-image_exposure_msgs_generate_messages_py-Debug-0c13c53b89aabe87b191.json",
+					"name" : "image_exposure_msgs_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nodelet_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nodelet_generate_messages_cpp-Debug-168e2cb3e438179d5279.json",
+					"name" : "nodelet_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nodelet_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nodelet_generate_messages_eus-Debug-0491da414bdebd9d8393.json",
+					"name" : "nodelet_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nodelet_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nodelet_generate_messages_lisp-Debug-160968a97f5cc62237a2.json",
+					"name" : "nodelet_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nodelet_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nodelet_generate_messages_nodejs-Debug-3d76dd93130f62de79d7.json",
+					"name" : "nodelet_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nodelet_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nodelet_generate_messages_py-Debug-46f992bc0b8db5c74999.json",
+					"name" : "nodelet_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "roscpp_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-roscpp_generate_messages_cpp-Debug-627a62690d803082d1eb.json",
+					"name" : "roscpp_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "roscpp_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-roscpp_generate_messages_eus-Debug-0e43594eaeaec939bed1.json",
+					"name" : "roscpp_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "roscpp_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-roscpp_generate_messages_lisp-Debug-e9618efcf9c055ba242d.json",
+					"name" : "roscpp_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "roscpp_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-roscpp_generate_messages_nodejs-Debug-d491f39e0faf8b12b981.json",
+					"name" : "roscpp_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "roscpp_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-roscpp_generate_messages_py-Debug-cdf6bf9234229ebf1052.json",
+					"name" : "roscpp_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rosgraph_msgs_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rosgraph_msgs_generate_messages_cpp-Debug-67ea0cf518aa09a0b6ce.json",
+					"name" : "rosgraph_msgs_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rosgraph_msgs_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rosgraph_msgs_generate_messages_eus-Debug-a04ad720b020144d435a.json",
+					"name" : "rosgraph_msgs_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rosgraph_msgs_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rosgraph_msgs_generate_messages_lisp-Debug-0a4f7f1387c845aba5eb.json",
+					"name" : "rosgraph_msgs_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rosgraph_msgs_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rosgraph_msgs_generate_messages_nodejs-Debug-6a5580a392c69720dd08.json",
+					"name" : "rosgraph_msgs_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rosgraph_msgs_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rosgraph_msgs_generate_messages_py-Debug-1e032c8723167c8a8ff2.json",
+					"name" : "rosgraph_msgs_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "roslint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-roslint-Debug-14739d7b58425e73f5cc.json",
+					"name" : "roslint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "roslint_spinnaker_camera_driver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-roslint_spinnaker_camera_driver-Debug-2929a58bac3a7aa10ccd.json",
+					"name" : "roslint_spinnaker_camera_driver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_tests-Debug-c8e03ddf19a6ca9845ca.json",
+					"name" : "run_tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_tests_spinnaker_camera_driver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_tests_spinnaker_camera_driver-Debug-349b1806ca8d414d395e.json",
+					"name" : "run_tests_spinnaker_camera_driver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_tests_spinnaker_camera_driver_roslaunch-check::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_tests_spinnaker_camera_driver_roslaunch-check-Debug-137d8936494699112d55.json",
+					"name" : "run_tests_spinnaker_camera_driver_roslaunch-check",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_tests_spinnaker_camera_driver_roslaunch-check_launch_camera.launch::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_tests_spinnaker_camera_driver_roslaunch-check_launch_camera.launch-Debug-9515db8bf6052a2aa048.json",
+					"name" : "run_tests_spinnaker_camera_driver_roslaunch-check_launch_camera.launch",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_tests_spinnaker_camera_driver_roslint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_tests_spinnaker_camera_driver_roslint-Debug-32848ec8a6fe03c061e7.json",
+					"name" : "run_tests_spinnaker_camera_driver_roslint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_tests_spinnaker_camera_driver_roslint_package::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_tests_spinnaker_camera_driver_roslint_package-Debug-0d7c0e8f868bc72190ed.json",
+					"name" : "run_tests_spinnaker_camera_driver_roslint_package",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sensor_msgs_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sensor_msgs_generate_messages_cpp-Debug-ab02239f7291595777d4.json",
+					"name" : "sensor_msgs_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sensor_msgs_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sensor_msgs_generate_messages_eus-Debug-66568c7c5d1b78e52505.json",
+					"name" : "sensor_msgs_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sensor_msgs_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sensor_msgs_generate_messages_lisp-Debug-ddce73ca54bdb4b15682.json",
+					"name" : "sensor_msgs_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sensor_msgs_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sensor_msgs_generate_messages_nodejs-Debug-de253423f4a4cf048373.json",
+					"name" : "sensor_msgs_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sensor_msgs_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sensor_msgs_generate_messages_py-Debug-6f6390a85cde61a5425e.json",
+					"name" : "sensor_msgs_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "spinnaker_camera_driver_gencfg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-spinnaker_camera_driver_gencfg-Debug-903fc62b6dd4ecd08b12.json",
+					"name" : "spinnaker_camera_driver_gencfg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "spinnaker_camera_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-spinnaker_camera_node-Debug-158207125d22b1f055c5.json",
+					"name" : "spinnaker_camera_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "spinnaker_test_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-spinnaker_test_node-Debug-eedd6a3453d4c7db1811.json",
+					"name" : "spinnaker_test_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "statistics_msgs_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-statistics_msgs_generate_messages_cpp-Debug-ca33a7ff29ff9d1b9566.json",
+					"name" : "statistics_msgs_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "statistics_msgs_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-statistics_msgs_generate_messages_eus-Debug-f5a1faf51a0ed1fb6a1c.json",
+					"name" : "statistics_msgs_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "statistics_msgs_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-statistics_msgs_generate_messages_lisp-Debug-6e291736e9d852681f29.json",
+					"name" : "statistics_msgs_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "statistics_msgs_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-statistics_msgs_generate_messages_nodejs-Debug-f3d5c69447cb8f2c6796.json",
+					"name" : "statistics_msgs_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "statistics_msgs_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-statistics_msgs_generate_messages_py-Debug-8b7dd8f39490bdd347a5.json",
+					"name" : "statistics_msgs_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "std_msgs_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-std_msgs_generate_messages_cpp-Debug-b38f16f015d08e1a6078.json",
+					"name" : "std_msgs_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "std_msgs_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-std_msgs_generate_messages_eus-Debug-357684420c0cb526af3d.json",
+					"name" : "std_msgs_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "std_msgs_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-std_msgs_generate_messages_lisp-Debug-d5cd70649b9cc9c92979.json",
+					"name" : "std_msgs_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "std_msgs_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-std_msgs_generate_messages_nodejs-Debug-fb1b7dec7919fc69b80c.json",
+					"name" : "std_msgs_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "std_msgs_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-std_msgs_generate_messages_py-Debug-1144a2721f5887635f6b.json",
+					"name" : "std_msgs_generate_messages_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tests-Debug-f6b8cd07f41d31c98b82.json",
+					"name" : "tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wfov_camera_msgs_generate_messages_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wfov_camera_msgs_generate_messages_cpp-Debug-251ef032757c4b293e6f.json",
+					"name" : "wfov_camera_msgs_generate_messages_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wfov_camera_msgs_generate_messages_eus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wfov_camera_msgs_generate_messages_eus-Debug-dfaa674c044e20bf9eba.json",
+					"name" : "wfov_camera_msgs_generate_messages_eus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wfov_camera_msgs_generate_messages_lisp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wfov_camera_msgs_generate_messages_lisp-Debug-2458abca2e4e72e37ff7.json",
+					"name" : "wfov_camera_msgs_generate_messages_lisp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wfov_camera_msgs_generate_messages_nodejs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wfov_camera_msgs_generate_messages_nodejs-Debug-ac8fbe1914c7a05a1210.json",
+					"name" : "wfov_camera_msgs_generate_messages_nodejs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wfov_camera_msgs_generate_messages_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wfov_camera_msgs_generate_messages_py-Debug-280e00e671327902d33b.json",
+					"name" : "wfov_camera_msgs_generate_messages_py",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver/build",
+		"source" : "/home/golfcart2/CamSync/external_hard_trigger/BEVHardware/src/flir_camera_driver/spinnaker_camera_driver"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

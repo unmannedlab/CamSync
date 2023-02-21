@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: spinnaker_camera_driver
+Description: Description of spinnaker_camera_driver
+Version: 0.2.5
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: image_exposure_msgs nodelet roscpp sensor_msgs wfov_camera_msgs

@@ -8,14 +8,20 @@
 
   <!-- When unspecified, the driver will use the default framerate as given by the
       camera itself. Use the parameter 'control_frame_rate' to enable manual frame 
-      rate control, and 'frame_rate' to set the frame rate value. -->
-  <arg name="control_frame_rate"        default="False" />
-  <arg name="frame_rate"                default="50" />
+      rate control, and 'frame_rate' to set the frame rate value. 
+
+
+      Though these parameters have been defined, THEY ARE NOT BEING USED
+      THE FRAME RATE IS COMPLETELY DEPENDENT ON THE EXTERNAL TRIGGER NOW
+-->
+
+  <!-- <arg name="control_frame_rate"        default="False" />
+  <arg name="frame_rate"                default="100" />        -->
 
   <!-- Disabling ISP will dramatically increase frame-rate. However, it can only be 
       disabled when using Bayer encoding (e.g. BayerRG8)-->
-  <arg name="isp_enable"                default="False" /> 
-  <arg name="encoding"                  default="BayerRG8" />
+  <!-- <arg name="isp_enable"                default="False" />  -->
+  <arg name="encoding"                  default="BayerGB8" />
   <arg name="color_balance"             default="Continuous" /> <!-- Off, Once, or Continuous -->
 
   <group ns="center">
@@ -32,15 +38,16 @@
 
       <!-- Exposure Mode-->
       <param name="exposure_mode"                   value="Timed"/>
-      <param name="exposure_auto"                   value="Off">
-      <param name="exposure_time"                   value="20000.0"/>
+      <param name="exposure_auto"                   value="Off"/>
+      <param name="exposure_time"                   value="10000.0"/>
 
-      <!-- Frame rate 
-      <param name="acquisition_frame_rate_enable"   value="$(arg control_frame_rate)" />
-      <param name="acquisition_frame_rate"          value="$(arg frame_rate)" /> -->
+      <!-- Frame rate -->
+      <!-- <param name="acquisition_frame_rate_enable"   value="$(arg control_frame_rate)" />
+      <param name="acquisition_frame_rate"          value="$(arg frame_rate)" />
+      <param name="frame_rate" value="100"/> -->
 
       <!-- Image Processing -->
-      <param name="isp_enable"                      value="$(arg isp_enable)" />
+      <!-- <param name="isp_enable"                      value="$(arg isp_enable)" /> -->
       <param name="auto_white_balance"              value="$(arg color_balance)" />
       <param name="image_format_color_coding"       value="$(arg encoding)" />
       
@@ -65,6 +72,8 @@
 
 
     <group ns="left">
+    <!-- Nodelet manager -->
+    <node pkg="nodelet" type="nodelet" name="left_camera_nodelet_manager" args="manager" cwd="node" output="screen"/>
 
     <node pkg="nodelet" type="nodelet" name="left"
           args="load spinnaker_camera_driver/SpinnakerCameraNodelet left_camera_nodelet_manager" >
@@ -75,15 +84,16 @@
 
       <!-- Exposure Mode-->
       <param name="exposure_mode"                   value="Timed"/>
-      <param name="exposure_auto"                   value="Off">
-      <param name="exposure_time"                   value="20000.0"/>
+      <param name="exposure_auto"                   value="Off"/>
+      <param name="exposure_time"                   value="10000.0"/>
 
-      <!-- Frame rate 
-      <param name="acquisition_frame_rate_enable"   value="$(arg control_frame_rate)" />
-      <param name="acquisition_frame_rate"          value="$(arg frame_rate)" /> -->
+      <!-- Frame rate -->
+      <!-- <param name="acquisition_frame_rate_enable"   value="$(arg control_frame_rate)" />
+      <param name="acquisition_frame_rate"          value="$(arg frame_rate)" />
+      <param name="frame_rate" value="100"/> -->
 
       <!-- Image Processing -->
-      <param name="isp_enable"                      value="$(arg isp_enable)" />
+      <!-- <param name="isp_enable"                      value="$(arg isp_enable)" /> -->
       <param name="auto_white_balance"              value="$(arg color_balance)" />
       <param name="image_format_color_coding"       value="$(arg encoding)" />
 
@@ -106,6 +116,8 @@
     </group>
 
     <group ns="right">     
+    <!-- Nodelet manager -->
+    <node pkg="nodelet" type="nodelet" name="right_camera_nodelet_manager" args="manager" cwd="node" output="screen"/>
 
     <!-- Camera nodelet -->
     <node pkg="nodelet" type="nodelet" name="right"
@@ -117,15 +129,17 @@
 
       <!-- Exposure Mode-->
       <param name="exposure_mode"                   value="Timed"/>
-      <param name="exposure_auto"                   value="Off">
-      <param name="exposure_time"                   value="20000.0"/>
+      <param name="exposure_auto"                   value="Off"/>
+      <param name="exposure_time"                   value="10000.0"/>
 
-      <!-- Frame rate 
-      <param name="acquisition_frame_rate_enable"   value="$(arg control_frame_rate)" />
-      <param name="acquisition_frame_rate"          value="$(arg frame_rate)" /> -->
+      <!-- Frame rate -->
+
+      <!-- <param name="acquisition_frame_rate_enable"   value="$(arg control_frame_rate)" />
+      <param name="acquisition_frame_rate"          value="$(arg frame_rate)" />
+      <param name="frame_rate" value="100"/> -->
 
       <!-- Image Processing -->
-      <param name="isp_enable"                      value="$(arg isp_enable)" />
+      <!-- <param name="isp_enable"                      value="$(arg isp_enable)" /> -->
       <param name="auto_white_balance"              value="$(arg color_balance)" />
       <param name="image_format_color_coding"       value="$(arg encoding)" />
 
@@ -145,5 +159,4 @@
           args="load image_proc/debayer right_camera_nodelet_manager">
     </node>
     </group>
-    
 </launch>
