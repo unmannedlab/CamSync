@@ -1,10 +1,12 @@
 import rospy
 import PySpin
-import SyncVerify.msg
+import std_msgs
 import Ins.msg
 
-
 system = PySpin.System.GetInstance()
+
+global cam_list
+
 cam_list = system.GetCameras()
 
 def configure_exposure(cam):
@@ -186,40 +188,27 @@ def configure_trigger(cam):
 
 
 
-def set_acquisition_modes(cam_list):
+def set_acquisition_modes(cam):
 
     try:
         result = True
 
-        for i, cam in enumerate(cam_list):
-
-            configure_exposure(cam)
-            configure_chunk_data(cam.GetNodeMap())
-            configure_trigger(cam)
-
-
-            # Set acquisition mode to continuous
-            node_acquisition_mode = PySpin.CEnumerationPtr(cam.GetNodeMap().GetNode('AcquisitionMode'))
-            if not PySpin.IsReadable(node_acquisition_mode) or not PySpin.IsWritable(node_acquisition_mode):
-                print('Unable to set acquisition mode to continuous (node retrieval; camera %d). Aborting... \n' % i)
-                return False
-
-            node_acquisition_mode_continuous = node_acquisition_mode.GetEntryByName('Continuous')
-            if not PySpin.IsReadable(node_acquisition_mode_continuous):
-                print('Unable to set acquisition mode to continuous (entry \'continuous\' retrieval %d). \
-                Aborting... \n' % i)
-                return False
-
-            acquisition_mode_continuous = node_acquisition_mode_continuous.GetValue()
-
-            node_acquisition_mode.SetIntValue(acquisition_mode_continuous)
-
-            print('Camera %d acquisition mode set to continuous...' % i)
-
-            # Begin acquiring images
-            cam.BeginAcquisition()
-
-            print('Camera %d started acquiring images...' % i)
+        # Set acquisition mode to continuous
+        node_acquisition_mode = PySpin.CEnumerationPtr(cam.GetNodeMap().GetNode('AcquisitionMode'))
+        if not PySpin.IsReadable(node_acquisition_mode) or not PySpin.IsWritable(node_acquisition_mode):
+            print('Unable to set acquisition mode to continuous (node retrieval; camera %d). Aborting... \n' % i)
+            return False
+        node_acquisition_mode_continuous = node_acquisition_mode.GetEntryByName('Continuous')
+        if not PySpin.IsReadable(node_acquisition_mode_continuous):
+            print('Unable to set acquisition mode to continuous (entry \'continuous\' retrieval %d). \
+            Aborting... \n' % i)
+            return False
+        acquisition_mode_continuous = node_acquisition_mode_continuous.GetValue()
+        node_acquisition_mode.SetIntValue(acquisition_mode_continuous)
+        print('Camera %d acquisition mode set to continuous...' % i)
+        # Begin acquiring images
+        cam.BeginAcquisition()
+        print('Camera %d started acquiring images...' % i)
         
     except PySpin.SpinnakerException as ex:
         print('Error: %s' % ex)
@@ -250,7 +239,7 @@ def acquire_timestamp(cam):
             result = timestamp
             
         image_result.Release()
-
+   
     except PySpin.SpinnakerException as ex:
         print('Error: %s' % ex)
         result = False
@@ -258,82 +247,99 @@ def acquire_timestamp(cam):
     return result
 
 
-def end_acquisition(cam_list):
-    for cam in cam_list:
-        # End acquisition
-        cam.EndAcquisition()
-   
-    return 
-
 
 rospy.init_node('SyncAnalyzer', anonymous=True)
 
-center_old_timestamp = 0
 
-right_old_timestamp = 0
+center_pub = rospy.Publisher('centercam_timedelta', std_msgs.msg.Int64, queue_size=5)
 
-left_old_timestamp = 0
 
-INS_old_timestamp = 0
+right_pub = rospy.Publisher('rightcam_timedelta', std_msgs.msg.Int64, queue_size=5)
+
+
+left_pub = rospy.Publisher('centercam_timedelta', std_msgs.msg.Int64, queue_size=5)
+
+ins_pub = rospy.Publisher('centercam_timedelta', std_msgs.msg.Int64, queue_size=5)
+
 
 def center():
+    center_old_timestamp = 0
     centercam = cam_list.GetBySerial('17512985')
-    SyncVerify.msg.SyncVerify.old_device_timestamp = center_old_timestamp
-    timestamp = acquire_timestamp(centercam)
-    SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
-    time_delta = timestamp - center_old_timestamp
-    SyncVerify.msg.SyncVerify.device_time_delta = time_delta
-    center_old_timestamp = timestamp
-    rospy.Publisher('centercam_timedelta', SyncVerify.msg, queue_size=5)
+    while True:        
+        #SyncVerify.msg.SyncVerify.old_device_timestamp = center_old_timestamp
+        timestamp = acquire_timestamp(centercam)
+        #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
+        time_delta = timestamp - center_old_timestamp
+        #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
+        center_old_timestamp = timestamp
+        center_pub.publish(std_msgs.msg.Int64(time_delta))
 
 def left():
+    left_old_timestamp = 0
     leftcam = cam_list.GetBySerial('18060270')
-    SyncVerify.msg.SyncVerify.old_device_timestamp = left_old_timestamp
-    timestamp = acquire_timestamp(leftcam)
-    SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
-    time_delta = timestamp - left_old_timestamp
-    SyncVerify.msg.SyncVerify.device_time_delta = time_delta
-    left_old_timestamp = timestamp
-    rospy.Publisher('leftcam_timedelta', SyncVerify.msg, queue_size=5)
+    while True:        
+        #SyncVerify.msg.SyncVerify.old_device_timestamp = left_old_timestamp
+        timestamp = acquire_timestamp(leftcam)
+        #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
+        time_delta = timestamp - left_old_timestamp
+        #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
+        left_old_timestamp = timestamp
+        left_pub.publish(std_msgs.msg.Int64(time_delta))
+    
 
 def right():
+    right_old_timestamp = 0
     rightcam = cam_list.GetBySerial('17528370')
-    SyncVerify.msg.SyncVerify.old_device_timestamp = right_old_timestamp
-    timestamp = acquire_timestamp(rightcam)
-    SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
-    time_delta = timestamp - right_old_timestamp
-    SyncVerify.msg.SyncVerify.device_time_delta = time_delta
-    right_old_timestamp = timestamp
-    rospy.Publisher('right_timedelta', SyncVerify.msg, queue_size=5)
+    while True:        
+        #SyncVerify.msg.SyncVerify.old_device_timestamp = right_old_timestamp
+        timestamp = acquire_timestamp(rightcam)
+        #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
+        time_delta = timestamp - right_old_timestamp
+        #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
+        right_old_timestamp = timestamp
+        right_pub.publish(std_msgs.msg.Int64(time_delta))
 
-def INS(data):
-    SyncVerify.msg.SyncVerify.old_device_timestamp = INS_old_timestamp
+INS_old_timestamp = 0
+def INS(data):    
+    #SyncVerify.msg.SyncVerify.old_device_timestamp = INS_old_timestamp
     timestamp = data.utcTime
-    SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
+    #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
     time_delta = timestamp - INS_old_timestamp
-    SyncVerify.msg.SyncVerify.device_time_delta = time_delta
+    #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
     INS_old_timestamp = timestamp
-    rospy.Publisher('INS_timedelta', SyncVerify.msg, queue_size=5)
+    ins_pub.publish(std_msgs.msg.Int64(time_delta))
+
 
 def GetSyncVerify():
     rospy.Subscriber("vectornav/INS", Ins.msg, INS)
     rospy.spin()
 
+
 def __init__():
 
     try:
-        set_acquisition_modes(cam_list)
-
+        for cam in cam_list:
+            cam.Init()
+            configure_exposure(cam)
+            configure_chunk_data(cam.GetNodeMap())
+            configure_trigger(cam)
+            set_acquisition_modes(cam)
+        
         GetSyncVerify()
+        left()
+        right()
+        center()
     
     except PySpin.SpinnakerException as ex:
         print('ERROR: %s' % ex)
-        del cam_list
         return
     
     except rospy.exceptions.ROSInterruptException as err:
         print('ROS_ERROR: %s' % err)
         GetSyncVerify.shutdown()
+        left_pub.shutdown()
+        right_pub.shutdown()
+        center_pub.shutdown()
         for cam in cam_list:
             cam.EndAcquisition()
             cam.DeInit()

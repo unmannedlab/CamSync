@@ -7,18 +7,18 @@ serial_baud: 921600
 
 # Acceptable data rates in Hz: 1, 2, 4, 5, 10, 20, 25, 40, 50, 100, 200
 # Baud rate must be able to handle the data rate
-async_output_rate: 100
+async_output_rate: 200
 
 # Acceptable imu rates in Hz: 1, 2, 4, 5, 10, 20, 25, 40, 50, 100, 200
 # If not defined, will be equal to async_output_rate
-imu_output_rate: 100
+imu_output_rate: 200
 
 # Device IMU Rate as set by the manufacturer (800Hz unless specified otherwise)
 # This value is used to set the serial data packet rate
 fixed_imu_rate: 400
 
 # Sync Out Skip Factor, set to 0 by default
-sync_out_skip_count: 39
+sync_out_skip_count: 19
 
 # Frame id to publish data in
 frame_id: Vectornav
