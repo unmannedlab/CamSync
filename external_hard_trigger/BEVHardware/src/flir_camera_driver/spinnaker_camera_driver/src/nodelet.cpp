@@ -612,7 +612,7 @@ private:
               ci_->roi.height = roi_height_;
               ci_->roi.width = roi_width_;
               ci_->roi.do_rectify = do_rectify_;
-              ci_->latch_time_offset = config_.time_offset;
+      
 
               wfov_image->info = *ci_;
 
