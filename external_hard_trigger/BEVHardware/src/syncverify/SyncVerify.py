@@ -1,7 +1,7 @@
 import rospy
 import PySpin
 import std_msgs
-import Ins.msg
+import vectornav.msg
 
 class TriggerType:
     SOFTWARE = 1
@@ -282,13 +282,13 @@ def acquire_timestamp(cam):
 rospy.init_node('SyncAnalyzer', anonymous=True)
 
 
-center_pub = rospy.Publisher('centercam_timedelta', std_msgs.msg.Int64, queue_size=5)
+center_pub = rospy.Publisher("centercam_timedelta", std_msgs.msg.Int64, queue_size=5)
 
-right_pub = rospy.Publisher('rightcam_timedelta', std_msgs.msg.Int64, queue_size=5)
+right_pub = rospy.Publisher("rightcam_timedelta", std_msgs.msg.Int64, queue_size=5)
 
-left_pub = rospy.Publisher('leftcam_timedelta', std_msgs.msg.Int64, queue_size=5)
+left_pub = rospy.Publisher("leftcam_timedelta", std_msgs.msg.Int64, queue_size=5)
 
-ins_pub = rospy.Publisher('INS_timedelta', std_msgs.msg.Int64, queue_size=5)
+ins_pub = rospy.Publisher("INS_timedelta", std_msgs.msg.Int64, queue_size=5)
 
 
 def center(cam_list):
@@ -301,7 +301,7 @@ def center(cam_list):
         time_delta = timestamp - center_old_timestamp
         #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
         center_old_timestamp = timestamp
-        center_pub.publish(std_msgs.msg.Int64(time_delta))
+        center_pub.publish(time_delta)
 
 def left(cam_list):
     left_old_timestamp = 0
@@ -313,7 +313,7 @@ def left(cam_list):
         time_delta = timestamp - left_old_timestamp
         #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
         left_old_timestamp = timestamp
-        left_pub.publish(std_msgs.msg.Int64(time_delta))
+        left_pub.publish(time_delta)
     
 
 def right(cam_list):
@@ -326,22 +326,22 @@ def right(cam_list):
         time_delta = timestamp - right_old_timestamp
         #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
         right_old_timestamp = timestamp
-        right_pub.publish(std_msgs.msg.Int64(time_delta))
+        right_pub.publish(time_delta)
 
 
 def INS(data):    
     INS_old_timestamp = 0
     #SyncVerify.msg.SyncVerify.old_device_timestamp = INS_old_timestamp
-    timestamp = data.utcTime
+    timestamp = data.time
     #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
     time_delta = timestamp - INS_old_timestamp
     #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
     INS_old_timestamp = timestamp
-    ins_pub.publish(std_msgs.msg.Int64(time_delta))
+    ins_pub.publish(time_delta)
 
 
 def GetSyncVerify():
-    rospy.Subscriber("vectornav/INS", Ins.msg, INS)
+    rospy.Subscriber("vectornav/INS", vectornav.msg.Ins, INS)
     rospy.spin()
 
 
