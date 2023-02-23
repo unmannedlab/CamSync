@@ -3,11 +3,18 @@ import PySpin
 import std_msgs
 import Ins.msg
 
-system = PySpin.System.GetInstance()
+class TriggerType:
+    SOFTWARE = 1
+    HARDWARE = 2
 
-global cam_list
+CHOSEN_TRIGGER = TriggerType.HARDWARE
 
-cam_list = system.GetCameras()
+class ChunkDataTypes:
+    IMAGE = 1
+    NODEMAP = 2
+
+CHOSEN_CHUNK_DATA_TYPE = ChunkDataTypes.IMAGE
+
 
 def configure_exposure(cam):
     """
@@ -25,14 +32,20 @@ def configure_exposure(cam):
 
     try:
         result = True
-
         if cam.ExposureAuto.GetAccessMode() != PySpin.RW:
-            print('Unable to write automatic exposure. Aborting...')
+            print('Unable to disable automatic exposure. Aborting...')
             return False
 
-        cam.ExposureAuto.SetValue(PySpin.ExposureAuto_Continuous)
-        print('Automatic exposure enabled...')
+        cam.ExposureAuto.SetValue(PySpin.ExposureAuto_Off)
+        print('Automatic exposure disabled...')
 
+        if cam.ExposureTime.GetAccessMode() != PySpin.RW:
+            print('Unable to set exposure time. Aborting...')
+            return False
+
+        # Ensure desired exposure time does not exceed the maximum
+        cam.ExposureAuto.SetValue(PySpin.ExposureAuto_Continuous)
+        print('Camera Exposure set to Auto')
 
     except PySpin.SpinnakerException as ex:
         print('Error: %s' % ex)
@@ -62,12 +75,12 @@ def configure_chunk_data(nodemap):
             chunk_mode_active.SetValue(True)
 
         print('Chunk mode activated...')
+
         chunk_selector = PySpin.CEnumerationPtr(nodemap.GetNode('ChunkSelector'))
 
         if not PySpin.IsReadable(chunk_selector) or not PySpin.IsWritable(chunk_selector):
             print('Unable to retrieve chunk selector. Aborting...\n')
             return False
-
         entries = [PySpin.CEnumEntryPtr(chunk_selector_entry) for chunk_selector_entry in chunk_selector.GetEntries()]
 
         print('Enabling entries...')
@@ -118,7 +131,17 @@ def configure_trigger(cam):
      :rtype: bool
     """
     result = True
-    
+
+    print('*** CONFIGURING TRIGGER ***\n')
+
+    print('Note that if the application / user software triggers faster than frame time, the trigger may be dropped / skipped by the camera.\n')
+    print('If several frames are needed per trigger, a more reliable alternative for such case, is to use the multi-frame mode.\n\n')
+
+    if CHOSEN_TRIGGER == TriggerType.SOFTWARE:
+        print('Software trigger chosen ...')
+    elif CHOSEN_TRIGGER == TriggerType.HARDWARE:
+        print('Hardware trigger chose ...')
+
     try:
         # Ensure trigger mode off
         # The trigger must be disabled in order to configure whether the source
@@ -162,12 +185,21 @@ def configure_trigger(cam):
             print('Unable to get trigger source (node retrieval). Aborting...')
             return False
 
-        node_trigger_source_hardware = node_trigger_source.GetEntryByName('Line0')
-        if not PySpin.IsReadable(node_trigger_source_hardware):
-            print('Unable to get trigger source (enum entry retrieval). Aborting...')
-            return False
-        node_trigger_source.SetIntValue(node_trigger_source_hardware.GetValue())
-        print('Trigger source set to hardware...')
+        if CHOSEN_TRIGGER == TriggerType.SOFTWARE:
+            node_trigger_source_software = node_trigger_source.GetEntryByName('Software')
+            if not PySpin.IsReadable(node_trigger_source_software):
+                print('Unable to get trigger source (enum entry retrieval). Aborting...')
+                return False
+            node_trigger_source.SetIntValue(node_trigger_source_software.GetValue())
+            print('Trigger source set to software...')
+
+        elif CHOSEN_TRIGGER == TriggerType.HARDWARE:
+            node_trigger_source_hardware = node_trigger_source.GetEntryByName('Line0')
+            if not PySpin.IsReadable(node_trigger_source_hardware):
+                print('Unable to get trigger source (enum entry retrieval). Aborting...')
+                return False
+            node_trigger_source.SetIntValue(node_trigger_source_hardware.GetValue())
+            print('Trigger source set to hardware...')
 
         # Turn trigger mode on
         # Once the appropriate trigger source has been set, turn trigger mode
@@ -187,65 +219,64 @@ def configure_trigger(cam):
     return result
 
 
-
-def set_acquisition_modes(cam):
+def set_acquisition_mode(cam_list):
 
     try:
         result = True
 
-        # Set acquisition mode to continuous
-        node_acquisition_mode = PySpin.CEnumerationPtr(cam.GetNodeMap().GetNode('AcquisitionMode'))
-        if not PySpin.IsReadable(node_acquisition_mode) or not PySpin.IsWritable(node_acquisition_mode):
-            print('Unable to set acquisition mode to continuous (node retrieval; camera %d). Aborting... \n' % i)
-            return False
-        node_acquisition_mode_continuous = node_acquisition_mode.GetEntryByName('Continuous')
-        if not PySpin.IsReadable(node_acquisition_mode_continuous):
-            print('Unable to set acquisition mode to continuous (entry \'continuous\' retrieval %d). \
-            Aborting... \n' % i)
-            return False
-        acquisition_mode_continuous = node_acquisition_mode_continuous.GetValue()
-        node_acquisition_mode.SetIntValue(acquisition_mode_continuous)
-        print('Camera %d acquisition mode set to continuous...' % i)
-        # Begin acquiring images
-        cam.BeginAcquisition()
-        print('Camera %d started acquiring images...' % i)
-        
+        # Prepare each camera to acquire images
+        #
+        # *** NOTES ***
+        # For pseudo-simultaneous streaming, each camera is prepared as if it
+        # were just one, but in a loop. Notice that cameras are selected with
+        # an index. We demonstrate pseduo-simultaneous streaming because true
+        # simultaneous streaming would require multiple process or threads,
+        # which is too complex for an example.
+        #
+
+        for i, cam in enumerate(cam_list):
+
+            # Set acquisition mode to continuous
+            node_acquisition_mode = PySpin.CEnumerationPtr(cam.GetNodeMap().GetNode('AcquisitionMode'))
+            if not PySpin.IsReadable(node_acquisition_mode) or not PySpin.IsWritable(node_acquisition_mode):
+                print('Unable to set acquisition mode to continuous (node retrieval; camera %d). Aborting... \n' % i)
+                return False
+
+            node_acquisition_mode_continuous = node_acquisition_mode.GetEntryByName('Continuous')
+            if not PySpin.IsReadable(node_acquisition_mode_continuous):
+                print('Unable to set acquisition mode to continuous (entry \'continuous\' retrieval %d). \
+                Aborting... \n' % i)
+                return False
+
+            acquisition_mode_continuous = node_acquisition_mode_continuous.GetValue()
+
+            node_acquisition_mode.SetIntValue(acquisition_mode_continuous)
+
+            print('Camera %d acquisition mode set to continuous...' % i)
+
+            # Begin acquiring images
+            cam.BeginAcquisition()
+
+            print('Camera %d started acquiring images...' % i)
+
     except PySpin.SpinnakerException as ex:
         print('Error: %s' % ex)
         result = False
 
     return result
-
 
 def acquire_timestamp(cam):
-    """
-    This function acquires and saves 10 images from each device.
-
-    :param cam_list: List of cameras
-    :type cam_list: CameraList
-    :return: True if successful, False otherwise.
-    :rtype: bool
-    """
-    
     try:
-        image_result = cam.GetNextImage()
-        if image_result.IsIncomplete():
-            print('Image incomplete with image status %d ... \n' % image_result.GetImageStatus())
-        else:
-            # Print image information
-            chunk_data = image_result.GetChunkData()
-            timestamp = chunk_data.GetTimestamp()
-
-            result = timestamp
-            
+        image_result = cam.GetNextImage(50)
+        chunk_data = image_result.GetChunkData()
+        timestamp = chunk_data.GetTimestamp()
         image_result.Release()
-   
+
+        return timestamp    
+
     except PySpin.SpinnakerException as ex:
         print('Error: %s' % ex)
-        result = False
-
-    return result
-
+        return
 
 
 rospy.init_node('SyncAnalyzer', anonymous=True)
@@ -253,16 +284,14 @@ rospy.init_node('SyncAnalyzer', anonymous=True)
 
 center_pub = rospy.Publisher('centercam_timedelta', std_msgs.msg.Int64, queue_size=5)
 
-
 right_pub = rospy.Publisher('rightcam_timedelta', std_msgs.msg.Int64, queue_size=5)
 
+left_pub = rospy.Publisher('leftcam_timedelta', std_msgs.msg.Int64, queue_size=5)
 
-left_pub = rospy.Publisher('centercam_timedelta', std_msgs.msg.Int64, queue_size=5)
-
-ins_pub = rospy.Publisher('centercam_timedelta', std_msgs.msg.Int64, queue_size=5)
+ins_pub = rospy.Publisher('INS_timedelta', std_msgs.msg.Int64, queue_size=5)
 
 
-def center():
+def center(cam_list):
     center_old_timestamp = 0
     centercam = cam_list.GetBySerial('17512985')
     while True:        
@@ -274,7 +303,7 @@ def center():
         center_old_timestamp = timestamp
         center_pub.publish(std_msgs.msg.Int64(time_delta))
 
-def left():
+def left(cam_list):
     left_old_timestamp = 0
     leftcam = cam_list.GetBySerial('18060270')
     while True:        
@@ -287,7 +316,7 @@ def left():
         left_pub.publish(std_msgs.msg.Int64(time_delta))
     
 
-def right():
+def right(cam_list):
     right_old_timestamp = 0
     rightcam = cam_list.GetBySerial('17528370')
     while True:        
@@ -299,8 +328,9 @@ def right():
         right_old_timestamp = timestamp
         right_pub.publish(std_msgs.msg.Int64(time_delta))
 
-INS_old_timestamp = 0
+
 def INS(data):    
+    INS_old_timestamp = 0
     #SyncVerify.msg.SyncVerify.old_device_timestamp = INS_old_timestamp
     timestamp = data.utcTime
     #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
@@ -316,19 +346,21 @@ def GetSyncVerify():
 
 
 def __init__():
+    system = PySpin.System.GetInstance()
+    cam_list = system.GetCameras()
 
     try:
         for cam in cam_list:
             cam.Init()
-            configure_exposure(cam)
-            configure_chunk_data(cam.GetNodeMap())
             configure_trigger(cam)
-            set_acquisition_modes(cam)
+            configure_chunk_data(cam.GetNodeMap())            
+            configure_exposure(cam)
+            set_acquisition_mode(cam)
         
         GetSyncVerify()
-        left()
-        right()
-        center()
+        left(cam_list)
+        right(cam_list)
+        center(cam_list)
     
     except PySpin.SpinnakerException as ex:
         print('ERROR: %s' % ex)
@@ -342,9 +374,10 @@ def __init__():
         center_pub.shutdown()
         for cam in cam_list:
             cam.EndAcquisition()
-            cam.DeInit()
-            
+            cam.DeInit()            
         del cam
+        cam_list.Clear()
+        system.ReleaseInstance()
         del cam_list
         return
     
