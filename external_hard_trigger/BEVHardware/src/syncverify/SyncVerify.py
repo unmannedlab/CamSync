@@ -331,6 +331,7 @@ def right(cam_list):
 
 def INS(data):    
     INS_old_timestamp = 0
+
     #SyncVerify.msg.SyncVerify.old_device_timestamp = INS_old_timestamp
     timestamp = data.time
     #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
@@ -350,7 +351,7 @@ def __init__():
     cam_list = system.GetCameras()
 
     try:
-        for cam in cam_list:
+        for i,cam in enumerate(cam_list):
             cam.Init()
             configure_trigger(cam)
             configure_chunk_data(cam.GetNodeMap())            
@@ -372,7 +373,7 @@ def __init__():
         left_pub.shutdown()
         right_pub.shutdown()
         center_pub.shutdown()
-        for cam in cam_list:
+        for i,cam in enumerate(cam_list):
             cam.EndAcquisition()
             cam.DeInit()            
         del cam
