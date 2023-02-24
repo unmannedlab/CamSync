@@ -2,6 +2,11 @@ import rospy
 import PySpin
 import std_msgs
 import vectornav.msg
+from threading import Thread, Lock
+
+
+global tlock
+tlock = Lock
 
 class TriggerType:
     SOFTWARE = 1
@@ -44,8 +49,14 @@ def configure_exposure(cam):
             return False
 
         # Ensure desired exposure time does not exceed the maximum
-        cam.ExposureAuto.SetValue(PySpin.ExposureAuto_Continuous)
-        print('Camera Exposure set to Auto')
+        # Ensure desired exposure time does not exceed the maximum
+        exposure_time_to_set = 10000.0
+        exposure_time_to_set = min(cam.ExposureTime.GetMax(), exposure_time_to_set)
+        cam.ExposureTime.SetValue(exposure_time_to_set)
+        print('Shutter time set to %s us...\n' % exposure_time_to_set)
+
+        # cam.ExposureAuto.SetValue(PySpin.ExposureAuto_Continuous)
+        # print('Camera Exposure set to Auto')
 
     except PySpin.SpinnakerException as ex:
         print('Error: %s' % ex)
@@ -140,7 +151,7 @@ def configure_trigger(cam):
     if CHOSEN_TRIGGER == TriggerType.SOFTWARE:
         print('Software trigger chosen ...')
     elif CHOSEN_TRIGGER == TriggerType.HARDWARE:
-        print('Hardware trigger chose ...')
+        print('Hardware trigger chosen ...')
 
     try:
         # Ensure trigger mode off
@@ -265,80 +276,122 @@ def set_acquisition_mode(cam_list):
 
     return result
 
-def acquire_timestamp(cam):
-    try:
-        image_result = cam.GetNextImage(50)
-        chunk_data = image_result.GetChunkData()
-        timestamp = chunk_data.GetTimestamp()
-        image_result.Release()
-
-        return timestamp    
-
-    except PySpin.SpinnakerException as ex:
-        print('Error: %s' % ex)
-        return
+# def acquire_timestamp(cam):
+#     try:
+#         image_result = cam.GetNextImage()
+#         chunk_data = image_result.GetChunkData()
+#         timestamp = float((8*float(chunk_data.GetTimestamp())))
+#         image_result.Release()
+#         return timestamp    
+#     except rospy.ROSInterruptException as roserr:
+#         print(roserr)
 
 
 rospy.init_node('SyncAnalyzer', anonymous=True)
 
 
-center_pub = rospy.Publisher("centercam_timedelta", std_msgs.msg.Int64, queue_size=5)
+center_pub = rospy.Publisher("centercam_timedelta", std_msgs.msg.Float64, queue_size=5)
 
-right_pub = rospy.Publisher("rightcam_timedelta", std_msgs.msg.Int64, queue_size=5)
+right_pub = rospy.Publisher("rightcam_timedelta", std_msgs.msg.Float64, queue_size=5)
 
-left_pub = rospy.Publisher("leftcam_timedelta", std_msgs.msg.Int64, queue_size=5)
+left_pub = rospy.Publisher("leftcam_timedelta", std_msgs.msg.Float64, queue_size=5)
 
-ins_pub = rospy.Publisher("INS_timedelta", std_msgs.msg.Int64, queue_size=5)
+ins_pub = rospy.Publisher("INS_timedelta", std_msgs.msg.Float64, queue_size=5)
 
 
-def center(cam_list):
-    center_old_timestamp = 0
+def getTimeDelta(serial):
+    tlock.acquire()
+    cam_old_timestamp = float(0)
+    cam = cam_list.GetBySerial(serial)
+    tlock.release()
+    while True:
+        try:
+            image_result = cam.GetNextImage()
+            chunk_data = image_result.GetChunkData()
+            timestamp = float(chunk_data.GetTimestamp())
+            image_result.Release()           
+            #SyncVerify.msg.SyncVerify.old_device_timestamp = center_old_timestamp
+            #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
+            time_delta = timestamp - cam_old_timestamp
+            #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
+            cam_old_timestamp = timestamp
+            rospy.Publisher(serial, std_msgs.msg.Float64, queue_size=5).publish(time_delta)
+        except rospy.ROSInterruptException as roserr:
+            print(roserr)
+
+def center():
+    tlock.acquire()
+    center_old_timestamp = float(0)
     centercam = cam_list.GetBySerial('17512985')
-    while True:        
-        #SyncVerify.msg.SyncVerify.old_device_timestamp = center_old_timestamp
-        timestamp = acquire_timestamp(centercam)
-        #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
-        time_delta = timestamp - center_old_timestamp
-        #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
-        center_old_timestamp = timestamp
-        center_pub.publish(time_delta)
+    tlock.release()
+    while True:
+        try:
+            image_result = centercam.GetNextImage()
+            chunk_data = image_result.GetChunkData()
+            timestamp = float(chunk_data.GetTimestamp())
+            image_result.Release()           
+            #SyncVerify.msg.SyncVerify.old_device_timestamp = center_old_timestamp
+            #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
+            time_delta = timestamp - center_old_timestamp
+            #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
+            center_old_timestamp = timestamp
+            center_pub.publish(time_delta)
+        except rospy.ROSInterruptException as roserr:
+            print(roserr)
 
-def left(cam_list):
-    left_old_timestamp = 0
+def left():
+    #tlock.acquire()
+    left_old_timestamp = float(0)
     leftcam = cam_list.GetBySerial('18060270')
+    #tlock.release()
     while True:        
-        #SyncVerify.msg.SyncVerify.old_device_timestamp = left_old_timestamp
-        timestamp = acquire_timestamp(leftcam)
-        #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
-        time_delta = timestamp - left_old_timestamp
-        #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
-        left_old_timestamp = timestamp
-        left_pub.publish(time_delta)
-    
+        try:
+            image_result = leftcam.GetNextImage()
+            chunk_data = image_result.GetChunkData()
+            timestamp = float((8*float(chunk_data.GetTimestamp())))
+            image_result.Release()           
+            #SyncVerify.msg.SyncVerify.old_device_timestamp = center_old_timestamp
+            #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
+            time_delta = timestamp - left_old_timestamp
+            #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
+            left_old_timestamp = timestamp
+            left_pub.publish(time_delta)
+        except rospy.ROSInterruptException as roserr:
+            print(roserr)
+           
 
-def right(cam_list):
-    right_old_timestamp = 0
+def right():
+    tlock.acquire()
+    right_old_timestamp = float(0)
     rightcam = cam_list.GetBySerial('17528370')
+    tlock.release()
     while True:        
-        #SyncVerify.msg.SyncVerify.old_device_timestamp = right_old_timestamp
-        timestamp = acquire_timestamp(rightcam)
-        #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
-        time_delta = timestamp - right_old_timestamp
-        #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
-        right_old_timestamp = timestamp
-        right_pub.publish(time_delta)
+        try:
+            image_result = rightcam.GetNextImage()
+            chunk_data = image_result.GetChunkData()
+            timestamp = float((8*float(chunk_data.GetTimestamp())))
+            image_result.Release()           
+            #SyncVerify.msg.SyncVerify.old_device_timestamp = center_old_timestamp
+            #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
+            time_delta = timestamp - right_old_timestamp
+            #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
+            right_old_timestamp = timestamp
+            right_pub.publish(time_delta)
+        except rospy.ROSInterruptException as roserr:
+            print(roserr)
 
-
-def INS(data):    
-    INS_old_timestamp = 0
-
+INS_old_timestamp = float(0)
+            
+def INS(data):  
+    global INS_old_timestamp 
     #SyncVerify.msg.SyncVerify.old_device_timestamp = INS_old_timestamp
-    timestamp = data.time
+    timestamp = float(data.time)
     #SyncVerify.msg.SyncVerify.current_device_timestamp = timestamp
     time_delta = timestamp - INS_old_timestamp
     #SyncVerify.msg.SyncVerify.device_time_delta = time_delta
     INS_old_timestamp = timestamp
     ins_pub.publish(time_delta)
+    return
 
 
 def GetSyncVerify():
@@ -346,39 +399,35 @@ def GetSyncVerify():
     rospy.spin()
 
 
-def __init__():
+def bruh():
     system = PySpin.System.GetInstance()
+    global cam_list
     cam_list = system.GetCameras()
-
     try:
         for i,cam in enumerate(cam_list):
             cam.Init()
             configure_trigger(cam)
             configure_chunk_data(cam.GetNodeMap())            
             configure_exposure(cam)
-            set_acquisition_mode(cam)
         
-        GetSyncVerify()
-        left(cam_list)
-        right(cam_list)
-        center(cam_list)
-    
-    except PySpin.SpinnakerException as ex:
-        print('ERROR: %s' % ex)
-        return
-    
-    except rospy.exceptions.ROSInterruptException as err:
-        print('ROS_ERROR: %s' % err)
-        GetSyncVerify.shutdown()
-        left_pub.shutdown()
-        right_pub.shutdown()
-        center_pub.shutdown()
+        set_acquisition_mode(cam_list)
+        print('Camera %d settings completed.....' % i)
+            
+        Thread(target=GetSyncVerify).start()
+
+        Thread(target=getTimeDelta,args='18060270').start()
+        Thread(target=getTimeDelta,args='17528370').start()
+        Thread(target=getTimeDelta,args='17512985').start()
+        #Thread(target=center).start()
+        #Thread(target=right).start()
+            
+    except rospy.ROSException or PySpin.SpinnakerException as err:
+        print(err)
         for i,cam in enumerate(cam_list):
             cam.EndAcquisition()
-            cam.DeInit()            
-        del cam
-        cam_list.Clear()
-        system.ReleaseInstance()
-        del cam_list
-        return
-    
+            cam.DeInit()
+            system.ReleaseInstance()
+            
+
+if __name__ == '__main__':
+    bruh()
